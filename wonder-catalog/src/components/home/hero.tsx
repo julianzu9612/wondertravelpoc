@@ -4,7 +4,7 @@ export function Hero() {
   const whatsapp = getWhatsAppHref();
 
   return (
-    <section className="relative isolate -mx-4 overflow-hidden rounded-3xl bg-black text-white sm:-mx-6 lg:-mx-12">
+    <section className="relative isolate -mx-4 overflow-hidden bg-black text-white sm:-mx-6 lg:-mx-12">
       <video
         className="absolute inset-0 h-full w-full object-cover"
         poster="/hero/captureVideo.webp"
@@ -16,8 +16,8 @@ export function Hero() {
         <source src="/hero/video-hero.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/55 to-black/35" />
-      <div className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-end px-6 pb-16 pt-20 sm:px-8 lg:px-10">
-        <div className="max-w-2xl space-y-6">
+      <div className="relative mx-auto flex min-h-[80vh] w-full flex-col justify-center px-6 pb-16 pt-24 sm:px-10 lg:px-16">
+        <div className="max-w-4xl space-y-6">
           <p className="text-xs uppercase tracking-[0.16em] text-white/70">
             Wonder Travel · Colombia auténtica
           </p>

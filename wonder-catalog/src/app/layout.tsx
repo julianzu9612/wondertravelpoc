@@ -7,6 +7,7 @@ import {
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { WhatsAppFloating } from "@/components/layout/whatsapp-floating";
+import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -25,9 +26,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Wonder Travel | Catálogo",
-  description:
-    "Catálogo estático de experiencias Wonder Travel. Inspiración visual y contacto inmediato por WhatsApp.",
+  title: siteConfig.name,
+  description: siteConfig.description,
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    url: siteConfig.url,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
 };
 
 export default function RootLayout({

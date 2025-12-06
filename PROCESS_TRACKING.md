@@ -38,4 +38,5 @@
 - 2025-XX-XX: Placeholders de imágenes en /public/images/trips y hero con imagen; pendiente decidir partners finales y copy/numero WhatsApp.
 - 2025-XX-XX: Se añade sección de partners con placeholders y README con pendientes críticos (WhatsApp, imágenes reales, logos).
 - 2025-XX-XX: Se copian assets del repo original (video hero, logos partners, Card*.webp, cano-cristales.jpg), hero con video, y motion suave en home.
+- 2025-XX-XX: Se sustituyen imágenes de trips con assets originales (ciudad-perdida, amazonas, mavicure, caño-cristales, tatacoa placeholder desert).
 - 2025-XX-XX: Config de metadata base con siteConfig y OG/twitter (actualizar url/imagen cuando haya dominio final).

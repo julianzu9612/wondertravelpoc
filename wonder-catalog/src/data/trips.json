@@ -7,7 +7,7 @@
     "price": 1800000,
     "duration": "4 días / 3 noches",
     "difficulty": "Alta",
-    "images": ["/images/trips/ciudad-perdida-1.webp"],
+    "images": ["/images/trips/ciudad-perdida-1.jpg"],
     "categories": ["Aventura", "Cultural", "Trekking"],
     "itinerary": [
       {"day": 1, "title": "Inicio de la Aventura", "description": "Salida desde Santa Marta hacia el Mamey. Caminata de 4 horas hasta el primer campamento."},
@@ -25,7 +25,7 @@
     "price": 2500000,
     "duration": "5 días / 4 noches",
     "difficulty": "Media",
-    "images": ["/images/trips/amazonas-1.webp"],
+    "images": ["/images/trips/amazonas-1.jpg"],
     "categories": ["Naturaleza", "Cultural", "Aventura"],
     "itinerary": [
       {"day": 1, "title": "Llegada a Leticia", "description": "Recepción y traslado a la reserva natural."},
@@ -61,7 +61,7 @@
     "price": 2100000,
     "duration": "4 días / 3 noches",
     "difficulty": "Media",
-    "images": ["/images/trips/mavicure-1.webp"],
+    "images": ["/images/trips/mavicure-1.jpg"],
     "categories": ["Aventura", "Naturaleza", "Expedición"],
     "itinerary": [
       {"day": 1, "title": "Inírida", "description": "Recorrido por la Estrella Fluvial."},
@@ -79,7 +79,7 @@
     "price": 1950000,
     "duration": "3 días / 2 noches",
     "difficulty": "Media",
-    "images": ["/images/trips/cano-cristales-1.jpg"],
+    "images": ["/images/trips/cano-cristales-1.webp"],
     "categories": ["Naturaleza", "Fotografía", "Aventura"],
     "itinerary": [
       {"day": 1, "title": "Llegada", "description": "Vuelo a La Macarena y orientación."},

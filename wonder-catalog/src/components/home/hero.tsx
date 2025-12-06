@@ -15,16 +15,26 @@ export function Hero() {
       >
         <source src="/hero/video-hero.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/35" />
-      <div className="relative mx-auto flex min-h-[92vh] w-full max-w-none flex-col justify-center px-2 pb-16 pt-28 sm:px-4 lg:px-6">
-        <div className="max-w-5xl space-y-6">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/30" />
+      <div className="relative mx-auto flex min-h-[92vh] w-full max-w-none flex-col justify-start gap-10 pb-12 pt-24">
+        <div className="flex items-start justify-between px-4 sm:px-8 lg:px-12">
           <p className="text-xs uppercase tracking-[0.16em] text-white/70">
             Wonder Travel · Colombia auténtica
           </p>
-          <h1 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
+          <div className="hidden text-xs font-semibold text-white/70 sm:flex sm:items-center sm:gap-3">
+            <span className="rounded-full border border-white/25 bg-white/10 px-3 py-1">
+              Expertos locales
+            </span>
+            <span className="rounded-full border border-white/25 bg-white/10 px-3 py-1">
+              Asesoría inmediata
+            </span>
+          </div>
+        </div>
+        <div className="flex flex-col gap-8 px-4 sm:px-8 lg:px-12">
+          <h1 className="font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
             Explora la Colombia que pocos conocen
           </h1>
-          <p className="text-lg text-white/80">
+          <p className="max-w-4xl text-lg text-white/85 sm:text-xl">
             Ciudad Perdida, Amazonas, Caño Cristales y más. Planes curados con
             expertos locales y contacto inmediato por WhatsApp.
           </p>

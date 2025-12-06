@@ -29,7 +29,7 @@
 - Fase 5 — Motion/QA
   - [ ] Microanimaciones aplicadas (stagger/hover/focus).
   - [ ] A11y revisada (semántica, focus, contrastes).
-  - [ ] Perf/Lighthouse móvil 95+ revisado.
+  - [ ] Perf/Lighthouse móvil 95+ revisado (pendiente correr con Chrome disponible).
   - [ ] TODOs documentados (WhatsApp final, assets pendientes).
 
 ## Bitácora rápida

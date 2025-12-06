@@ -22,6 +22,7 @@ npm run lint
 - **WhatsApp**: actualizar número y mensaje en `src/lib/whatsapp.ts` antes de release.
 - **Imágenes**: reemplazar placeholders en `public/images/trips/*.jpg` por fotos reales y actualizar rutas en `src/data/trips.json`.
 - **Partners**: añadir logos reales en `public/partners` y apuntarlos en la sección de partners (cuando se implemente).
+- **Dominio**: configurar `NEXT_PUBLIC_SITE_URL` para OG/canonicals antes de desplegar.
 
 ## Assets reutilizados (repo original)
 - Video/póster de hero: `public/hero/video-hero.mp4`, `public/hero/captureVideo.webp`.
@@ -30,3 +31,4 @@ npm run lint
 
 ## Despliegue
 - Vercel (recomendado) o `next export` para GitHub Pages; no hay backend ni llamadas externas.
+- Para `next export`: setear `OUTPUT=export` en Next 14 o usar `next.config.ts` con `output: 'export'` si se desea modo estático. Configurar `NEXT_PUBLIC_SITE_URL` para OG.

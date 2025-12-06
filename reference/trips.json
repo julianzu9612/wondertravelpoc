@@ -1,0 +1,91 @@
+[
+  {
+    "id": "1",
+    "slug": "ciudad-perdida",
+    "title": "Ciudad Perdida Trek",
+    "shortDescription": "Descubre la ancestral Teyuna en la Sierra Nevada de Santa Marta. Una caminata épica de 4 días a través de la selva hasta las ruinas sagradas.",
+    "price": 1800000,
+    "duration": "4 días / 3 noches",
+    "difficulty": "Alta",
+    "images": ["/images/trips/ciudad-perdida-1.jpg"],
+    "categories": ["Aventura", "Cultural", "Trekking"],
+    "itinerary": [
+      {"day": 1, "title": "Inicio de la Aventura", "description": "Salida desde Santa Marta hacia el Mamey. Caminata de 4 horas hasta el primer campamento."},
+      {"day": 2, "title": "Hacia Mutanyi", "description": "Caminata visitando comunidades indígenas Kogui y Wiwa."},
+      {"day": 3, "title": "Ciudad Perdida", "description": "Ascenso por los 1.200 escalones hasta las terrazas sagradas."},
+      {"day": 4, "title": "Regreso", "description": "Descenso y traslado a Santa Marta."}
+    ],
+    "isFeatured": true
+  },
+  {
+    "id": "2",
+    "slug": "amazonas-magico",
+    "title": "Amazonas Mágico",
+    "shortDescription": "Inmersión en la selva amazónica. Delfines rosados y encuentro con comunidades Tikuna.",
+    "price": 2500000,
+    "duration": "5 días / 4 noches",
+    "difficulty": "Media",
+    "images": ["/images/trips/amazonas-1.jpg"],
+    "categories": ["Naturaleza", "Cultural", "Aventura"],
+    "itinerary": [
+      {"day": 1, "title": "Llegada a Leticia", "description": "Recepción y traslado a la reserva natural."},
+      {"day": 2, "title": "Puerto Nariño", "description": "Navegación y avistamiento de delfines rosados."},
+      {"day": 3, "title": "Comunidades Indígenas", "description": "Intercambio cultural con la comunidad Tikuna."},
+      {"day": 4, "title": "Reserva Natural", "description": "Pesca de pirañas y caminata por la selva."},
+      {"day": 5, "title": "Regreso", "description": "Traslado al aeropuerto."}
+    ],
+    "isFeatured": true
+  },
+  {
+    "id": "3",
+    "slug": "desierto-tatacoa",
+    "title": "Estrellas del Desierto",
+    "shortDescription": "Observación astronómica en el Desierto de la Tatacoa. Paisajes surreales y cielos estrellados.",
+    "price": 850000,
+    "duration": "3 días / 2 noches",
+    "difficulty": "Baja",
+    "images": ["/images/trips/tatacoa-1.jpg"],
+    "categories": ["Naturaleza", "Relax", "Fotografía"],
+    "itinerary": [
+      {"day": 1, "title": "Desierto Rojo", "description": "Caminata por el laberinto del Cuzco."},
+      {"day": 2, "title": "Desierto Gris", "description": "Valle de los Xilópalos y observación astronómica."},
+      {"day": 3, "title": "Regreso", "description": "Amanecer en el desierto y regreso."}
+    ],
+    "isFeatured": false
+  },
+  {
+    "id": "4",
+    "slug": "cerros-mavicure",
+    "title": "Cerros de Mavicure",
+    "shortDescription": "Expedición a los tepuyes sagrados del Guainía. Navegación y ascenso con vistas de 360°.",
+    "price": 2100000,
+    "duration": "4 días / 3 noches",
+    "difficulty": "Media",
+    "images": ["/images/trips/mavicure-1.jpg"],
+    "categories": ["Aventura", "Naturaleza", "Expedición"],
+    "itinerary": [
+      {"day": 1, "title": "Inírida", "description": "Recorrido por la Estrella Fluvial."},
+      {"day": 2, "title": "Navegación", "description": "Río arriba hasta la base de los cerros."},
+      {"day": 3, "title": "Ascenso", "description": "Amanecer desde la cima del Mavicure."},
+      {"day": 4, "title": "Regreso", "description": "Navegación y vuelo de salida."}
+    ],
+    "isFeatured": true
+  },
+  {
+    "id": "5",
+    "slug": "cano-cristales",
+    "title": "Caño Cristales",
+    "shortDescription": "El río de los cinco colores. El río más hermoso del mundo en la Sierra de la Macarena.",
+    "price": 1950000,
+    "duration": "3 días / 2 noches",
+    "difficulty": "Media",
+    "images": ["/images/trips/cano-cristales-1.jpg"],
+    "categories": ["Naturaleza", "Fotografía", "Aventura"],
+    "itinerary": [
+      {"day": 1, "title": "Llegada", "description": "Vuelo a La Macarena y orientación."},
+      {"day": 2, "title": "Caño Cristales", "description": "Día completo en el río de colores."},
+      {"day": 3, "title": "Regreso", "description": "Visita a otro sector y vuelo de regreso."}
+    ],
+    "isFeatured": true
+  }
+]

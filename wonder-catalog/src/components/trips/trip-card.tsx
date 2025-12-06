@@ -54,9 +54,11 @@ export function TripCard({ trip }: Props) {
           {trip.shortDescription}
         </p>
         <div className="mt-auto flex items-center justify-between text-sm font-semibold text-foreground">
-          <div>
-            <p className="text-foreground/60">Desde</p>
-            <p>{formatter.format(trip.price)}</p>
+          <div className="space-y-1">
+            <p className="text-xs uppercase tracking-[0.08em] text-foreground/60">
+              Desde
+            </p>
+            <p className="text-base">{formatter.format(trip.price)}</p>
           </div>
           <div className="rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-foreground">
             {trip.duration}

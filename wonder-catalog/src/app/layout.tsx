@@ -6,7 +6,7 @@ import {
 } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
-import { WhatsAppFloating } from "@/components/layout/whatsapp-floating";
+import { WhatsAppFloatingGate } from "@/components/layout/whatsapp-floating-gate";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -57,7 +57,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <WhatsAppFloating />
+        <WhatsAppFloatingGate />
       </body>
     </html>
   );

@@ -22,11 +22,11 @@ export function Hero() {
             Wonder Travel · Colombia y LatAm
           </p>
           <h1 className="font-display text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
-            El alma aventurera de Latinoamérica
+            Explora Colombia con expertos locales
           </h1>
           <p className="max-w-2xl text-lg text-foreground/70">
-            Catálogo visual de experiencias únicas. Inspírate, filtra por
-            categoría y habla directo por WhatsApp con nuestro equipo.
+            Aventuras icónicas como Ciudad Perdida, Amazonas y Caño Cristales.
+            Inspírate, filtra por categoría y habla directo por WhatsApp con nuestro equipo.
           </p>
           <div className="flex flex-wrap gap-3">
             <a

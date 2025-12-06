@@ -15,8 +15,8 @@ export function Hero() {
       >
         <source src="/hero/video-hero.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/40" />
-      <div className="relative mx-auto flex min-h-[85vh] w-full max-w-none flex-col justify-center px-6 pb-16 pt-28 sm:px-8 lg:px-10">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/35" />
+      <div className="relative mx-auto flex min-h-[92vh] w-full max-w-none flex-col justify-center px-2 pb-16 pt-28 sm:px-4 lg:px-6">
         <div className="max-w-5xl space-y-6">
           <p className="text-xs uppercase tracking-[0.16em] text-white/70">
             Wonder Travel · Colombia auténtica

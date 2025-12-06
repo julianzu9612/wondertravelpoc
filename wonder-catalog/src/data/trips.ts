@@ -16,3 +16,23 @@ export function getCategories() {
   trips.forEach((trip) => trip.categories.forEach((cat) => set.add(cat)));
   return Array.from(set).sort();
 }
+
+export function getRelatedTrips(slug: string, limit = 3) {
+  const current = getTripBySlug(slug);
+  if (!current) return [];
+
+  const pool = trips.filter((trip) => trip.slug !== slug);
+  // Priorizar misma categoría
+  const related = pool
+    .map((trip) => {
+      const overlap = trip.categories.filter((c) =>
+        current.categories.includes(c)
+      ).length;
+      return { trip, score: overlap };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((item) => item.trip);
+
+  return related;
+}

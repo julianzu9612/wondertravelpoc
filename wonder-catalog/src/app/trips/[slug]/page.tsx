@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { getTripBySlug, trips } from "@/data/trips";
+import { getRelatedTrips, getTripBySlug, trips } from "@/data/trips";
 import type { Trip } from "@/data/types";
 import { getWhatsAppHref } from "@/lib/whatsapp";
+import { TripGallery } from "@/components/trips/gallery";
+import { RelatedTrips } from "@/components/trips/related-trips";
 
 type Props = {
   params: { slug: string };
@@ -76,6 +78,7 @@ export default function TripDetailPage({ params }: Props) {
 
   const cover = trip.images?.[0] ?? "/brand/wonder.png";
   const whatsapp = getWhatsAppHref(trip.title);
+  const related = getRelatedTrips(trip.slug, 3);
 
   return (
     <div className="mx-auto max-w-6xl px-4 pb-20 pt-8 sm:px-6 lg:max-w-7xl">
@@ -133,14 +136,13 @@ export default function TripDetailPage({ params }: Props) {
         </div>
       </div>
 
-      <div id="itinerario" className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+      <div id="itinerario" className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <Itinerary trip={trip} />
-        <div className="space-y-4">
-          <div className="rounded-2xl border border-dashed border-border/80 bg-muted/60 p-5 text-sm text-foreground/70">
-            Galería próximamente. Usa imágenes en <code>/public/images/trips</code>{" "}
-            siguiendo el slug y actualiza <code>images</code> en el JSON.
-          </div>
-        </div>
+        <TripGallery trip={trip} />
+      </div>
+
+      <div className="mt-12">
+        <RelatedTrips related={related} />
       </div>
 
       <div className="fixed inset-x-0 bottom-4 z-30 px-4 sm:hidden">

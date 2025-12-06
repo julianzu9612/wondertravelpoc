@@ -5,17 +5,20 @@ import { Partners } from "@/components/home/partners";
 import { SearchBar } from "@/components/home/search-bar";
 import { Testimonials } from "@/components/home/testimonials";
 import { TrustBand } from "@/components/home/trust-band";
+import { StaggerList } from "@/components/motion/stagger";
 
 export default function Home() {
   return (
     <div className="mx-auto max-w-6xl space-y-10 px-4 pb-16 pt-10 sm:px-6 lg:max-w-7xl">
       <Hero />
-      <CampaignBanner />
-      <FeaturedSection />
-      <SearchBar />
-      <Testimonials />
-      <TrustBand />
-      <Partners />
+      <StaggerList className="space-y-10">
+        <CampaignBanner />
+        <FeaturedSection />
+        <SearchBar />
+        <Testimonials />
+        <TrustBand />
+        <Partners />
+      </StaggerList>
     </div>
   );
 }

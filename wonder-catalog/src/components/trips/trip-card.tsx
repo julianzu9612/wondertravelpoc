@@ -17,7 +17,7 @@ export function TripCard({ trip }: Props) {
   return (
     <Link
       href={`/trips/${trip.slug}`}
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/70 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/70 bg-white shadow-sm transition transform-gpu hover:-translate-y-1 hover:shadow-lg focus-visible:-translate-y-1 focus-visible:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-orange-100/60 via-white to-orange-50/40">
         <Image

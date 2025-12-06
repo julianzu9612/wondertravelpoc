@@ -42,7 +42,7 @@ export function Testimonials() {
         {testimonials.map((t) => (
           <div
             key={t.name}
-            className="flex h-full flex-col gap-3 rounded-2xl border border-border/70 bg-secondary/60 p-4 text-sm text-foreground/80"
+            className="flex h-full flex-col gap-3 rounded-2xl border border-border/70 bg-secondary/60 p-4 text-sm text-foreground/80 transition transform-gpu hover:-translate-y-1 hover:shadow-md"
           >
             <div className="flex items-center justify-between gap-2 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/60">
               <span>{t.country}</span>

@@ -29,7 +29,7 @@ export function Partners() {
         {partners.map((partner) => (
           <div
             key={partner.name}
-            className="flex h-full flex-col items-start justify-between gap-3 rounded-2xl border border-dashed border-border/70 bg-secondary/50 p-4 text-sm text-foreground/80"
+            className="flex h-full flex-col items-start justify-between gap-3 rounded-2xl border border-dashed border-border/70 bg-secondary/50 p-4 text-sm text-foreground/80 transition transform-gpu hover:-translate-y-1 hover:shadow-md"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-xs font-semibold text-foreground shadow-sm">
               Logo

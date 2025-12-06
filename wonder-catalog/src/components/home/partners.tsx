@@ -1,8 +1,10 @@
+import Image from "next/image";
+
 const partners = [
-  { name: "ProColombia", note: "Logo pendiente" },
-  { name: "TourCert", note: "Logo pendiente" },
-  { name: "Acotur", note: "Logo pendiente" },
-  { name: "Destinos de Paz", note: "Logo pendiente" },
+  { name: "ProColombia", logo: "/partners/acotur-procolombia.png" },
+  { name: "TourCert", logo: "/partners/TourCertSiegel.svg" },
+  { name: "Acotur", logo: "/partners/acoturcortologo.png" },
+  { name: "Destinos de Paz", logo: "/partners/sello.png" },
 ];
 
 export function Partners() {
@@ -21,7 +23,7 @@ export function Partners() {
           </p>
         </div>
         <span className="rounded-full bg-secondary px-4 py-2 text-xs font-semibold text-foreground">
-          Logos pendientes
+          Certificaciones y aliados
         </span>
       </div>
 
@@ -31,15 +33,21 @@ export function Partners() {
             key={partner.name}
             className="flex h-full flex-col items-start justify-between gap-3 rounded-2xl border border-dashed border-border/70 bg-secondary/50 p-4 text-sm text-foreground/80 transition transform-gpu hover:-translate-y-1 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-xs font-semibold text-foreground shadow-sm">
-              Logo
+            <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white text-xs font-semibold text-foreground shadow-sm">
+              <Image
+                src={partner.logo}
+                alt={partner.name}
+                width={48}
+                height={48}
+                className="h-full w-full object-contain p-1.5"
+              />
             </div>
             <div className="space-y-1">
               <p className="text-base font-semibold text-foreground">
                 {partner.name}
               </p>
               <p className="text-xs uppercase tracking-[0.1em] text-foreground/60">
-                {partner.note}
+                Aliado certificado
               </p>
             </div>
           </div>

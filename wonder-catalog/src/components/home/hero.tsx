@@ -6,7 +6,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-orange-50 via-white to-orange-100 px-5 py-14 sm:px-10 lg:px-14">
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-20">
         <Image
           src="/brand/pattern-web.svg"
           alt=""
@@ -46,14 +46,16 @@ export function Hero() {
           </div>
         </div>
         <div className="relative mx-auto aspect-[4/3] w-full max-w-lg overflow-hidden rounded-2xl border border-border/70 shadow-lg">
-          <Image
-            src="/images/trips/amazonas-1.jpg"
-            alt="Paisaje de aventura"
-            fill
-            sizes="(max-width: 1024px) 100vw, 500px"
-            className="object-cover"
-            priority
-          />
+          <video
+            className="h-full w-full object-cover"
+            poster="/hero/captureVideo.webp"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/hero/video-hero.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent" />
           <div className="absolute bottom-4 left-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground shadow-sm">
             Naturaleza · Aventura

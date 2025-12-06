@@ -23,5 +23,10 @@ npm run lint
 - **Imágenes**: reemplazar placeholders en `public/images/trips/*.jpg` por fotos reales y actualizar rutas en `src/data/trips.json`.
 - **Partners**: añadir logos reales en `public/partners` y apuntarlos en la sección de partners (cuando se implemente).
 
+## Assets reutilizados (repo original)
+- Video/póster de hero: `public/hero/video-hero.mp4`, `public/hero/captureVideo.webp`.
+- Logos de partners (ProColombia, TourCert, Acotur, Sello de Paz) en `public/partners`.
+- Placeholders de trips tomados de `/wonder-main-main/public/assets/images/homepage/Card*.webp` y `cano-cristales.jpg`.
+
 ## Despliegue
 - Vercel (recomendado) o `next export` para GitHub Pages; no hay backend ni llamadas externas.

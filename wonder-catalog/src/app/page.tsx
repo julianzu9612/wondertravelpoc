@@ -16,16 +16,18 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-6xl space-y-10 px-4 pb-16 pt-10 sm:px-6 lg:max-w-7xl">
+    <>
       <Hero />
-      <StaggerList className="space-y-10">
-        <CampaignBanner />
-        <FeaturedSection />
-        <SearchBar />
-        <Testimonials />
-        <TrustBand />
-        <Partners />
-      </StaggerList>
-    </div>
+      <div className="mx-auto max-w-6xl space-y-10 px-4 pb-16 pt-10 sm:px-6 lg:max-w-7xl">
+        <StaggerList className="space-y-10">
+          <CampaignBanner />
+          <FeaturedSection />
+          <SearchBar />
+          <Testimonials />
+          <TrustBand />
+          <Partners />
+        </StaggerList>
+      </div>
+    </>
   );
 }

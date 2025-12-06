@@ -4,7 +4,7 @@ export function Hero() {
   const whatsapp = getWhatsAppHref();
 
   return (
-    <section className="relative isolate -mx-4 overflow-hidden bg-black text-white sm:-mx-6 lg:-mx-12">
+    <section className="relative isolate w-screen max-w-none -mx-[calc(50vw-50%)] overflow-hidden bg-black text-white">
       <video
         className="absolute inset-0 h-full w-full object-cover"
         poster="/hero/captureVideo.webp"

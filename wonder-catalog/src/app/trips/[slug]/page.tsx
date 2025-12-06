@@ -7,15 +7,16 @@ import { TripGallery } from "@/components/trips/gallery";
 import { RelatedTrips } from "@/components/trips/related-trips";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
   return trips.map((trip) => ({ slug: trip.slug }));
 }
 
-export function generateMetadata({ params }: Props) {
-  const trip = getTripBySlug(params.slug);
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const trip = getTripBySlug(slug);
   if (!trip) return {};
   return {
     title: `${trip.title} | Wonder Travel`,
@@ -72,8 +73,9 @@ function Itinerary({ trip }: { trip: Trip }) {
   );
 }
 
-export default function TripDetailPage({ params }: Props) {
-  const trip = getTripBySlug(params.slug);
+export default async function TripDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const trip = getTripBySlug(slug);
   if (!trip) return notFound();
 
   const cover = trip.images?.[0] ?? "/brand/wonder.png";

@@ -45,16 +45,19 @@ export function Hero() {
             </a>
           </div>
         </div>
-        <div className="relative mx-auto aspect-[4/3] w-full max-w-lg overflow-hidden rounded-2xl border border-border/70 bg-[#0b1220] shadow-lg">
+        <div className="relative mx-auto aspect-[4/3] w-full max-w-lg overflow-hidden rounded-2xl border border-border/70 shadow-lg">
           <Image
-            src="/brand/wonderLogoDarkContrast.svg"
-            alt="Wonder Travel"
+            src="/images/trips/amazonas-1.jpg"
+            alt="Paisaje de aventura"
             fill
             sizes="(max-width: 1024px) 100vw, 500px"
-            className="object-contain p-10"
+            className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent" />
+          <div className="absolute bottom-4 left-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground shadow-sm">
+            Naturaleza · Aventura
+          </div>
         </div>
       </div>
     </section>

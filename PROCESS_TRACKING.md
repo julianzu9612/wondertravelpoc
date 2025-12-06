@@ -35,3 +35,4 @@
 ## Bitácora rápida
 - 2025-XX-XX: Se crea ROADMAP y tracking, pendiente cerrar decisiones de diseño base.
 - 2025-XX-XX: Scaffolding Next + Tailwind + shadcn; Home con hero/buscador/destacados/confianza; listado /trips y detalle con itinerario/CTA; añadidos banner de campaña, testimonios, galería y relacionados; página /contacto.
+- 2025-XX-XX: Placeholders de imágenes en /public/images/trips y hero con imagen; pendiente decidir partners finales y copy/numero WhatsApp.

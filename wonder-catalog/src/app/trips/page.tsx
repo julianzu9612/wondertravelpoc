@@ -1,10 +1,19 @@
+import type { Metadata } from "next";
 import { trips } from "@/data/trips";
 import { TripCard } from "@/components/trips/trip-card";
+import { siteConfig } from "@/config/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Viajes | Wonder Travel",
   description:
     "Explora todas las experiencias del catálogo Wonder Travel. Aventuras curadas, listas para inspirarte.",
+  openGraph: {
+    title: "Viajes | Wonder Travel",
+    description:
+      "Explora todas las experiencias del catálogo Wonder Travel. Aventuras curadas, listas para inspirarte.",
+    url: `${siteConfig.url}/trips`,
+    images: [siteConfig.ogImage],
+  },
 };
 
 export default function TripsPage() {

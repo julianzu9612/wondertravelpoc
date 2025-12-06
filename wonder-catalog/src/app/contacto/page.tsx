@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
 import { getWhatsAppHref, WHATSAPP_NUMBER } from "@/lib/whatsapp";
+import { siteConfig } from "@/config/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contacto | Wonder Travel",
   description:
     "Hablemos por WhatsApp o email para planear tu próxima aventura con Wonder Travel.",
+  openGraph: {
+    title: "Contacto | Wonder Travel",
+    description:
+      "Hablemos por WhatsApp o email para planear tu próxima aventura con Wonder Travel.",
+    url: `${siteConfig.url}/contacto`,
+    images: [siteConfig.ogImage],
+  },
 };
 
 export default function ContactoPage() {

@@ -6,6 +6,13 @@ import { SearchBar } from "@/components/home/search-bar";
 import { Testimonials } from "@/components/home/testimonials";
 import { TrustBand } from "@/components/home/trust-band";
 import { StaggerList } from "@/components/motion/stagger";
+import { siteConfig } from "@/config/site";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: siteConfig.name,
+  description: siteConfig.description,
+};
 
 export default function Home() {
   return (

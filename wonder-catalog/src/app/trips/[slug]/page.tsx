@@ -5,6 +5,8 @@ import type { Trip } from "@/data/types";
 import { getWhatsAppHref } from "@/lib/whatsapp";
 import { TripGallery } from "@/components/trips/gallery";
 import { RelatedTrips } from "@/components/trips/related-trips";
+import { absoluteUrl } from "@/lib/urls";
+import { siteConfig } from "@/config/site";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -18,9 +20,19 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const trip = getTripBySlug(slug);
   if (!trip) return {};
+  const ogImage = trip.images?.[0]
+    ? absoluteUrl(trip.images[0])
+    : absoluteUrl(siteConfig.ogImage);
+
   return {
     title: `${trip.title} | Wonder Travel`,
     description: trip.shortDescription,
+    openGraph: {
+      title: `${trip.title} | Wonder Travel`,
+      description: trip.shortDescription,
+      url: `${siteConfig.url}/trips/${trip.slug}`,
+      images: [ogImage],
+    },
   };
 }
 

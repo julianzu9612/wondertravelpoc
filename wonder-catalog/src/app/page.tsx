@@ -1,6 +1,7 @@
 import { CampaignBanner } from "@/components/home/campaign-banner";
 import { FeaturedSection } from "@/components/home/featured-section";
 import { Hero } from "@/components/home/hero";
+import { Partners } from "@/components/home/partners";
 import { SearchBar } from "@/components/home/search-bar";
 import { Testimonials } from "@/components/home/testimonials";
 import { TrustBand } from "@/components/home/trust-band";
@@ -14,6 +15,7 @@ export default function Home() {
       <SearchBar />
       <Testimonials />
       <TrustBand />
+      <Partners />
     </div>
   );
 }

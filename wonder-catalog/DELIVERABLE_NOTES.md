@@ -13,6 +13,12 @@
 - **Partners**: añadir logos adicionales si aplica.
 - **QA**: pasar Lighthouse móvil + revisión de contrastes/focus; ajustar copy final en hero/CTAs.
 
+### QA/Lighthouse
+- Intenté correr Lighthouse con `npx lighthouse http://localhost:3000` (headless Chrome), pero falló por falta de Chrome en el entorno. Al correr en local/CI con Chrome disponible, revisar especialmente:
+  - Pesos de imágenes (optimizar si suben fotos nuevas)
+  - Lazy-loading en galerías (ya se usa `next/image`)
+  - Contraste en chips/badges sobre fondos claros
+
 ## Limitantes / hallazgos
 - El repo original no trae datos de viajes en archivos estáticos; el sitio productivo consulta un API (`API_ENDPOINTS.TRIPS` / `LIST_TRIPS` vía `NEXT_PUBLIC_API_WOUNDER_ROOT`). Sin ese endpoint/dump, solo podemos usar el mock de `src/data/trips.json` (5 viajes del brief).
 - Imágenes de trips en el repo original son escasas y genéricas (carpetas de países/ciudades). No hay foto específica para Tatacoa en el asset pack.

@@ -1,0 +1,14 @@
+@import '/src/app/[lng]/variables';
+
+.external-flight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 8px;
+  row-gap: 12px;
+
+  &__country,
+  &__city,
+  &__date{
+    grid-column: 1 /  -1;
+  }
+}

@@ -1,0 +1,111 @@
+   @import '/src/app/[lng]/variables';
+
+   .type-doc {
+
+       &__error {
+           font-size: 0.8em;
+           color: $error;
+
+       }
+
+       &__summary-select--value {
+           &>div:first-child {
+               h3 {
+                   color: $blue-700 !important;
+               }
+           }
+       }
+
+       &__summary-select {
+           padding: 0;
+
+           &>div:first-child {
+               border: 2.271px solid $grey-300;
+               border-radius: 8px;
+               padding: 8px 16px;
+               margin: 0;
+               max-height: 37px;
+
+               h3 {
+                   font-weight: 400;
+                   font-size: 14px;
+                   font-family: $secondary-font;
+                   color: $blue-200;
+
+                   @media screen and (min-width: $min-tablet) {
+                       font-size: 13.3px;
+
+                   }
+               }
+           }
+
+           .summary-select {
+
+               &__form-doc {
+                   margin-top: 3px;
+                   padding: 0.5em 0;
+                   display: flex;
+                   flex-direction: column;
+                   color: $blue-700;
+                   font-family: $secondary-font;
+                   border: 1px solid $grey-500;
+                   border-radius: 8px;
+                   gap: 8px;
+                   max-height: 25vh;
+                   overflow: auto;
+
+
+                   label {
+                       padding-left: 1em;
+                       display: flex;
+                       gap: 12px;
+                       align-items: center;
+
+                       span {
+                           display: inline-flex;
+                           padding: 3px;
+                           align-items: center;
+                           justify-content: center;
+
+                           input {
+                               font-size: 14px;
+                               font-family: $secondary-font;
+                           }
+                       }
+
+                       input[type='radio'] {
+                           appearance: none;
+                           border-radius: 2px;
+                           padding: 0.4em;
+                           border-radius: 50%;
+                           outline-color: $grey-300;
+                           border: none;
+
+                           &:checked {
+                               border: none;
+                               background-color: $orange-500;
+                           }
+                       }
+                   }
+               }
+
+
+           }
+
+           &--value {
+
+
+               &>div:first-child {
+                   h3 {
+                       color: $blue-700;
+
+                       @media screen and (min-width: $min-tablet) {
+                           font-size: 13.3px;
+
+                       }
+                   }
+               }
+           }
+       }
+
+   }

@@ -1,0 +1,95 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.how-we-travel {
+  width: 100vw;
+  margin: 16px 16px 120px;
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  &__title {
+    width: 100%;
+    margin-bottom: 40px;
+
+    .title {
+      @include title('h1');
+      position: relative;
+      margin: 0;
+      margin-bottom: 16px;
+
+      span {
+        @include title('h1');
+      }
+
+      span::before {
+        content: '';
+        position: absolute;
+        width: .8em;
+        height: .8em;
+        background-repeat: no-repeat;
+        background-image: url('/assets/brand/wonder-isotype.svg');
+        left: calc(1em * 5.5);
+        top: 0px;
+      }
+    }
+  }
+
+  &__items {
+    background-color: $blue-300;
+    background-image: url('/assets/brand/pattern-web-2.svg');
+    background-size: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    border-radius: 20px;
+    width: 90%;
+
+    li {
+      @include subtitle(1, 'dark');
+      margin-bottom: 28px;
+      position: relative;
+      max-width: 320px;
+
+      &::before {
+        content: '';
+        width: 0.5em;
+        height: 0.5em;
+        background-color: $orange-500;
+        border-radius: 50%;
+        position: absolute;
+        left: -1.5em;
+        top: 0.5em;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    &__container {
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+    }
+
+    &__title {
+      margin: 48px 48px 48px 80px;
+      width: 40%;
+    }
+
+    &__items {
+      width: 60%;
+      padding: 90px;
+      border-radius: 20px 0 0 20px;
+
+    }
+  }
+}

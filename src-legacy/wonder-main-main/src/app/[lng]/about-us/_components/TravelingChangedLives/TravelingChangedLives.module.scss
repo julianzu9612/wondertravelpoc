@@ -1,0 +1,142 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.traveling {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding: 46px 20px;
+
+
+    @include topography;
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        max-width: $min-desktop;
+
+        .content {
+
+            &__ourLives {
+                display: flex;
+                gap: 24px;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+
+                .ourLives {
+                    &__texts {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                        flex: 1 1 300px;
+
+                        .texts {
+                            &__title {
+                                font-size: 24px;
+                                text-align: left;
+                            }
+
+                            &__description {
+                                font-size: 16px;
+                            }
+
+                            &__title,
+                            &__description {
+                                color: $blue-700;
+                            }
+
+                            &__description {
+                                text-align: justify;
+                            }
+                        }
+
+                    }
+
+                    &__image {
+                        width: 320px;
+                        height: 280px;
+                    }
+                }
+            }
+
+            &__video {
+                width: 100%;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+
+                h2 {
+                    font-size: 24px;
+                }
+
+                p {
+                    font-size: 16px;
+                    text-align: start;
+                }
+
+                iframe {
+                    align-self: center;
+                    aspect-ratio: 4/2;
+                    border-radius: 12px;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        padding: 64px 48px;
+
+        &__content {
+
+            .content {
+
+                &__ourLives {
+                    gap: 60px;
+
+                    .ourLives {
+                        &__texts {
+                            .texts {
+
+                                &__title {
+                                    font-size: 36px;
+                                }
+
+                                &__description {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+
+                        &__image {
+                            width: 400px;
+                            height: 300px;
+                        }
+                    }
+                }
+
+                &__video {
+                    gap: 24px;
+
+                    h2 {
+                        font-size: 32px;
+                    }
+
+                    p {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

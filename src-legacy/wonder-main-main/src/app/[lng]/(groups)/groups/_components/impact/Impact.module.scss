@@ -1,0 +1,59 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.impact {
+  @include wonder-grid;
+  animation: appear-bottom 1s;
+  @include animation-appear(bottom);
+
+  &__svg {
+    grid-column: 2 / span 5;
+    grid-row: 1 / span 4;
+    width: 100%;
+
+    .circle-text {
+      fill: $blue-700;
+    }
+  }
+
+  &__title, &__text {
+    grid-column: 7 / span 6;
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  &__title {
+    grid-row: 2 / span 1;
+  }
+
+  &__text {
+    grid-row: 3 / span 1;
+    line-height: 32px;
+    b {
+      color: $orange-500;
+    }
+  }
+ 
+
+  @media screen and (max-width: $min-tablet) {
+    padding: 40px 16px;
+
+  
+    &__title, &__text,
+    &__svg {
+      grid-column: 1 / -1;
+      grid-row: span 1;
+    }
+    &__title {
+      margin-bottom: 24px;
+    }
+
+    &__text {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+
+  }
+
+}

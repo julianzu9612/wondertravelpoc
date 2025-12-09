@@ -1,0 +1,123 @@
+@import "/src//app//[lng]/variables";
+@import "/src//app//[lng]/mixin";
+
+@mixin common-text {
+    font-size: 12px;
+
+    @media screen and (min-width: $min-tablet) {
+        font-size: 14px;
+    }
+}
+
+.getBlogsCountry {
+    display: flex;
+    gap: 28px;
+    flex-direction: column;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 6px;
+    scroll-snap-type: x mandatory;
+
+    &>* {
+        text-decoration: none;
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        flex-direction: row;
+    }
+}
+
+.targetBlog {
+    scroll-snap-align: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 260px;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+
+    &:hover &__image {
+        transform: scale(1.04);
+    }
+
+    &__image {
+        transition: transform 0.4s ease-in-out 0.1s;
+        border-radius: 12px;
+        flex: 1 1 100px;
+        height: 170px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+        width: 50%;
+        padding: 1rem;
+        position: relative;
+        background-color: $cream;
+        border-radius: 12px;
+        flex: 1 1 200px;
+
+        .content {
+            &__info {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .info {
+
+                    &__title,
+                    &__description {
+                        @include common-text();
+                    }
+
+                    &__title {
+                        line-height: 20px;
+                        @include limit-text(2);
+                    }
+
+                    &__description {
+                        @include limit-text(4);
+                        color: $blue-700;
+                    }
+                }
+            }
+
+            &__date {
+                bottom: 10px;
+                font-size: 14px;
+                color: $grey-500;
+                @include common-text;
+            }
+        }
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        flex-direction: column;
+        max-width: 320px;
+
+        &__image {
+            width: 100%;
+            border-radius: 12px;
+            max-width: none;
+            height: 200px;
+        }
+
+        &__content {
+            flex: none;
+            width: 100%;
+            top: -10px;
+            height: 182px;
+            border-radius: 0 0 12px 12px;
+        }
+    }
+
+}

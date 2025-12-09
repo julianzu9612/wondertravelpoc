@@ -1,0 +1,70 @@
+{
+    "data_personal": {
+        "genres": {
+            "MALE": "Hombre",
+            "FEMALE": "Mujer",
+            "OTHER": "Otros",
+            "NON_SPECIFIC": "Prefiero no especificar"
+        },
+        "type_document": {
+            "CC": "Cédula de ciudadanía",
+            "TI": "Tarjeta de identidad",
+            "CE": "Cédula de extranjería",
+            "PAS": "Pasaporte",
+            "PEP": "Permiso especial de permanencia"
+        },
+        "data_personal": "Datos Personales",
+        "name": "Nombre",
+        "lastName": "Apellido",
+        "identification": "Cédula de Identidad*",
+        "number_id": "Número de Cédula*",
+        "number_passport": "Número de Pasaporte*",
+        "gender": "Género*",
+        "male": "Masculino",
+        "female": "Femenino",
+        "nationality": "Nacionalidad*",
+        "birthday": "Fecha de Nacimiento",
+        "document": "Documento",
+        "title": "Documento de Identidad"
+    },
+    "data_contact": {
+        "data_contact": "Datos de Contacto",
+        "email": "Correo Electrónico",
+        "country_residence": "País de Residencia",
+        "city": "Ciudad*",
+        "direction": "Dirección",
+        "code_phone": "Código de Teléfono*",
+        "phone": "Teléfono"
+    },
+    "data_password": {
+        "change_password": "Cambio de Contraseña",
+        "password": "Contraseña actual",
+        "confirm_password": "Confirmar Nueva Contraseña",
+        "new_password": "Nueva Contraseña"
+    },
+    "finish_send": "Finalizar y Enviar",
+    "title_profile": "Datos del Perfil",
+    "input_required": "*Campo obligatorio",
+    "message_error": {
+        "name": "El nombre es obligatorio",
+        "last_name": "El apellido es obligatorio",
+        "document": "El documento es obligatorio",
+        "birthday": "La fecha de nacimiento es obligatoria",
+        "type_document": "El tipo de documento es obligatorio",
+        "email": "El correo electrónico es obligatorio",
+        "direction": "La dirección es obligatoria",
+        "phone": "El teléfono es obligatorio",
+        "code_phone": "El codigo de teléfono es obligatorio",
+        "password": "La contraseña es obligatoria",
+        "country": "El Pais es obligatoria",
+        "nacionality": "La Nacionalidad es obligatoria",
+        "password_confirmation": "Las contraseñas no coinciden",
+        "new_password": "La nueva contraseña es obligatoria",
+        "city": "Ciudad es Requerida",
+        "phone_no_valid": "El telefono no es valido"
+    },
+    "update": {
+        "success": "Datos actualizados satisfactoriamente",
+        "error": "Error al actualizar datos del perfil"
+    }
+}

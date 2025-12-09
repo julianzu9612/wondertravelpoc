@@ -1,0 +1,215 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.tailor-made-modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: background-animated;
+  animation-duration: 300ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 100ms;
+
+  img {
+    position: absolute;
+    object-fit: cover;
+    border-radius: 0 0 10% 10%;
+    filter: drop-shadow(2px 4px 6px rgb(54, 54, 54)) saturate(0.9);
+  }
+
+  .close-btn {
+    position: absolute;
+    cursor: pointer;
+    top: 16px;
+    right: 16px;
+  }
+
+  .wrapper {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    animation: appear-animated 400ms ease-out 300ms forwards;
+    opacity: 0;
+  }
+
+  .images {
+    &__3 {
+      top: -6%;
+      left: -35%;
+      width: 355px;
+      height: 170px;
+      animation-name: move-200;
+      animation-duration: calc(2 * 60s);
+      animation-timing-function: ease-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    &__3_1 {
+      top: 18%;
+      left: 15%;
+      width: 250px;
+      height: 122px;
+      animation-name: move-100;
+      animation-duration: calc(1 * 60s);
+      animation-timing-function: ease-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    &__3_2 {
+      display: none;
+    }
+  }
+
+  .title {
+    &__1 {
+      @include title(h2);
+      position: absolute;
+      top: 10%;
+      left: 0%;
+      right: 0%;
+      text-align: center;
+      color: $white;
+    }
+    
+    &__2 {
+      @include title(h2);
+      position: absolute;
+      top: 15%;
+      left: 0%;
+      right: 0%;
+      text-align: center;
+      color: $white;
+    }
+  }
+
+  .description {
+      position: absolute;
+      top: 22%;
+      left: 0%;
+      right: 0%;
+      text-align: center;
+      color: $white;
+      font-size: 16px;
+      line-height: 18px;
+  }
+
+  .form {
+    flex-direction: column;
+    z-index: 10;
+    display: flex;
+    position: absolute;
+    top: 37%;
+
+    left: calc(50% - (80% / 2));
+    width: 80%;
+    gap: 8px;
+
+    label {
+      color: $white;
+      font-size: 16px;
+      font-family: $secondary-font;
+      font-weight: 700;
+    }
+
+    input {
+      border-color: transparent;
+      font-family: $secondary-font;
+    }
+
+    button {
+      margin-top: 16px;
+    }
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    .wrapper {
+      width: 80vh;
+      height: 90vh;
+    }
+
+    .close-btn {
+      top: 48px;
+      right: 48px;
+    }
+
+    .title {
+      &__1 {
+        top: 10%;
+        text-shadow: 1px 1px 9px #272727;
+      }
+      &__2 {
+        top: 18%;
+        text-shadow: 1px 1px 9px #272727;
+      }
+    }
+
+    .description {
+      top: 26%;
+      max-width: 70%;
+      margin: auto;
+      text-shadow: 1px 1px 9px #272727;
+    }
+
+    .images {
+      &__3_2 {
+        display: initial;
+        top: -5%;
+        right: 0;
+        animation-name: move-150;
+        animation-duration: calc(2 * 60s);
+        animation-timing-function: ease-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        transform: scaleX(-1);
+        transform: rotate(10deg);
+      }
+    }
+    .form {
+      left: calc(50% - 25%);
+      width: 50%;
+    }
+  }
+}
+
+@keyframes move-200 {
+  to {
+    transform: translateX(50%);
+  }
+}
+@keyframes move-100 {
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes move-150 {
+  to {
+    transform: translateX(150%);
+  }
+}
+
+@keyframes background-animated {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: $grey-100-10;
+  }
+}
+
+@keyframes appear-animated {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

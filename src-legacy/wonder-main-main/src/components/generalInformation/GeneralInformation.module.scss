@@ -1,0 +1,87 @@
+@import '/src/app/[lng]/variables';
+
+.general-information {
+  h2 {
+    font-size: 20px;
+    padding-bottom: 24px;
+    padding-top: 52px;
+  }
+
+  .general-information {
+    &__items {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+
+    &__item {
+      display: flex;
+      gap: 8px;
+      min-height: 42px;
+      font-size: 14px;
+      align-items: baseline;
+
+      p {
+        height: fit-content;
+      }
+
+      img {
+        height: 8px;
+        width: auto;
+      }
+    }
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    h2 {
+      font-size: 38px;
+      padding-bottom: 42px;
+      padding-top: 64px;
+
+    }
+
+    .general-information {
+      &__items {
+        grid-template-columns: 33% 33% 33%;
+      }
+
+      &__item {
+        font-size: 16px;
+      }
+
+      &__list-items {
+        display: grid;
+        grid-template-columns: minmax(auto, 15em) 1fr;
+        column-gap: 16px;
+        padding: 24px 0;
+        border-top: 1px solid $grey-300;
+
+        .list-items {
+          &__title {
+            font-size: 20px;
+          }
+
+          &__items {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 8px;
+            font-size: 16px
+          }
+
+          &__item {
+            display: flex;
+            gap: 8px;
+            margin-top: 4px;
+            align-items: baseline;
+
+            img {
+              width: 12px;
+              height: 12px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

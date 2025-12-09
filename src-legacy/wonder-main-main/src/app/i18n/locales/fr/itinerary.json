@@ -1,0 +1,83 @@
+{
+  "details": {
+    "travelStyle": "Estilos de Viaje",
+    "destinations": "Destinos",
+    "serviceLevel": "Nivel de Servicio",
+    "physical_effort": "Esfuerzo Fisico",
+    "flightInformation": "Información de Vuelo",
+    "accommodation": "Alojamiento",
+    "travel_type": "Tipo de viaje",
+    "duration": "Duración",
+    "Highlighted activities": "Actividades destacadas",
+    "languaje": "Idioma",
+    "meeting_point": "Punto de encuentro",
+    "experts": "Personal y expertas",
+    "group_size": "Tamaño del grupo",
+    "Domestic Flights": "Vuelos nacionales",
+    "International Flights": "Vuelos internacionales",
+    "Included": "Incluye",
+    "Not included": "No incluye",
+    "overview-title": "Resumen",
+    "Varies depending on your country": "Varía según tu país.",
+    "Check here": "Revisa acá"
+  },
+  "navbar": {
+    "overview": "Vision general",
+    "itinerary": "Itinerario",
+    "trip_details": "Información general",
+    "impact": "El impacto de tu viaje"
+  },
+  "overview": {
+    "category": "Categoria",
+    "level": "Ligero",
+    "type_travel": "Multidía",
+    "highlighted": "Actividades destacadas"
+  },
+  "itinerary": {
+    "day": "Día",
+    "itinerary": "Itinerario",
+    "view_complete_itinerary": "Ver Itinerario completo",
+    "learn_more_about_itinerary": "Obtenga más información sobre los lugares que visitará"
+  },
+  "dates": "Fechas",
+  "policy": {
+    "title": "Política de Cancelación",
+    "text": "Haz clic en el siguiente enlace para ver nuestras políticas de cancelación",
+    "url_policies": "Ver políticas de cancelación"
+  },
+  "general_information": {
+    "title": "Informacion General"
+  },
+  "leader": {
+    "title": "Su anfitriona: {{name}}"
+  },
+  "help": "¡Hola wonder! ando buscando un poco de ayuda con mi proceso",
+  "message": "Hola! Tengo dudas para hacer mi reserva de {{itinerary}} por la página de Wonder",
+  "durationDays": {
+    "days": "días",
+    "nights": "noches"
+  },
+  "our_travelers": "Reseñas",
+  "Recomendations": {
+    "More Adventures For You": "Mas Aventuras Para Ti"
+  },
+  "cardPrice": {
+    "Book Now": "Reservar ahora",
+    "talkAgent": "Hablar con un agente",
+    "person": "Por persona",
+    "Chat with an agent": "Consultar con asesor",
+    "from": "Desde"
+  },
+  "SocialProof": {
+    "+985 travelers rate our trips with 4.6/5": "+985 viajeros califican nuestros viajes con 4.6 / 5",
+    "This product does not have reviews yet. However, we leave you reviews of other of our trips.": "Este producto no tiene reviews aun. Sin embargo, te dejamos reviews de otros de nuestros viajes."
+  },
+  "Deals": "Oferta",
+  "Book now with $0 deposit": "Reserva sin deposito",
+  "perfect-date-title": "¿Ninguna de las fechas disponibles te sirve?",
+  "perfect-date-text": "¡Hagámoslo funcionar! Ponte en contacto y exploraremos todas las opciones posibles para adaptarnos a tu agenda.",
+  "Show Less": "Mostrar Menos",
+  "Show More": "Mostrar más",
+  "view here": "ver acá",
+  "per-person": "Por Persona"
+}

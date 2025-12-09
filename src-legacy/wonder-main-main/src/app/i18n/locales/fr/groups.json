@@ -1,0 +1,138 @@
+{
+  "addOns": {
+    "title": {
+      "customized": "Activités",
+      "addOns": "Suppléments",
+      "forTrips": "pour vos voyages d’affaires"
+    },
+    "description": {
+      "prefix": "Les activités supplémentaires permettent à votre groupe (voyages d’incitation ou retraites) de se diviser en plus petits groupes pour profiter de",
+      "highlight": "activités personnalisées",
+      "suffix": "adaptées aux divers intérêts et préférences des membres de votre équipe."
+    },
+    "benefits": {
+      "diverse": {
+        "title": "Intérêts Divers",
+        "description": "Répond à différentes préférences au sein de votre équipe"
+      },
+      "flexible": {
+        "title": "Groupes Flexibles",
+        "description": "Divisez en groupes plus petits et plus gérables"
+      },
+      "customizable": {
+        "title": "Personnalisable",
+        "description": "Activités adaptées à chaque membre de l’équipe"
+      }
+    }
+  },
+  "contact": {
+    "title": "Votre groupe est-il prêt à vivre une expérience transformatrice en Colombie ?",
+    "description": "Contactez-nous dès aujourd’hui :",
+    "email": "travelbuddygroups@wondertravel.co",
+    "social": "@wondertravel.co",
+    "button": "Envoyer un e-mail"
+  },
+  "experience": {
+    "title": "Expérience",
+    "universitiesDescription": "Nous avons collaboré avec les universités suivantes :",
+    "businessesDescription": "et les entreprises suivantes :",
+    "universities": {
+      "chicago": "Logo de l’Université de Chicago",
+      "columbia": "Logo de l’Université de Columbia",
+      "harvard": "Logo de l’Université Harvard",
+      "mit": "Logo de l’Institut MIT",
+      "stanford": "Logo de l’Université Stanford",
+      "berkeley": "Logo de l’Université de Berkeley",
+      "wharton": "Logo de l’Université Wharton"
+    },
+    "businesses": {
+      "ypo": "Logo de YPO",
+      "zemoga": "Logo de Zemoga",
+      "columbia": "Logo de Columbia"
+    }
+  },
+  "reviews": {
+    "title": "Ce qu’ils disent de nous :",
+    "list": {
+      "temilola": {
+        "name": "Temilola R",
+        "review": "J’ai été impressionnée par la qualité de l’organisation. Nous avons été divisés en groupes avec des responsables désignés qui partageaient des informations chaque jour. Ils se sont occupés de tout et ont été très attentionnés en offrant de petits cadeaux, à la fois amusants et utiles, comme des verres à shot, de la crème solaire, des médicaments contre le mal de mer, du café à emporter chez soi. Toutes les fêtes étaient très amusantes et tout le monde était flexible et disponible pour répondre à toutes les questions. Je recommande vivement cette équipe."
+      },
+      "rebecca": {
+        "name": "Rebecca H",
+        "review": "J’ai été impressionnée par la qualité de l’organisation. Nous avons été divisés en groupes avec des responsables désignés qui partageaient des informations chaque jour. Ils se sont occupés de tout et ont été très attentionnés en offrant de petits cadeaux, à la fois amusants et utiles, comme des verres à shot, de la crème solaire, des médicaments contre le mal de mer, du café à emporter chez soi. Toutes les fêtes étaient très amusantes et tout le monde était flexible et disponible pour répondre à toutes les questions. Je recommande vivement cette équipe."
+      },
+      "camila": {
+        "name": "Camila V",
+        "review": "Ce voyage a répondu et même dépassé toutes nos attentes. Quel voyage incroyable et inoubliable ! Une organisation impeccable, tout a parfaitement fonctionné et chaque expérience a été magique."
+      }
+    }
+  },
+  "recognition": {
+    "title": "Reconnaissances",
+    "description": "Grâce à notre impact à travers les groupes Wonder et le tourisme régénératif en Colombie, nous avons obtenu les certifications suivantes :",
+    "certifications": {
+      "tourcert": "Certification TourCert",
+      "paz": "Label Paz Colombia"
+    },
+    "associations": {
+      "title": "Et nos associations :",
+      "acotur": "Logo d’ACOTUR",
+      "atta": "Logo d’ATTA"
+    }
+  },
+  "groupsTypes": {
+    "title": {
+      "what": "Qu’est-ce que",
+      "wonderGroups": "les Wonder Groups"
+    },
+    "description": "Rassembler des groupes de plus de 30 personnes pour partager des aventures et créer des souvenirs durables.",
+    "universityGroups": {
+      "title": "Groupes Universitaires :",
+      "description": "Voyages de groupe personnalisés à travers la Colombie, donnant aux étudiants en master des expériences immersives qui inspirent, connectent et transforment, conçues pour les futurs leaders."
+    },
+    "list": {
+      "mba": "1. Groupes MBA",
+      "llm": "2. Groupes LLM",
+      "other": "3. MPA, MPP et autres Masters"
+    }
+  },
+  "hero": {
+    "title": "Les meilleures histoires sont celles partagées avec des amis et des collègues."
+  },
+  "proposal": {
+    "title": "Mais pour y parvenir, nous nous assurons d’abord de :",
+    "customerService": {
+      "title": "Service Client Exceptionnel",
+      "description": "Un personnel hautement qualifié et compétent offrant une attention exceptionnelle, une planification sans souci et un service personnalisé."
+    },
+    "authentic": {
+      "title": "Expériences Authentiques et Locales",
+      "description": "Rencontres authentiques avec des habitants lors d’« activités supplémentaires » et extensions de voyage vers des destinations hors des sentiers battus."
+    },
+    "safety": {
+      "title": "Gestion des Risques : La Sécurité avant tout !",
+      "description": "Une gestion experte des risques dans dix domaines clés, de la planification à l’exécution, garantit votre sécurité dans le tourisme de nature comme en milieu urbain."
+    }
+  },
+  "aboutUs": {
+    "title": {
+      "who": "Qui",
+      "weAre": "Nous Sommes"
+    },
+    "description": "Après avoir exploré chaque recoin de la Colombie et voyagé à travers le monde, nous avons réalisé que nous devions faire bouger les choses. C’est ainsi qu’est née Wonder,",
+    "purpose": {
+      "prefix": "dans le but de",
+      "highlight1": "transformer le tourisme",
+      "middle": "et de révéler le véritable potentiel de notre pays grâce à",
+      "highlight2": "des expériences innovantes"
+    },
+    "subtitle": "Nous nous consacrons à créer des voyages qui transcendent le tourisme conventionnel",
+    "impact": "Nous considérons le tourisme comme un outil de développement social et sommes passionnés par le travail avec les communautés locales dans les grandes villes et les destinations émergentes."
+  },
+  "impact": {
+    "title": "Impact",
+    "subtitle": "L’impact derrière notre proposition de valeur",
+    "text": "Avec <b>plus de 80 %</b> de nos clients provenant des États-Unis et d’Europe, nous avons accueilli <b>plus de 7 000 voyageurs</b> et créé des expériences significatives dans <b>plus de 25 destinations</b> à travers la Colombie, des rues animées de Carthagène aux montagnes caféières et au-delà."
+  }
+}

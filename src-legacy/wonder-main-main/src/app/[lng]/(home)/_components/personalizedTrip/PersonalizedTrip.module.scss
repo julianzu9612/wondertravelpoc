@@ -1,0 +1,77 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.personalized-trip {
+  background-color: $blue-900;
+  width: 100%;
+  color: $white;
+  position: relative;
+  height: 550px;
+  padding: 40px 16px;
+  margin-bottom: 100px;
+
+  .personalized-trip {
+    &__path {
+      position: absolute;
+      bottom: 120px;
+      left: 16px;
+      height: 25%;
+      width: calc(100% - (16px * 2));
+      object-fit: contain;
+    }
+
+    &__title {
+      @include title('h2');
+      color: $white;
+      max-width: 100%;
+      padding-bottom: 16px;
+      margin: 0;
+    }
+
+    &__description {
+      color: $white;
+      max-width: 700px;
+      font-size: 16px;
+      font-family: $secondary-font;
+      font-weight: 400;
+
+    }
+
+    &__cta {
+      position: absolute;
+      width: 80%;
+      bottom: 40px;
+      right: 10%;
+    }
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    padding: 48px;
+    height: 500px;
+
+    .personalized-trip {
+      &__path {
+        top: 48px;
+        left: 48px;
+        height: calc(100% - (48px * 2));
+        width: calc(100% - (48px * 2));
+      }
+      &__title {
+        max-width: 900px;
+        padding-bottom: 4px;
+
+      }
+
+      &__description {
+      font-size: 20px;
+
+      }
+
+      &__cta {
+        width: 400px;
+        bottom: 48px;
+        right: 48px;
+      }
+    }
+  }
+}

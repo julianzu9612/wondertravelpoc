@@ -1,0 +1,25 @@
+@import '/src/app/[lng]/variables';
+
+.back {
+    cursor: pointer;
+    position: fixed;
+    width: 26px;
+    height: 27px;
+    z-index: 10;
+    top: 0;
+
+    @media screen and (min-width: $min-tablet) {
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+.back--relative {
+    position: relative;
+}
+
+.back--static {
+    position: static;
+}

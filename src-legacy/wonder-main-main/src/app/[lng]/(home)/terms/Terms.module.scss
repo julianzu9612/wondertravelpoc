@@ -1,0 +1,64 @@
+@import '/src/app/[lng]/variables';
+
+@media screen and (min-width: 820px) {
+  .mainContainer {
+    padding: 20px 110px 180px; /* Simplificación de las propiedades de padding */
+    margin-top: 20px;
+
+    &__divContainer {
+      padding: 2px;
+      margin-bottom: 1px;
+
+      &--h4 {
+        font-size: 16px;
+        font-family: $primary-font;
+        color: $black;
+
+        &.indiceTitle {
+          font-weight: bold;
+        }
+      }
+
+      &--h3 {
+        font-size: 24px;
+        font-family: $primary-font;
+        color: $black;
+      }
+
+      &--h1 {
+        font-size: 38px;
+        font-family: $primary-font;
+        color: $black;
+        text-align: center;
+        
+        &.multi-line-h1 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+      }
+
+      &--p {
+        font-size: 16px;
+        font-family: $secondary-font;
+        color: $black;
+      }
+
+      &--ul {
+        margin-top: 20px;
+
+        &--li {
+          font-size: 16px;
+          font-family: $secondary-font;
+          color: $black;
+
+          > a {
+            text-decoration: underline;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}

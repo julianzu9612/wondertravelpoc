@@ -1,0 +1,14 @@
+@import '/src/app/[lng]/variables';
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $blue-700;
+    font-size: 14px;
+
+    @media screen and (min-width: $min-desktop) {
+        font-size: 16px;
+
+    }
+}

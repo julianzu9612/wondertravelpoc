@@ -1,0 +1,67 @@
+@import '/src/app/[lng]/variables';
+
+
+.travelPurpose {
+    position: relative;
+    height: 103vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 16px;
+    min-height: 480px;
+    max-height: 1000px;
+
+    &__bkg-img {
+        img {
+            object-fit: cover;
+            border-radius: 2rem 2rem 0 0;
+            object-position: top right;
+        }
+    }
+
+    &__content {
+        width: 90%;
+
+        .content {
+
+            &__description {
+                position: relative;
+                color: $white;
+            }
+
+            &__description {
+                font-size: 14px;
+            }
+
+            &__targets {
+                margin-top: 55px;
+                position: relative;
+                display: flex;
+                gap: 12px;
+                justify-content: center;
+            }
+        }
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        justify-content: flex-start;
+        padding-left: 96px;
+
+        &__content {
+            width: 65%;
+
+            .content {
+
+                &__description {
+                    font-size: 20px;
+                }
+
+                &__targets {
+                    justify-content: flex-start;
+                    gap: 42px;
+                }
+            }
+        }
+    }
+
+}

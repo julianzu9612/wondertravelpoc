@@ -1,0 +1,24 @@
+@import '/src/app/[lng]/variables';
+
+.FullViewImage {
+    position: relative;
+    width: 100%;
+
+    &__icon {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    &__image {
+        border: 2px solid $grey-300;
+        width: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}

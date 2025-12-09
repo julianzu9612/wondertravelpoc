@@ -1,0 +1,84 @@
+{
+  "bookNow": "Book Now",
+  "details": {
+    "travelStyle": "Travel Styles",
+    "destinations": "Destinations",
+    "serviceLevel": "Service Level",
+    "physical_effort": "Physical Effort",
+    "flightInformation": "Flight Information",
+    "accommodation": "Accommodation",
+    "travel_type": "Travel Type",
+    "duration": "Duration",
+    "Highlighted activities": "Highlighted Activities",
+    "languaje": "Language",
+    "meeting_point": "Meeting Point",
+    "experts": "Staff and Experts",
+    "group_size": "Group Size",
+    "Domestic Flights": "Domestic Flights:",
+    "International Flights": "International Flights:",
+    "Included": "Included",
+    "Not included": "Not included: ",
+    "overview-title": "Overview",
+    "Varies depending on your country": "Varies depending on your country.",
+    "Check here": "Check here"
+  },
+  "navbar": {
+    "overview": "Overview",
+    "itinerary": "Itinerary",
+    "trip_details": "General Information",
+    "impact": "Impact Travel"
+  },
+  "overview": {
+    "category": "Category",
+    "level": "Level",
+    "type_travel": "Multiday",
+    "highlighted": "Highlighted activities"
+  },
+  "itinerary": {
+    "day": "Day",
+    "itinerary": "Itinerary",
+    "view_complete_itinerary": "View complete itinerary",
+    "learn_more_about_itinerary": "Learn more about the places you will visit"
+  },
+  "dates": "Dates",
+  "policy": {
+    "title": "Cancellation Policy",
+    "text": "Click the following link to see our cancelation policies",
+    "url_policies": "View cancellation policies"
+  },
+  "general_information": {
+    "title": "General Information"
+  },
+  "leader": {
+    "title": "Your Host: {{name}}"
+  },
+  "help": "Hello wonder! I'm looking for a little help with my process",
+  "message": "Hey there! I have some questions about the {{itinerary}} trip on Wonder’s website",
+  "durationDays": {
+    "days": "days",
+    "nights": "nights"
+  },
+  "our_travelers": "Reviews",
+  "Recomendations": {
+    "More Adventures For You": "More Adventures For You"
+  },
+  "cardPrice": {
+    "Book Now": "Book Now",
+    "talkAgent": "Talk to an agent",
+    "person": "Per person",
+    "Chat with an agent": "Chat with an agent",
+    "from": "From"
+  },
+  "SocialProof": {
+    "+985 travelers rate our trips with 4.6/5": "+985 travelers rate our trips with 4.6/5",
+    "This product does not have reviews yet. However, we leave you reviews of other of our trips.": "This trip doesn't have any reviews yet. However, here are some reviews from other of our adventures!"
+  },
+  "Deals": "Deal",
+  "Book now with $0 deposit": "Book with $0 deposit",
+  "perfect-date-title": "Struggling to Find the Perfect Date? ",
+  "perfect-date-text": "Let's make it work! Reach out, and we'll explore all possible options to accommodate to your schedule.",
+  "Show Less": "Show Less",
+  "Show More": "Show More",
+  "view here": "view here",
+  "per-person": "Per Person"
+}

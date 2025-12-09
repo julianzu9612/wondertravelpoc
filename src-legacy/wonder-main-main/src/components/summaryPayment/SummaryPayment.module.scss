@@ -1,0 +1,96 @@
+@import '/src/app/[lng]/variables';
+
+.summary-payment {
+  font-family: $secondary-font;
+  &__card-summary {
+    width: 100%;
+    padding: 16px;
+    z-index: 100;
+    border-radius: 8px;
+    margin-bottom: 16px;
+
+    &__persons {
+      display: flex;
+      color: $grey-500;
+      font-size: 12px;
+    }
+
+    .card-summary {
+      &__title-dates {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 24px;
+        color: $blue-700;
+      }
+      &__subtitle-dates {
+        color: $blue-700;
+        font-size: 16px;
+        margin-bottom: 12px;
+        font-weight: 700;
+      }
+
+      &__persons {
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+        row-gap: 8px;
+
+        .persons {
+          margin-bottom: 12px;
+          &__type {
+            text-align: left;
+          }
+
+          &__price {
+            text-align: right;
+          }
+        }
+      }
+
+      &__line {
+        border-bottom: 1px dashed $grey-500;
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+
+      &__total-trip {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__btn-details {
+        padding-left: 0;
+        margin-bottom: 40px;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+@media screen and (min-width: $min-tablet) {
+  .summary-payment {
+    &__card-summary {
+      padding: 32px 48px;
+      grid-column: 2 / span 1;
+      width: 100%;
+
+      .card-summary {
+        &__title-dates {
+          margin-bottom: 16px;
+          font-size: 20px;
+        }
+        &__subtitle-dates {
+          margin-bottom: 8px;
+          font-size: 16px;
+        }
+
+        &__line {
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+
+        &__persons {
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+}

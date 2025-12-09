@@ -1,0 +1,7 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.link {
+    @include button;
+    text-decoration: none;
+}

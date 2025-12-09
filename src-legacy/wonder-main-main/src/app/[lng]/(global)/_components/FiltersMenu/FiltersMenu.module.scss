@@ -1,0 +1,46 @@
+@import '/src/app/[lng]/mixin';
+@import '/src/app/[lng]/variables';
+
+.filters-menu {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .filter {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      button {
+        font-size: 14px;
+
+        @media screen and (min-width: $min-tablet) {
+          font-size: 16px;
+        }
+
+      }
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+#clear-filter {
+  color: $orange-500;
+  font-size: 14px;
+
+  @media screen and (min-width: $min-tablet) {
+    font-size: 16px;
+
+  }
+}

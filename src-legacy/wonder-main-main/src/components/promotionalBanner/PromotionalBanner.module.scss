@@ -1,0 +1,11 @@
+@import '/src/app/[lng]/variables';
+
+.promotional-banner {
+  width: 100vw;
+  height: 50px;
+  position: relative;
+
+  @media screen and (min-width: $min-tablet) {
+    height: 70px;
+  }
+}

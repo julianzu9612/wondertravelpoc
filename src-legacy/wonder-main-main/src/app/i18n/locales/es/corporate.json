@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "title": "Las mejores historias son las que se comparten con amigos y colegas."
+  },
+  "aboutUs": {
+    "title": "Quiénes <span>Somos</span>",
+    "description": "Después de explorar cada rincón de Colombia y viajar por el mundo, nos dimos cuenta de que necesitábamos hacer que las cosas sucedieran. Así nació Wonder,",
+    "purpose": "con el propósito de <b>transformar el turismo</b> y revelar el verdadero potencial de nuestro país con <b>experiencias disruptivas</b>.",
+    "subtitle": "Nos dedicamos a crear viajes que trascienden el turismo convencional",
+    "impact": "Vemos el turismo como una herramienta de desarrollo social y nos apasiona trabajar con comunidades locales en grandes ciudades y destinos emergentes."
+  },
+  "proposal": {
+    "title": "Pero para lograrlo, primero aseguramos:",
+    "cxTitle": "Servicio al Cliente Excepcional",
+    "cxDesc": "Personal altamente capacitado y conocedor que brinda atención excepcional, planificación sin preocupaciones y atención personalizada.",
+    "authenticTitle": "Experiencias Auténticas y Locales",
+    "authenticDesc": "Encuentros genuinos con locales en “add-ons” y extensiones de viaje a destinos fuera de lo común.",
+    "safetyTitle": "Gestión de Riesgos: ¡Seguridad Primero!",
+    "safetyDesc": "Gestión experta de riesgos en diez áreas clave, desde la planificación hasta la ejecución, garantiza tu seguridad tanto en el turismo de naturaleza como urbano."
+  },
+  
+  "groupsTypes": {
+    "title": {
+      "what": "¿Qué es",
+      "wonderGroups": "Wonder Groups?"
+    },
+    "description": "Reuniendo grupos de 30+ personas para aventuras compartidas y recuerdos duraderos.",
+    "universityGroups": {
+      "title": "Corporativo:",
+      "description": "Eleva el potencial de tu equipo con experiencias a medida, disruptivas y transformadoras diseñadas para inspirar creatividad y fomentar el trabajo en equipo. Conectamos a tu equipo con locales a través de experiencias auténticas que promueven una comprensión más profunda y conexiones significativas."
+    },
+    "list": {
+      "mba": "1. Viajes de incentivos y retiros para tomadores de decisiones. ",
+      "llm": "2. Eventos y reuniones empresariales. ",
+      "other": "3. Conferencias y congresos."
+    }
+  },
+  "impact": {
+    "title": "Impacto",
+    "subtitle": "El impacto detrás de nuestra propuesta de valor",
+    "text": "Con <b>más del 80%</b> de nuestros clientes provenientes de EE.UU. y Europa, hemos recibido a <b>más de 7,000 viajeros</b> y creado experiencias significativas en <b>más de 25 destinos</b> en toda Colombia, desde las vibrantes calles de Cartagena hasta las montañas cafeteras y más allá."
+  },
+  "addOns": {
+    "title": "<span>Add-ons</span> personalizados para tus viajes corporativos de incentivos",
+    "description": "Los add-ons permiten que tu grupo (viajes de incentivos o retiros) se divida en grupos más pequeños para disfrutar de <b>actividades personalizables</b> adaptadas a los diversos intereses y preferencias de los miembros de tu equipo.",
+    "benefit1": {
+      "title": "Intereses Diversos",
+      "text": "Atiende diferentes preferencias dentro de tu equipo."
+    },
+    "benefit2": {
+      "title": "Grupos Flexibles",
+      "text": "Divídanse en grupos más pequeños y manejables."
+    },
+    "benefit3": {
+      "title": "Personalizable",
+      "text": "Actividades adaptadas para cada miembro del equipo."
+    }
+  },
+  "recognition": {
+    "title": "Reconocimientos",
+    "description": "Gracias a nuestro impacto a través de Wonder groups y el turismo regenerativo en Colombia, hemos obtenido las siguientes certificaciones:",
+    "bellow": "Y nuestras asociaciones:"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "descUniversities": "Hemos trabajado con las siguientes universidades:",
+    "descBusinesses": "y con las siguientes empresas"
+  },
+  "reviews": {
+    "title": "Lo que la gente dice de nosotros:",
+    "list": {
+      "TemilolaR": "Me sorprendió lo bien organizado que estuvo. Nos dividieron en grupos con líderes designados que compartían información cada día. Todo estaba cuidado y fueron muy atentos al darnos pequeños obsequios útiles y divertidos como vasos de shots, protector solar, medicamentos para mareos en los barcos, café para llevar a casa. Todas las fiestas fueron muy divertidas y todos estaban disponibles para responder cualquier pregunta. Recomiendo mucho a este equipo.",
+      "RebeccaH": "Me sorprendió lo bien organizado que estuvo. Nos dividieron en grupos con líderes designados que compartían información cada día. Todo estaba cuidado y fueron muy atentos al darnos pequeños obsequios útiles y divertidos como vasos de shots, protector solar, medicamentos para mareos en los barcos, café para llevar a casa. Todas las fiestas fueron muy divertidas y todos estaban disponibles para responder cualquier pregunta. Recomiendo mucho a este equipo.",
+      "CamilaV": "Este viaje cumplió y superó todas nuestras expectativas. ¡Qué viaje tan increíble e inolvidable! Todo estuvo perfectamente organizado, todo salió bien y cada experiencia fue mágica."
+    }
+  },
+  "contact": {
+    "title": "¿Está tu grupo listo para ser parte de una experiencia transformadora en Colombia?",
+    "desc": "Contáctanos hoy:",
+    "mail": "travelbuddygroups@wondertravel.co",
+    "social": "@wondertravel.co",
+    "cta": "Enviar correo"
+  }
+}

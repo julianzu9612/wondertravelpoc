@@ -1,0 +1,40 @@
+@import '/src/app/[lng]/variables';
+
+.search-trip{
+  display: flex;
+  background-color: $white;
+  border-radius: 14px;
+  overflow: hidden;
+  padding: 5px;
+
+  input,
+  button{
+    height: 45px;
+  }
+
+  input{
+    padding: 8px 22px;
+    font-size: 20px;
+    width: 100%;
+    border: none;
+  }
+  button{
+    width: 60px;
+    margin-left: 10px;
+    background-image: url('/assets/icons/search.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+  }
+
+  @media screen and (max-width: 620px) {
+    input,
+    button{
+      height: 40px;
+    }
+    button{
+      width: 50px;
+      background-size: 20px;
+    }
+  }
+}

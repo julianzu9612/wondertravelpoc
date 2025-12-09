@@ -1,0 +1,81 @@
+@import '/src/app/[lng]/variables';
+
+
+.nav-steps {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  position: relative;
+  position: relative;
+  height: auto;
+  max-width: $min-desktop;
+  margin-bottom: 16px;
+
+  &__return {
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    left: 16px;
+
+    img {
+      width: 16px;
+      height: 16px;
+      aspect-ratio: 1 /1;
+    }
+  }
+
+  &__share {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    &__return {
+      width: 36px;
+      height: 36px;
+
+      img {
+        width: 22px;
+        height: 22px;
+        aspect-ratio: 1 /1;
+      }
+    }
+  }
+}
+
+.content-modal {
+  padding: 1em;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font-size: 14px;
+    font-family: $subtitle-font;
+    color: $blue-700;
+    font-weight: 700;
+  }
+
+  input {
+    max-width: 20em;
+  }
+
+  button {
+    width: min-content;
+  }
+}

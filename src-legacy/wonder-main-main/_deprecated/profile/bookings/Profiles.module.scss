@@ -1,0 +1,64 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.profile {
+  min-height: 100vh;
+
+  &__logo {
+    margin: auto;
+    display: block;
+    margin-bottom: 16px;
+    object-fit: contain;
+  }
+
+  &__return {
+    padding: 1em;
+
+  }
+
+  &__image-desk {
+    display: none;
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    @include wonder-grid;
+    grid-template-rows: repeat(2, 1fr);
+    padding: 24px 48px;
+    height: 100vh;
+
+    .profile {
+      &__logo {
+        display: none;
+      }
+
+      &__return {
+        padding: 0;
+        display: block;
+        grid-column: 12 span;
+        grid-column-start: 1;
+        grid-row-start: 1;
+
+        &> :first-child {
+          top: -2em;
+          left: -2em;
+        }
+      }
+
+      &__image-desk {
+        display: block;
+        grid-column: 1 / span 6;
+        grid-row: 1 / -1;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        max-height: 600px;
+      }
+
+      &__tabs {
+        grid-column: 7 / -1;
+        grid-row: 1 / -1;
+      }
+    }
+  }
+}

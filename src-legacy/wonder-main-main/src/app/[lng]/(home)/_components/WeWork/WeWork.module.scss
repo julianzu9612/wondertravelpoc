@@ -1,0 +1,163 @@
+@import '/src/app/[lng]/variables';
+@import '../../mixin';
+@import '/src/app/[lng]/mixin';
+
+@mixin cubicAnimation {
+    position: relative;
+    animation-duration: 800ms;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@mixin containImage {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    padding-bottom: 42px;
+}
+
+.weWork {
+    height: 100vh;
+    max-height: 700px;
+    min-height: 700px;
+      margin-top: -1.5rem;
+    &__texts {
+        padding: 42px 16px;
+
+        .texts {
+            &__title {
+                padding-top: 0px;
+                font-size: 24px;
+                line-height: 1.7rem;
+                margin-bottom: 16px;
+            }
+
+            &__description {
+                font-size: 14px;
+                color: $blue-700;
+            }
+        }
+    }
+
+    &__images {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+
+        .images {
+            &__right {
+                align-items: flex-end;
+                @include containImage;
+
+                .right {
+
+                    &__image-1,
+                    &__image-2 {
+                        align-self: flex-end;
+                        @include cubicAnimation;
+                    }
+
+                    &__image-1 {
+                        transform: rotate(-20deg);
+                    }
+
+                    &__image-2 {
+                        transform: rotate(-10deg);
+                    }
+                }
+            }
+
+            &__left {
+                justify-content: flex-end;
+                @include containImage;
+
+
+                .left {
+
+                    &__image-2,
+                    &__image-1 {
+                        @include cubicAnimation()
+                    }
+
+                    &__image-1 {
+                        transform: rotate(20deg);
+                    }
+
+                    &__image-2 {
+                        transform: rotate(15deg);
+                    }
+
+                }
+
+            }
+
+        }
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        max-height: 1000px;
+        min-height: 900px;
+        padding: 60px 48px;
+
+        &__texts {
+            padding: 48px 0;
+
+            .texts {
+                &__title {
+                    @include title('h2');
+                }
+
+                &__description {
+                    font-size: 20px;
+                    max-width: 75%;
+                }
+            }
+        }
+
+        &__images {
+            padding-bottom: 160px;
+
+            .images {
+                &__right {
+                    flex-direction: row;
+
+                    img {
+                        width: 278px;
+                        height: 350px;
+                    }
+
+                    .right {
+
+                        &__image-1 {
+                            top: 85%;
+                        }
+
+                        &__image-2 {
+                            left: 30%;
+                        }
+                    }
+
+                }
+
+                &__left {
+                    flex-direction: row;
+
+                    img {
+                        width: 278px;
+                        height: 350px;
+                    }
+
+                    .left {
+                        &__image-1 {
+                            right: 30%;
+                        }
+
+                        &__image-2 {
+                            align-self: flex-end;
+                            top: 85%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

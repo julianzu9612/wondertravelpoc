@@ -1,0 +1,138 @@
+{
+  "addOns": {
+    "title": {
+      "customized": "Customized",
+      "addOns": "Add-ons",
+      "forTrips": "for your corporate incentive trips"
+    },
+    "description": {
+      "prefix": "Add-ons allow your group (incentive trips or retreats) to split into smaller groups to enjoy",
+      "highlight": "customizable activities",
+      "suffix": "tailored to the diverse interests and preferences of your team members."
+    },
+    "benefits": {
+      "diverse": {
+        "title": "Diverse Interests",
+        "description": "Cater to different preferences within your team"
+      },
+      "flexible": {
+        "title": "Flexible Groups",
+        "description": "Split into smaller, more manageable groups"
+      },
+      "customizable": {
+        "title": "Customizable",
+        "description": "Tailored activities for every team member"
+      }
+    }
+  },
+  "contact": {
+    "title": "So, is your group ready to be part of a transformative experience in Colombia?",
+    "description": "Contact us today:",
+    "email": "travelbuddygroups@wondertravel.co",
+    "social": "@wondertravel.co",
+    "button": "Send Email"
+  },
+  "experience": {
+    "title": "Experience",
+    "universitiesDescription": "We have worked with the following universities:",
+    "businessesDescription": "and the following businesses:",
+    "universities": {
+      "chicago": "Logo of chicago university",
+      "columbia": "Logo of columbia university",
+      "harvard": "Logo of harvard university",
+      "mit": "Logo of MIT university",
+      "stanford": "Logo of stanford university",
+      "berkeley": "Logo of Berkeley university",
+      "wharton": "Logo of Wharton university"
+    },
+    "businesses": {
+      "ypo": "Logo of YPO",
+      "zemoga": "Logo of Zemoga",
+      "columbia": "Logo of Columbia"
+    }
+  },
+  "reviews": {
+    "title": "What people say about us:",
+    "list": {
+      "temilola": {
+        "name": "Temilola R",
+        "review": "I was amazed by how well-run it was. we were all put into groups with designated leaders who shared information every day. All things were taken care of and they were so thoughtful in providing little gifts from fun to functional along the way like shot glasses, sunscreen, medication for sickness on boats, coffee to take home. All the parties were so much fun and everyone was flexible and available to answer any questions. I highly recommend this team."
+      },
+      "rebecca": {
+        "name": "Rebecca H",
+        "review": "I was amazed by how well-run it was. we were all put into groups with designated leaders who shared information every day. All things were taken care of and they were so thoughtful in providing little gifts from fun to functional along the way like shot glasses, sunscreen, medication for sickness on boats, coffee to take home. All the parties were so much fun and everyone was flexible and available to answer any questions. I highly recommend this team."
+      },
+      "camila": {
+        "name": "Camila V",
+        "review": "This trip met and surpassed every expectation we had. What an incredible and unforgettable trip! Flawlessly organized, everything ran smoothly and every experience was magical."
+      }
+    }
+  },
+  "recognition": {
+    "title": "Recognition",
+    "description": "Thanks to our impact through Wonder groups and regenerative tourism in Colombia, we have obtained the following certifications:",
+    "certifications": {
+      "tourcert": "TourCert Certification",
+      "paz": "Paz Colombia Seal"
+    },
+    "associations": {
+      "title": "And Our associations:",
+      "acotur": "ACOTUR Logo",
+      "atta": "ATTA Logo"
+    }
+  },
+  "groupsTypes": {
+    "title": {
+      "what": "What is",
+      "wonderGroups": "Wonder Groups"
+    },
+    "description": "Bringing together groups of 30+ people for shared adventures and lasting memories.",
+    "universityGroups": {
+      "title": "University Groups:",
+      "description": "Personalized group travel across Colombia, empowering master's students with immersive journeys that inspire, connect, and transform, tailored for future leaders."
+    },
+    "list": {
+      "mba": "1. MBA Groups",
+      "llm": "2. LLM Groups",
+      "other": "3. MPA, MPP and other Masters54"
+    }
+  },
+  "hero": {
+    "title": "The greatest stories are those shared with friends and colleagues."
+  },
+  "proposal": {
+    "title": "But to achieve this, we first ensure:",
+    "customerService": {
+      "title": "Exceptional Customer Service",
+      "description": "Highly trained, knowledgeable staff providing exceptional care, worry-free planning, and personalized attention."
+    },
+    "authentic": {
+      "title": "Authentic and Local Experiences",
+      "description": "Genuine encounters with locals in \"add-ons\" and trip extensions to off-the-beaten-path destinations."
+    },
+    "safety": {
+      "title": "Risk Management: Safety First!",
+      "description": "Expert risk management across ten key areas-from planning to execution-ensures your safety in both wilderness and urban tourism."
+    }
+  },
+  "aboutUs": {
+    "title": {
+      "who": "Who",
+      "weAre": "We Are"
+    },
+    "description": "After exploring every corner of Colombia and traveling the world, we realized we needed to make things happen. That's how Wonder was born,",
+    "purpose": {
+      "prefix": "with the purpose of",
+      "highlight1": "transforming tourism",
+      "middle": "and revealing the true potential of our country with",
+      "highlight2": "disruptive experiences"
+    },
+    "subtitle": "We are dedicated to creating trips that transcend conventional tourism",
+    "impact": "We see tourism as a tool for social development and are passionate about working with local communities in large cities and emerging destinations."
+  },
+   "impact": {
+    "title": "Our Impact",
+    "subtitle": "The impact behind our value proposition",
+    "text": "With <b>over 80%</b> of our clients from the US and Europe, we've welcomed <b>7,000+ travelers</b> and created meaningful experiences across <b>25+ destinations</b> throughout Colombia, from the vibrant streets of Cartagena to the coffee mountains and beyond."
+  }
+}

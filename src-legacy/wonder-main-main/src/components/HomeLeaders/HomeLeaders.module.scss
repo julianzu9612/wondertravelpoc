@@ -1,0 +1,71 @@
+@import '/src/app/[lng]/variables';
+
+.content-leaders {
+    margin-top: 60px;
+    position: relative;
+    height: min-content;
+    color: white;
+    padding: 38px 16px;
+    width: 100%;
+
+    &__content {
+        position: relative;
+    }
+
+    &__text-images {
+        width: 70%;
+
+        .text-images {
+            &__title {
+                font-size: 24px;
+                color: white;
+                padding-bottom: 20px;
+            }
+
+            &__description {
+                font-family: $secondary-font;
+                font-size: 14px;
+                padding-bottom: 24px;
+            }
+        }
+
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+        width: 60%;
+
+        button {
+            min-width: 133px;
+            font-size: 14px;
+        }
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        padding: 80px 48px;
+
+        &__text-images {
+            width: 50%;
+
+            .text-images {
+                &__title {
+                    font-size: 38px;
+
+                }
+
+                &__description {
+                    font-size: 20px;
+                    padding-bottom: 42px;
+                }
+            }
+
+        }
+
+        &__buttons {
+            width: 100%;
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@import '/src/app/[lng]/variables';
+
+.traveler-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: $cream;
+  margin: 18px 16px;
+
+  &__select-user {
+    width: 100%;
+  }
+
+  &__user {
+    padding: 0.5em;
+    border-radius: 8px;
+    width: 100%;
+
+    p {
+      width: 90%;
+      overflow: hidden;
+      word-wrap: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__users-pending {
+    color: $blue-700;
+    font-family: $subtitle-font;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    &__select-user {
+      width: 50%;
+    }
+  }
+}

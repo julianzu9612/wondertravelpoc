@@ -1,0 +1,55 @@
+@import '/src/app/[lng]/variables';
+
+@keyframes showPopup {
+    0% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.popup {
+    background-color: transparent;
+    color: $blue-700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    font-family: $secondary-font;
+    font-size: 12px;
+    min-width: 207px;
+
+    ul {
+        padding: 0;
+
+        li {
+            list-style: disc;
+        }
+    }
+
+    &:hover {
+        background-color: transparent;
+    }
+
+    &__icon:hover~&__content {
+        display: block;
+        animation: showPopup 0.3s ease-in;
+    }
+
+    &__content {
+        background-color: $white ;
+        position: absolute;
+        padding: 16px;
+        bottom: 70%;
+        border-radius: 16px;
+        box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.11);
+        left: 73%;
+        display: none;
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        font-size: 16px;
+    }
+}

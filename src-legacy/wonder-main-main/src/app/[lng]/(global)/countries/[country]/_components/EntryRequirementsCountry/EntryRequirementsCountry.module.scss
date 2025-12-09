@@ -1,0 +1,88 @@
+@import "/src/app/[lng]/variables";
+
+.entry-requirements {
+    padding: 0 24px;
+    max-width: $min-desktop;
+
+    &__description {
+        background-color: #F4F3EF;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        gap: 12px;
+
+        p {
+            font-size: 14px;
+            color: $blue-700;
+        }
+
+        .description {
+            &__list {
+                list-style: disc;
+                padding-left: 2rem;
+
+                li {
+                    list-style: disc;
+                    font-size: 14px;
+                    color: $blue-700;
+
+                    span {
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            &__more-info {
+                display: flex;
+                gap: 4px;
+                flex-direction: column;
+
+                p {
+                    font-size: 14px;
+                    color: $blue-700;
+                }
+
+                a {
+                    color: $orange-500;
+                    text-decoration: none;
+                    font-family: $primary-font;
+                    font-weight: 600;
+                    font-size: 14px;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+
+    @media screen and (min-width: $min-tablet) {
+        padding: 0 48px;
+
+        p {
+            font-size: 20px;
+        }
+
+        &__description {
+            gap: 16px;
+            padding: 32px;
+
+            .description {
+
+                &__more-info {
+
+                    a,
+                    p {
+                        font-size: 20px;
+                    }
+                }
+
+                &__list {
+                    li {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@import '/src/app/[lng]/variables';
+
+.highlighted {
+    flex-basis: 100%;
+
+    &__title {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 12px;
+        align-items: center;
+
+
+
+        h3 {
+            font-size: 16px;
+        }
+
+    }
+
+    &__list {
+        padding-left: 1.6em;
+        font-size: 14px;
+
+        li {
+            list-style: disc;
+        }
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        &__title {
+            h3 {
+                font-size: 20px;
+            }
+        }
+
+        &__list {
+            font-size: 16px;
+        }
+    }
+}

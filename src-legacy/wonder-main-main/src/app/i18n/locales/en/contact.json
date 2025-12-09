@@ -1,0 +1,38 @@
+{
+    "Contact Us": "Contact Us",
+    "description": "We want to help you make your dream trip come true. If you have any questions, reach out to us through the following channels so we can assist you",
+    "chatWithUs": {
+        "Chat with us": "Chat with us",
+        "Service hours": "Service hours",
+        "Monday to Friday": "Monday to Friday from 8:30 am to 5:30 pm (COT)",
+        "Saturday from": "Saturday from 9:00 am to 12:00 pm (COT)",
+        "Chat Via Whatsapp": "Chat Via Whatsapp"
+    },
+    "didnt looking for": {
+        "Didnt find what you were looking for?": "Didn't find what you were looking for?",
+        "description": "Leave us your details, and our team will get in touch with you to help you make your dream trip come true or answer any questions you may have!",
+        "I accept": "I accept",
+        "terms and conditions. *": "terms and conditions. *",
+        "Subscribe me to receive news and benefits.": "Subscribe to receive news and benefits.",
+        "* Required Field": "* Required Field",
+        "Submit": "Submit"
+    },
+    "frequentlyQuestions": {
+        "Frequently asked questions": "Frequently asked questions",
+        "Clear Your Doubts": "Clear Your Doubts: Find by Topic",
+        "How do I confirm my reservation?": "How do I confirm my reservation?",
+        "How do I confirm my reservation?__text": "By making the first payment for your trip through our website, your reservation and its respective slots will be confirmed. You will receive an email confirming your reservation and providing you with the next steps before starting your journey.",
+        "Payment methods": "Payment methods",
+        "Payment methods__text": "We accept credit cards and debit cards (in this case, as long as they have a CVV). If you need to use another payment method, send us a message through any of our communication channels, and we will assist you.",
+        "How many payments do I have to make?": "How many payments do I have to make?",
+        "How many payments do I have to make?__text": "We split it into 2 payments of 50% each. You will have a deadline to make your second payment; you can pay at any time, and we will send you a payment reminder as the date approaches.",
+        "Is it safe to travel to the destinations ?": "Is it safe to travel to the destinations ?",
+        "Is it safe to travel to the destinations ?__text": "At Wonder, we ensure compliance with all safety standards at our destinations. You will always be safe, and your only concern will be to enjoy!",
+        "Are flights included ?": "Are flights included ?",
+        "Are flights included ?__text": "Our trips only include flights if they are part of the itinerary (i.e., when there are travels to other regions within the itinerary). Arrival and departure flights to your destination are not included. If you need help arranging them, write to us, and we'll assist you!",
+        "Is everything included ?": "Is everything included ?",
+        "Is everything included ?__text": "Our itineraries include meals (you should check each itinerary to see which meals are included), accommodations, guidance, and local transfers.",
+        "What is the time and meeting point ?": "What is the time and meeting point ?",
+        "What is the time and meeting point ?__text": "It depends on each destination. We will inform you in each case where you will find the Wonder host, and your adventure will begin there. Don't worry; we have all the logistical details covered!"
+    }
+}

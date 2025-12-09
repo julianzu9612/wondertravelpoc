@@ -1,0 +1,20 @@
+{
+    "CalendarTitle": "Fechas Wonder",
+    "CalendarSubTitle": "Calendario {{year}}",
+    "TS_CalendarHeadline": "Elige el mes y revisa las fechas disponibles en que deseas viajar a nuestros destinos con fechas programadas.",
+    "months": {
+        "Enero": "Enero",
+        "Febrero": "Febrero",
+        "Marzo": "Marzo",
+        "Abril": "Abril",
+        "Mayo": "Mayo",
+        "Junio": "Junio",
+        "Julio": "Julio",
+        "Agosto": "Agosto",
+        "Septiembre": "Septiembre",
+        "Octubre": "Octubre",
+        "Noviembre": "Noviembre",
+        "Diciembre": "Diciembre"
+    },
+    "no_trips": "Fecha no disponible"
+}

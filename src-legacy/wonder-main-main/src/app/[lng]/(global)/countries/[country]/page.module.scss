@@ -1,0 +1,149 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.categories-page {
+  font-family: $subtitle-font;
+  margin-bottom: 2rem;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    align-items: center;
+  }
+
+  h2,
+  h3 {
+    font-family: $primary-font;
+  }
+
+  h2 {
+    font-size: 38px;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-family: $secondary-font;
+    line-height: 30px;
+  }
+
+  &>h3 {
+    font-size: 18px;
+    padding-bottom: 1rem;
+  }
+
+
+  &__top-section {
+    padding: 42px 16px 32px 16px;
+    background-color: #ddd;
+    background-repeat: no-repeat;
+    background-position: 20% center;
+    background-size: cover;
+    min-height: 200px;
+    color: $white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(0deg, rgb(0 0 0 / 67%) 9.74%, rgb(0 0 0 / 0%) 54.38%, rgba(0, 0, 0, 0) 87.05%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    }
+
+    >div {
+      position: relative;
+    }
+
+    .top-section {
+
+      &__main-info {
+        max-width: $min-desktop;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+
+        h1 {
+          padding: 1rem 0;
+          color: $white;
+          font-weight: 700;
+          margin-bottom: 16px;
+        }
+
+        a {
+          @include button;
+          width: fit-content;
+          padding: 8px 16px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    &__content {
+      gap: 64px;
+    }
+
+    h1 {
+      font-size: 68px;
+      line-height: 83px;
+      margin-bottom: 52px;
+    }
+
+    a {
+      font-size: 16px;
+    }
+
+    &__top-section {
+      position: relative;
+      padding: 100px 48px 60px 48px;
+      height: 480px;
+      align-items: center;
+    }
+  }
+}
+
+.coupon {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  h2,
+  span {
+    color: $white;
+    font-size: 38px;
+    font-family: $subtitle-font;
+    font-weight: 600;
+
+    @media screen and (max-width: $min-tablet) {
+      font-size: 28px;
+    }
+  }
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  height: 100%;
+  min-height: 80vh;
+  justify-content: center;
+
+  h2 {
+    font-size: 28px;
+  }
+
+  p {
+    font-weight: 600;
+    color: $blue-700;
+    font-size: 20px;
+  }
+
+}

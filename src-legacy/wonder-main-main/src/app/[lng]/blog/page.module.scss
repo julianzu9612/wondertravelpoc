@@ -1,0 +1,55 @@
+@import '/src/app/[lng]/variables';
+
+.blog {
+  margin: 32px 16px;
+  max-width: 1280px;
+
+  &__title {
+    border-bottom: 1px solid $orange-500;
+    padding-bottom: 8px;
+  }
+
+  &__post-list {
+    margin-bottom: 40px;
+  }
+
+  &__subtitle {
+    font-size: $secondary-font;
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: $blue-700;
+    font-weight: 400;
+  }
+
+  &__line-title {
+    margin-top: -2px;
+    margin-bottom: 8px;
+    border-top: 3px solid $orange-500;
+    max-width: 50%;
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    max-width: 1280px;
+    margin: 40px 120px;
+
+    &__post-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+
+    &__title {
+      padding-bottom: 16px;
+    }
+
+    &__line-title {
+      max-width: 30%;
+    }
+
+    &__subtitle {
+      max-width: 70%;
+      font-size: 20px;
+    }
+  }
+}

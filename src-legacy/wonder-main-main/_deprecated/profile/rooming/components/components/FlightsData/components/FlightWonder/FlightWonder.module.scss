@@ -1,0 +1,39 @@
+@import '/src/app/[lng]/variables';
+
+
+.flight-wonder {
+  color: $blue-700;
+  width: 100%;
+  grid-column: 1 / -1;
+  table {
+    margin-bottom: 42px;
+  }
+  h3 {
+    font-family: $subtitle-font;
+    font-size: 16px;
+  }
+
+  th, td {
+    padding: 6px 0;
+  }
+
+  h3:not(:first-child) {
+    margin-bottom: 16px;
+  }
+
+  tr > td:first-child {
+    font-family: $secondary-font;
+    font-size: 14px;
+    font-weight: 400;
+    min-width: 150px;
+    
+  }
+
+  tr > td {
+    font-family: $secondary-font;
+    font-size: 14px;
+    font-weight: 700;
+    // min-width: 350px;
+
+  }
+}

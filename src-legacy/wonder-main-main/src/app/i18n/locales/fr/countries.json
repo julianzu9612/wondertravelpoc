@@ -1,0 +1,32 @@
+{
+  "colombia": "Colombie 🇨🇴 ",
+  "argentina": "Argentine 🇦🇷",
+  "costa-rica": "Costa Rica 🇨🇷",
+  "guatemala": "Guatemala 🇬🇹",
+  "ecuador": "Équateur 🇪🇨 ",
+  "mexico": "Mexique 🇲🇽",
+  "peru": "Pérou 🇵🇪",
+  "chile": "Chili 🇨🇱",
+  "bolivia": "Bolivie 🇧🇴",
+  "Discover The Incredible Wonders Of Country": "Découvrez les merveilles incroyables de {{country}}",
+  "AboutCountry": "À propos de {{country}}",
+  "Travel Styles": "Styles de voyage en {{country}}",
+  "Last minute deals in country": "Offres de dernière minute en {{country}}",
+  "Trips in Country": "Voyages en {{country}}",
+  "View all trips": "Voir tous les voyages",
+  "Main Activities": "Activités principales",
+  "entryRequirements": {
+    "title": "Exigences d'entrée",
+    "description": "Pour entrer en tant que touriste à {{country}}, vous devez remplir les conditions suivantes:",
+    "moreInfoDescription": "Pour des informations plus complètes sur les visas et les exigences d'entrée, cliquez sur le lien ci-dessous:",
+    "moreInfoLink": "Plus d'informations"
+  },
+  "personalizedAdvise": {
+    "Looking for personalized advice?": "Besoin de conseils personnalisés?",
+    "description": "Concevez le voyage de vos rêves avec des experts locaux.",
+    "Plan my Trip": "Planifiez mon voyage"
+  },
+  "Travel Tips": "Conseils de voyage",
+  "View Trips": "Voir les voyages",
+  "Country not found": "Pays non trouvé"
+}

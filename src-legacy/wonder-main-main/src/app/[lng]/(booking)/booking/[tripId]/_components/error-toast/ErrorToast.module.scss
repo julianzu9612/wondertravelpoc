@@ -1,0 +1,37 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.error-toast {
+  width: 100vw;
+  
+  .toast {
+    position: fixed;
+    top: 48px;
+    right: 48px;
+    background-color: $error;
+    width: 350px;
+    height: fit-content;
+    min-height: 80px;
+    z-index: 1000;
+    color: $white;
+    padding: 16px; 
+    border-radius: 5px;
+
+    .title {
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: $white;
+    }
+    
+    .message {
+      margin-bottom: 20px;
+      color: $white;
+
+    }
+
+    button {
+      margin: auto;
+      width: 100%;
+    }
+  }
+}

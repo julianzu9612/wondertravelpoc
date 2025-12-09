@@ -1,0 +1,29 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.many-travelers {
+  font-family: $secondary-font;
+  text-align: center;
+  color: $blue-700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 16px 140px;
+
+  h4 {
+    @include title(h4);
+    max-width: 834px;
+    margin: auto;
+  }
+
+
+  strong {
+    background-color: $orange-500;
+    color: $white;
+    padding: 0 8px;
+    border-radius: 8px;
+  }
+
+  @media screen and (min-width: $min-tablet) {
+  }
+}

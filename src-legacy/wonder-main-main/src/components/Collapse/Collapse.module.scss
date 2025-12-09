@@ -1,0 +1,111 @@
+@import '/src/app/[lng]/variables';
+
+@keyframes ShoweCollapse {
+  0% {
+    opacity: 0.0;
+  }
+
+
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.collapse {
+
+  &:last-child {
+    border-bottom: 2px solid $grey-300;
+  }
+
+  &__summary {
+    border-collapse: collapse;
+    border-top: 2px solid $grey-300;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+
+    .summary {
+
+      h3 {
+        font-size: 16px;
+      }
+
+      &__toggleButton {
+        font-size: 18px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: $grey-500;
+        padding: 0;
+
+        p {
+          width: 16px;
+          transition-duration: 400ms;
+          transition-timing-function: ease-in-out;
+        }
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .content {
+    margin: 10px 0;
+    padding: 0 16px;
+    animation: ShoweCollapse 0.4s ease-in;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .openArrow {
+    transform: rotate(90deg);
+  }
+
+  .closeArrow {
+    transform: rotate(270deg);
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    .summary {
+      gap: 16px;
+
+      &__title {
+        padding: 24px;
+
+        h3 {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .content {
+      gap: 30px;
+    }
+  }
+}
+
+.withoutBorder {
+  border: none;
+
+
+  &>div {
+    padding: 0 !important;
+
+  }
+
+  &:last-child {
+    border: none;
+  }
+}

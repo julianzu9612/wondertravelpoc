@@ -1,0 +1,126 @@
+@import '/src/app/[lng]/variables';
+
+.homepage {
+  font-family: $subtitle-font;
+  margin-top: 4px;
+  position: relative;
+
+  h1,
+  h2,
+  h3 {
+    font-family: $subtitle-font;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+
+  &__top-section {
+
+    h1 {
+      line-height: 1;
+      padding: 1rem 0;
+      font-weight: bold;
+      margin-left: 1rem;
+      font-family: $subtitle-font;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    padding: 0;
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    h1 {
+      font-size: 46px;
+    }
+
+    &__content {
+      flex-direction: row;
+      padding: 1rem;
+      padding-right: 0;
+    }
+
+    .top-section {
+      .main-info {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1300px) {
+    &__content {
+      justify-content: center;
+    }
+  }
+}
+
+.section-page-grid {
+  padding: 1rem;
+  padding-top: 0;
+  width: 100%;
+  order: 2;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    gap: 12px;
+    max-width: 1474px;
+
+
+    .title {
+      &__filters {
+        display: none;
+        gap: 14px;
+        justify-content: flex-end;
+        flex: 1 1;
+      }
+    }
+
+    &--deals {
+      color: blue;
+
+      &:last-child {
+        color: $orange-500;
+      }
+    }
+  }
+
+
+
+  @media screen and (min-width: $min-tablet) {
+    padding-top: 0;
+
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      h1 {
+        line-height: 2.8rem;
+
+      }
+
+      .title {
+        &__filters {
+          display: flex;
+          height: fit-content;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1300px) {
+    width: fit-content;
+    flex: 0 1 1400px;
+  }
+
+}

@@ -1,0 +1,19 @@
+@keyframes observeIntersecting {
+    from {
+        transform: translateX(-80%);
+        opacity: 0.5;
+
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.isIntersecting {
+    animation: observeIntersecting 0.1s linear;
+}
+
+.noInteresting {}

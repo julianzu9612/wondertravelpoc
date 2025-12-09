@@ -1,0 +1,10 @@
+@import '/src/app/[lng]/variables';
+
+
+
+.wonder-grid {
+  max-width: 1280px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 77px);
+}

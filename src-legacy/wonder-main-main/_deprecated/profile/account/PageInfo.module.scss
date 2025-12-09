@@ -1,0 +1,51 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.content-profile {
+
+    &__hero-account {
+        padding: 1em 0;
+        display: none;
+        text-align: center;
+        position: relative;
+
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        max-width: 1300px;
+        gap: 1em;
+        margin-top: 2em;
+
+        &__hero-account {
+            display: block;
+            min-width: 300px;
+            flex-basis: 45%;
+            grid-row: 1 / -1;
+            height: 98vh;
+            position: sticky;
+            top: 10px;
+
+            img {
+                height: 100%;
+                width: 100%;
+                margin: auto;
+                max-width: 722px;
+                object-fit: cover;
+                border-radius: 16px;
+            }
+
+        }
+
+
+    }
+}
+
+.back {
+    cursor: pointer;
+    top: -1em;
+    left: 2em;
+    position: relative;
+}

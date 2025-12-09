@@ -1,0 +1,48 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.testing-products {
+  max-width: 1280px;
+  height: 60vh;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include topography;
+
+  &__title {
+    line-height: 1.4rem;
+    margin-bottom: 8px;
+    max-width: 800px;
+    text-align: center;
+    mix-blend-mode: multiply;
+
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &__image {
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 24px;
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    margin: auto;
+    margin-bottom: 100px;
+
+    &__title {
+      line-height: 2.1rem;
+      padding-bottom: 0 !important;
+    }
+
+    &__image {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}

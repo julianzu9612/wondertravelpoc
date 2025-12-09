@@ -1,0 +1,90 @@
+@import '/src/app/[lng]/variables';
+
+@keyframes ShowModal {
+    0% {
+        opacity: 0.0;
+    }
+
+
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slider {
+    0% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+.modal-images {
+    width: 100%;
+    height: 90%;
+    background-color: $black-01;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 77px;
+    animation: ShowModal 0.6s ease-in;
+    padding-top: 24px;
+
+    &__close {
+        position: absolute;
+        top: 18px;
+        left: 6px;
+        cursor: pointer;
+    }
+
+    &__image-container {
+        position: relative;
+        width: 80%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 10px;
+
+        .image-container {
+
+            &__image {
+                object-fit: contain;
+                border-radius: 12px;
+                animation: slider 0.6s ease-in;
+            }
+        }
+    }
+
+
+    &__buttons {
+        z-index: 1;
+        background: #333;
+        border-radius: 40px;
+        button {
+            background-color: transparent;
+            cursor: pointer;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    span {
+        color: $white;
+    }
+}

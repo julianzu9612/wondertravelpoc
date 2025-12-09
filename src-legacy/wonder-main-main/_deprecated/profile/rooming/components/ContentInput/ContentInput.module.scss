@@ -1,0 +1,19 @@
+@import '/src/app/[lng]/variables';
+
+.container-input {
+    height: auto;
+
+    legend {
+        color: $blue-700;
+        font-family: $secondary-font;
+        font-size: 16px;
+        font-weight: 400;
+        padding-bottom: 9px;
+    }
+
+    &__content {
+        border-radius: 8px;
+        border: 2px solid $grey-300;
+        padding: 16px 12px;
+    }
+}

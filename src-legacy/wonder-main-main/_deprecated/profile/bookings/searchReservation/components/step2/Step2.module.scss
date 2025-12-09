@@ -1,0 +1,30 @@
+@import '/src/app/[lng]/variables';
+
+.step-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 14px;
+  margin-top: 2em;
+  margin-left: 2em;
+
+
+  &__cta-consult {
+    width: 50%;
+  }
+
+  &__size-text {
+    font-size: 1em;
+  }
+
+  .ghost {
+    text-decoration: underline;
+    text-align: left;
+    padding-left: 0;
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    font-size: 16px;
+    ;
+  }
+}

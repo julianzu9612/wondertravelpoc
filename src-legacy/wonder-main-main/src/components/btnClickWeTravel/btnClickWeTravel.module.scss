@@ -1,0 +1,6 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.button-click-wetravel {
+    @include button;
+}

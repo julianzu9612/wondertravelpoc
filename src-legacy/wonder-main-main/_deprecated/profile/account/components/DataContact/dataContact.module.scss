@@ -1,0 +1,40 @@
+@import '/src/app/[lng]/variables';
+
+.content-form {
+    display: grid;
+    gap: 0.5em;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    &__content {
+        grid-column: 2 span;
+    }
+
+    &__select {
+        grid-column: 2 span;
+    }
+
+    &__phone {
+        display: flex;
+        grid-column: 2 span;
+        justify-content: space-between;
+        gap: 11.6px;
+
+        &>div:nth-child(1) {
+            width: 35%;
+        }
+
+        &>div:nth-child(2) {
+            width: 60%;
+        }
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        &__select {
+            max-width: 10em;
+            min-width: 8em;
+        }
+    }
+}

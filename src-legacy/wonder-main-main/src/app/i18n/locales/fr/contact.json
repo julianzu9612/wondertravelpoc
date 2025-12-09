@@ -1,0 +1,38 @@
+{
+    "Contact Us": "Contáctanos",
+    "description": "Queremos ayudarte a hacer realidad el viaje de tus sueños. Si tienes alguna pregunta, contáctanos a través de los siguientes canales para poder asistirte:",
+    "chatWithUs": {
+        "Chat with us": "Chatea con nosotros",
+        "Service hours": "Horario de atención:",
+        "Monday to Friday": "Lunes a viernes de 8:30 a.m. a 5:30 p.m. (COT)",
+        "Saturday from": "Sábado de 9:00 a.m. a 12:00 p.m. (COT)",
+        "Chat Via Whatsapp": "Chatea vía Whatsapp"
+    },
+    "didnt looking for": {
+        "Didnt find what you were looking for?": "¿No encontraste lo que buscabas?",
+        "description": "Déjanos tus datos y nuestro equipo se pondrá en contacto contigo para ayudarte a hacer realidad el viaje de tus sueños o responder cualquier pregunta que puedas tener.",
+        "I accept": "Acepto los",
+        "terms and conditions. *": "términos y condiciones. *",
+        "Subscribe me to receive news and benefits.": "¡Suscríbete para recibir noticias sobre viajes increíbles!.",
+        "* Required Field": "Campo requerido",
+        "Submit": "Enviar"
+    },
+    "frequentlyQuestions": {
+        "Frequently asked questions": "Preguntas frecuentes",
+        "Clear Your Doubts": "Encuentra Respuestas: Busca por el Tema que te Genera Dudas",
+        "How do I confirm my reservation?": "¿Cómo confirmo mi reserva?",
+        "How do I confirm my reservation?__text": "Al realizar el primer pago de tu viaje a través de nuestro sitio web, tu reserva y los respectivos cupos serán confirmados. Recibirás un correo electrónico confirmando tu reserva y proporcionándote los siguientes pasos antes de comenzar tu viaje.",
+        "Payment methods": "Métodos de pago",
+        "Payment methods__text": "Aceptamos tarjetas de crédito y débito (en caso de ser tarjeta débito, debe tener un CVV). Si necesitas utilizar otro método de pago, envíanos un mensaje a través de cualquiera de nuestros canales de comunicación y te asistiremos.",
+        "How many payments do I have to make?": "¿Cuántos pagos tengo que hacer?",
+        "How many payments do I have to make?__text": "Lo dividimos en 2 pagos del 50% cada uno. Tendrás un plazo para realizar tu segundo pago; puedes pagar en cualquier momento y te enviaremos un recordatorio de pago a medida que se acerque la fecha.",
+        "Is it safe to travel to the destinations ?": "¿Es seguro viajar a los destinos?",
+        "Is it safe to travel to the destinations ?__text": "En Wonder, aseguramos el cumplimiento de todos los estándares de seguridad en nuestros destinos. Siempre estarás seguro, y tu única preocupación será disfrutar.",
+        "Are flights included ?": "¿Están incluidos los vuelos?",
+        "Are flights included ?__text": "Nuestros viajes solo incluyen vuelos si son parte del itinerario (es decir, cuando hay viajes a otras regiones dentro del itinerario). Los vuelos de llegada y salida a tu destino no están incluidos. Si necesitas ayuda para organizarlos, escríbenos y te asistiremos.",
+        "Is everything included ?": "¿Está todo incluido?",
+        "Is everything included ?__text": "Nuestros itinerarios incluyen comidas (debes verificar cada itinerario para ver qué comidas están incluidas), alojamiento, guía y traslados locales.",
+        "What is the time and meeting point ?": "¿Cuál es la hora y el punto de encuentro?",
+        "What is the time and meeting point ?__text": "Depende de cada destino. Te informaremos en cada caso dónde encontrarás al anfitrión de Wonder, y ahí comenzará tu aventura. No te preocupes; ¡tenemos todos los detalles logísticos cubiertos!"
+    }
+}

@@ -1,0 +1,73 @@
+@import '/src/app/[lng]/variables';
+
+.flights-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 8px;
+  row-gap: 12px;
+
+  &__description {
+    color: $blue-700;
+    font-family: $secondary-font;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  &__country,
+  &__city,
+  &__date {
+    grid-column: 1 / -1;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  &__airlane {
+    grid-column: 1 / span 1;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  // {
+  //   "buyed_with_wonder": null,
+  //   "origin_city": "",
+  //   "origin_date": null,
+  //   "origin_flight_number": "",
+  //   "origin_airline": "",
+  //   "destination_city": "",
+  //   "destination_date": null,
+  //   "destination_flight_number": "",
+  //   "destination_airline": "",
+  //   "revised": null
+  // }
+
+  &__flight-number {
+    grid-column: 2 / span 1;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  &__question,
+  &__submit,
+  &__title-return {
+    grid-column: 1 / -1;
+  }
+
+
+  &__submit {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    margin-top: 24px;
+
+    button {
+      width: fit-content;
+    }
+  }
+}

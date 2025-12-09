@@ -1,0 +1,54 @@
+@import '/src/app/[lng]/variables';
+
+.videos {
+  margin: 0px auto 24px;
+  display: flex;
+  width: 100vw;
+  height: fit-content;
+  max-width: 1280px;
+  flex-direction: column;
+
+  p {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: $blue-700;
+    width: 100%;
+    margin: 0 auto 16px;
+  }
+
+  & > div {
+    width: 100% !important;
+    height: 100% !important;
+
+    & > div {
+      width: 100% !important;
+      height: 100% !important;
+
+      overflow: hidden;
+    }
+
+    &:first-child {
+      margin-bottom: 24px;
+    }
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    flex-direction: row;
+    margin: 40px auto;
+    height: 430px;
+
+    p {
+      font-size: 20px;
+      width: 60%;
+    }
+
+    & > div > div {
+      border-radius: 0 10px 10px 0;
+
+      &:first-child {
+        border-radius: 10px 0 0 10px;
+      }
+    }
+  }
+}

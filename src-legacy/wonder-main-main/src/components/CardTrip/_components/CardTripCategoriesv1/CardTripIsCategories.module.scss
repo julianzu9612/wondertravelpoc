@@ -1,0 +1,223 @@
+@import '/src/app/[lng]/mixin';
+@import '/src/app/[lng]/variables';
+
+.link-trip {
+    width: 100%;
+    text-decoration: none;
+
+    &__card-trip {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 100%;
+        padding: 8px;
+        min-width: 250px;
+        font-size: 16px;
+        background-color: $black;
+        flex-shrink: 0;
+        background: #f4f3ef;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        .card-trip {
+
+            &:hover &__feature-image img {
+                transition-duration: 200ms;
+                transition-timing-function: ease-in-out;
+                scale: 1.1;
+            }
+
+            &__feature-image {
+                width: 33%;
+                height: 100%;
+                background-size: cover;
+                z-index: 0;
+                transition: all 0.25s;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 6.5em;
+                    border-radius: 8px;
+                }
+            }
+
+            &__content {
+                width: 60%;
+                position: static;
+                background: $cream;
+                backdrop-filter: blur(3.3698782920837402px);
+                border-radius: 12px;
+                color: $blue-700;
+                font-size: 11px;
+
+                .content {
+
+                    &__text {
+                        line-height: 15px;
+                        color: $blue-700;
+                        margin: 0;
+                        padding: 0;
+                        font-size: 12px;
+                        padding-bottom: 6px;
+                        min-height: unset;
+                    }
+
+                    &__dates {
+                        margin: 0;
+                    }
+
+                    &__per-person {
+                        font-size: 11px;
+                    }
+
+                    &__price {
+                        font-size: 12px;
+                    }
+
+                    &__title {
+                        color: $white;
+                        margin-bottom: 8px;
+                        min-height: 44px;
+                    }
+
+                    &__dates {
+                        margin-bottom: 12px;
+                    }
+
+                    &__from,
+                    &__per-person {
+                        font-size: 10px;
+                        font-family: $secondary-font;
+                    }
+
+                    &__price {
+                        span:first-child {
+                            font-weight: 700;
+                            margin-right: 4px;
+                        }
+                    }
+
+                    &__per-person {
+                        margin-bottom: 7px;
+                    }
+
+                    &__days {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        p:first-child {
+                            font-family: $secondary-font;
+                            font-weight: 700;
+                            font-size: 10px;
+                        }
+
+                        .days__days-nights {
+                            background-color: $blue-700;
+                            color: $white;
+                            font-size: 10px;
+                            border-radius: 10px;
+                            padding: 5px 7px;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 620px) {
+            border-radius: 16px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            background-color: $black;
+
+            .card-trip {
+                &__feature-image {
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                    z-index: 0;
+                    transition: all 0.25s;
+
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 54%;
+                        border-radius: 8px;
+                    }
+
+                    &::before {
+                        content: "";
+                        display: inline-block;
+                        top: 45%;
+                        width: 100%;
+                        height: 2rem;
+                        position: absolute;
+                        background-image: linear-gradient(to bottom, transparent, $black);
+                    }
+                }
+
+                &__content {
+                    border-radius: 11px;
+                    background: rgba(244, 243, 239, 0.32);
+                    backdrop-filter: blur(3.3698782920837402px);
+                    position: absolute;
+                    bottom: 8px;
+                    z-index: 10;
+                    width: 93%;
+                    padding: 12px;
+                    color: $white;
+                    min-height: 45%;
+
+                    .content {
+                        &__text {
+                            line-height: 24px;
+                            font-size: 18px;
+                            color: $white;
+                        }
+
+                        &__from {
+                            font-size: 12px;
+                        }
+
+                        &__price,
+                        &__per-person {
+                            font-size: 14px;
+                        }
+
+                        &__days {
+                            p:first-child {
+                                font-family: $secondary-font;
+                                font-weight: 700;
+                                font-size: 16px;
+                            }
+
+                            .days__days-nights {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+.slider-trips-scroll::-webkit-scrollbar,
+.orange-scroll::-webkit-scrollbar {
+    height: 5px;
+    border-radius: 10px;
+}
+
+.slider-trips-scroll::-webkit-scrollbar-thumb,
+.orange-scroll::-webkit-scrollbar-thumb {
+    background-color: $orange-500;
+    border-radius: 10px;
+}

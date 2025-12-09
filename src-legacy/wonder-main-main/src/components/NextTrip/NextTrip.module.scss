@@ -1,0 +1,39 @@
+@import '/src/app/[lng]/variables';
+
+.next-trip {
+  margin: 20px 1em;
+
+  &__card {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  &__cta-more-trips {
+    margin-bottom: 32px;
+    width: 100%;
+    font-family: $subtitle-font;
+  }
+
+  &__user-sesion {
+    .user-sesion {
+      &__text {
+        margin-bottom: 20px;
+      }
+
+      &__actions {
+        display: flex;
+        gap: 10px;
+
+        button {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    &__cta-more-trips {
+      width: 100%;
+    }
+  }
+}

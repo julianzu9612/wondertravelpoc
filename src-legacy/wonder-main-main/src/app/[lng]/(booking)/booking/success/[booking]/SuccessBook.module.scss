@@ -1,0 +1,120 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+@mixin animation {
+  animation-name: appear-bottom;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.39, 0.57, 0.56, 1);
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.success-booking {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  margin-left: 48px;
+  margin-right: 48px;
+  height: 85vh;
+  color: $blue-700;
+
+  &__message {
+    grid-area: 1 / 1 / span 2 / span 1;
+    @include center-column;
+    @include animation;
+
+    h1 {
+      @include title('h3');
+      color: $orange-500;
+    }
+
+    .message__description {
+      text-align: center
+    }
+    p {
+      @include subtitle(1);
+    }
+  }
+
+  &__link-to-form {
+    @include center-column;
+    grid-area: 1 / 2 / span 1 / span 1;
+    @include animation;
+    animation-delay: 400ms;
+
+    h2 {
+      @include title(h3);
+    }
+
+    .link-to-form__alert {
+      transform: rotate(-30deg);
+    }
+
+    .text {
+      margin-bottom: 24px;
+      max-width: 377px;
+      text-align: center;
+    }
+  }
+
+    &__booking-number {
+    grid-area: 2 / 2 / span 1 / span 1;
+    @include center-column;
+    @include animation;
+    animation-delay: 200ms;
+
+    h2 {
+      @include title('h4');
+      margin-bottom: 0px;
+    }
+
+    .text {
+      margin-bottom: 24px;
+      max-width: 377px;
+      text-align: center;
+    }
+
+    .id-bookint__data {
+      @include subtitle(1);
+      margin-bottom: 24px;
+    }
+  }
+
+  @include animation-appear(bottom);
+
+  @media screen and (max-width: $min-tablet) {
+    grid-template: repeat(3, 1fr) / 1fr;
+    row-gap: 24px;
+    margin-bottom: 40px;
+    height: fit-content;
+
+    &__message,
+    &__booking-number,
+    &__link-to-form {
+      grid-column: 1 / span 1;
+    }
+
+    &__message {
+      grid-row: 1 / span 1;
+
+      h1 {
+        text-align: center;
+      }
+
+      .message {
+        &__image {
+          height: 200px;
+          width: auto;
+        }
+      }
+
+
+    }
+   
+    &__link-to-form {
+      grid-row: 2 / span 1;
+    }
+     &__booking-number {
+      grid-row: 3 / span 1;
+    }
+  }
+}

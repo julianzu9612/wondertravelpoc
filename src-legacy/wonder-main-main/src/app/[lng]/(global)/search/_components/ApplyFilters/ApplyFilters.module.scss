@@ -1,0 +1,15 @@
+@import '/src/app/[lng]/variables';
+
+.applyFilters {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 8px 14px;
+    width: 84%;
+    border-radius: 8px;
+    font-family: $primary-font;
+    font-size: 14px;
+    margin-top: 1rem;
+    text-align: center;
+
+}

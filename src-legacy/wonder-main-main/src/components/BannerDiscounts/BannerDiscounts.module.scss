@@ -1,0 +1,19 @@
+@import '/src/app/[lng]/variables';
+
+.info-banner {
+    display: block;
+  position: relative;
+  width: 100vw;
+  height: 40px;
+  
+  &__img {
+    z-index: 10;
+    object-fit: contain;
+  }
+  
+  @media screen and (min-width: $min-tablet) {
+    height: 60px;
+
+  }
+
+}

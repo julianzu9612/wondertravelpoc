@@ -1,0 +1,46 @@
+@import '/src/app/[lng]/variables';
+
+.content-emabarazo {
+    display: flex;
+    gap: 3em;
+
+    label {
+
+        input[type=radio] {
+            accent-color: $orange-500;
+            appearance: none;
+            border-radius: 2px;
+            padding: 0.4em;
+            border-radius: 50%;
+            outline-color: $grey-300;
+            border: none;
+
+            &:not(:checked) {
+                border: none;
+                outline: 1px solid $grey-300;
+                outline-offset: 3px;
+                margin-right: 0.5em;
+            }
+
+            &:checked {
+                margin-right: 0.5em;
+                border: none;
+                background-color: $orange-500;
+                outline: 1px solid $grey-300;
+                outline-offset: 3px;
+            }
+        }
+    }
+}
+
+.info-medica {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    & select {
+        margin: 0 0.8em;
+        width: auto;
+        padding: 9px 23.317px;
+    }
+}

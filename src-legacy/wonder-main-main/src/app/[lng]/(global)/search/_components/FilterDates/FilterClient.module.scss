@@ -1,0 +1,9 @@
+@import '/src/app/[lng]/variables';
+
+.filterDates {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+}

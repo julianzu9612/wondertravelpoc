@@ -1,0 +1,10 @@
+.consult-booking {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__cta {
+    width: 50%;
+  }
+}

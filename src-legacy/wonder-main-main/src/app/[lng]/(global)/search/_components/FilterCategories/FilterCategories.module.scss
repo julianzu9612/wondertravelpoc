@@ -1,0 +1,21 @@
+@import "/src/app/[lng]/variables";
+
+.filterCategories {
+    display: grid;
+    gap: 8px;
+
+    button {
+        background-color: transparent;
+        text-decoration: underline;
+        color: $blue-700;
+        cursor: pointer;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        button {
+            font-size: 16px;
+        }
+    }
+}

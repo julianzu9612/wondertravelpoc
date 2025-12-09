@@ -1,0 +1,168 @@
+@import '/src/app/[lng]/variables';
+
+.modal-filter {
+  &__modal {
+    background-color: #fff;
+    position: relative;
+    padding: 12px;
+    padding-top: 0px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 523px;
+    max-height: 603px;
+    height: 100%;
+    overflow: auto;
+
+    .modal {
+
+      &__modal-title {
+        font-size: 20px;
+        color: $blue-700;
+        font-family: $subtitle-font;
+        font-weight: 700;
+        padding: .5rem 2rem;
+        padding-bottom: 0;
+        border-bottom: 1px solid $grey-300;
+      }
+
+      &__section-close {
+        width: 100%;
+        height: min-content;
+        position: sticky;
+        top: 0;
+        background-color: $white;
+        display: flex;
+        justify-content: flex-end;
+
+
+        .section-close {
+          &__modal-close {
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            background: initial;
+            top: 10px;
+            right: 10px;
+            padding-right: 0;
+          }
+
+
+        }
+      }
+
+      &__modal-content {
+        font-family: $subtitle-font;
+
+        .modal-content {
+          &__modal-filters-trips {
+            padding: 1em 2rem;
+          }
+
+          &__modal-filters-trips {
+            .modal-filters-trips {
+
+              &__wrap {
+                margin-bottom: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                margin: 0;
+
+                .wrap {
+                  &__last {
+                    border-bottom: none;
+                  }
+
+                  input[type='number'],
+                  input[type='text'],
+                  select {
+                    padding: .7rem 1rem;
+                    border-radius: 10px;
+                    border: 2px solid $grey-300
+                  }
+
+                  .inputs-wrap {
+                    padding: 1rem 0;
+                  }
+
+                  &__section:last-child {
+
+
+                    border-bottom: none;
+                    padding: 0;
+                  }
+
+                  &__section {
+                    padding-bottom: 16px;
+                    border-bottom: 1px solid $grey-300;
+
+                    .section {
+                      &__title {
+                        font-size: 20px;
+                        padding-bottom: 16px;
+                      }
+
+                      &__inputs-groups {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 6px;
+
+                        @media screen and (min-width: $min-tablet) {
+                          flex-wrap: nowrap;
+                        }
+
+                        div {
+                          width: 100%;
+
+                          label {
+                            margin-right: 10px;
+                            cursor: pointer;
+                          }
+
+                          b.input-info {
+                            padding-top: .5rem;
+                            display: block;
+                            font-weight: 600;
+                            color: $blue-700
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &__modal-filters-trips {
+            h3 {
+              font-size: 16px;
+              color: $blue-700;
+              font-family: $subtitle-font;
+              font-weight: 700;
+            }
+          }
+
+          &__buttons-modal {
+            padding: 1rem 2rem;
+            border-top: 1px solid $grey-300;
+            justify-content: space-between;
+            display: flex;
+
+            :last-child {
+              padding: 8px 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $min-tablet) {
+  .modal-filter {
+    .modal {
+      width: 620px;
+    }
+  }
+}

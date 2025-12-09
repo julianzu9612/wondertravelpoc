@@ -1,0 +1,116 @@
+{
+    "modal_share": {
+        "label": "Share with your friends so they can complete their information",
+        "invite": "Invite",
+        "share": "Share"
+    },
+    "traveler_selected": {
+        "select_a_travel": "Select a Traveler",
+        "travelers_earring": "Travelers Pending:",
+        "loading": "Loading..."
+    },
+    "information_medical": {
+        "type_blood": {
+            "title": "Blood Type"
+        },
+        "allergies": {
+            "title": "Medical Conditions and/or Diseases"
+        },
+        "pregnant": {
+            "title": "Are you pregnant?*",
+            "yes": "Yes",
+            "no": "No"
+        },
+        "mobility_problems": {
+            "title": "Mobility Problems"
+        }
+    },
+    "information_eats": {
+        "allergies": {
+            "title": "Food Allergies"
+        },
+        "food_restrictions": {
+            "title": "Food Restrictions"
+        },
+        "restrictions": {
+            "Vegan": "Vegan",
+            "Celiac": "Celiac",
+            "No restrictions": "No restrictions",
+            "Vegetarian": "Vegetarian",
+            "Lactose free": "Lactose-free",
+            "Other": "Other",
+            "Pescatarian": "Pescatarian"
+        }
+    },
+    "list": {
+        "placeholder": "Enter your condition",
+        "add_other": "Add another"
+    },
+    "data_personal": {
+        "name": "Name*",
+        "last_name": "Last Name*",
+        "document_type": "Document Type*",
+        "genders": {
+            "male": "Male",
+            "female": "Female",
+            "other": "Other",
+            "non_especific": "Prefer not to specify"
+        },
+        "bithdate": "Birthdate",
+        "terms_and_conditions": "I accept terms and conditions"
+    },
+    "contact_data": {
+        "email": "Email*",
+        "address": "Address",
+        "phone": "Phone"
+    },
+    "emergency": {
+        "name": "Name*",
+        "last_name": "Last Name*",
+        "relation_ship": "Relationship*",
+        "phone": "Phone"
+    },
+    "policy_data": {
+        "date": "Start Date*",
+        "date_end": "End Date*",
+        "number_policy": "Policy Number",
+        "phone": "Phone Number",
+        "supplier": "Supplier"
+    },
+    "additional_data": {
+        "select_swim": "How would you rate your swimming ability?*",
+        "additional": {
+            "non_swim": "Cannot swim",
+            "swim": "Can swim",
+            "preferences_no_swim": "Prefer not to swim",
+            "profesional_swim": "Professional swimmer"
+        }
+    },
+    "flight_data": {
+        "buyed_with_us": {
+            "yes": "Yes",
+            "no": "No",
+            "flight_no_requires": "My trip does not require a flight"
+        },
+        "buy": "Did you purchase your flights with us?*"
+    },
+    "modal_end": {
+        "title": "Your information is complete!",
+        "text": "Continue to review and submit the information",
+        "btn": "Confirm and Submit"
+    },
+    "send": "Save and Next",
+    "finish_progress": "Finish and Send",
+    "back": "Back",
+    "title_flight_arrival": "Flight to arrive destination",
+    "flight_number": "Flight Number",
+    "airline": "Airline",
+    "from_to": "Origin-Destination",
+    "arrival_hour": "Arrival hour",
+    "departur_hour": "Departure hour",
+    "title_flight_departure": "flight return",
+    "local_hour_arrive": "Local hour destination",
+    "origin_country": "Country origin",
+    "origin_city": "Origin City",
+    "": ""
+}

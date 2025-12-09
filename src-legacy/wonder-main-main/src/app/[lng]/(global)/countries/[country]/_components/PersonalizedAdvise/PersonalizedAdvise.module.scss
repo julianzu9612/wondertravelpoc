@@ -1,0 +1,104 @@
+@import "/src/app/[lng]/variables";
+
+.personalized {
+    max-width: $min-desktop;
+    width: 100%;
+    padding: 0 24px;
+
+
+    &__content {
+        position: relative;
+
+        .content {
+            &__texts {
+                padding: 28px 16px;
+                position: relative;
+                height: 479px;
+                display: flex;
+                flex-direction: column;
+
+                h2,
+                p {
+                    color: $white;
+                }
+
+                h2 {
+                    font-size: 24px;
+                    width: 100%;
+                    line-height: 25px;
+                }
+
+                p {
+                    line-height: 18px;
+                    font-weight: 600;
+                }
+
+                p,
+                a {
+                    font-size: 14px;
+                }
+
+                a {
+                    width: 90%;
+                    padding: 12px 24px;
+                    font-family: $secondary-font;
+                    font-weight: 600;
+                }
+
+                .texts {
+                    &__anchor {
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        bottom: 3rem;
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width:$min-tablet) {
+        padding: 0 48px;
+
+        &__content {
+            .content {
+                &__texts {
+                    height: 368px;
+                    padding: 39px;
+
+                    h2 {
+                        font-size: 32px;
+                        width: 415px;
+                        line-height: 35px;
+                    }
+
+                    p {
+                        width: 275px;
+                        line-height: 26px;
+                    }
+
+                    p,
+                    a {
+                        font-size: 20px;
+                    }
+
+                    a {
+                        align-self: flex-end;
+                        width: fit-content;
+                    }
+
+                    .texts {
+                        &__anchor {
+                            bottom: 2rem;
+                            width: 96%;
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

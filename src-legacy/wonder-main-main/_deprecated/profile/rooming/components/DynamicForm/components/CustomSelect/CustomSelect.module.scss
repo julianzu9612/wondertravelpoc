@@ -1,0 +1,18 @@
+@import '/src/app/[lng]/variables';
+
+
+.custom-select {
+  label {
+    color: $blue-700;
+  }
+
+  select {
+    font-size: 13px;
+    margin: 0;
+
+  }
+
+  select option:first-child {
+    color: $grey-500;
+  }
+}

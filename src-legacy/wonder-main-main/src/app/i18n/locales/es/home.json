@@ -1,0 +1,66 @@
+{
+  "heroBannerDestinations": {
+    "Enriching the travel experience": "El alma aventurera<br/>de Latinoamérica",
+    "Which country are you going to?": "¿A qué país vamos?",
+    "When would you travel?": "¿Cuándo quieres viajar?",
+    "Select a country": "Seleccione un país"
+  },
+  "categories": {
+    "Travel Styles": "Estilos de viaje",
+    "description": "Para almas aventureras, para entusiastas de la gastronomía local y exótica, para amantes de la naturaleza, para los más cómodos: en Wonder Travel tenemos una amplia variedad de estilos de viaje para cada tipo de viajero."
+  },
+  "why-us": {
+    "title": "Elige tu destino, <br/> del resto, nos encargamos nosotros.",
+    "description": "Itinerarios hechos por expertos para todos los gustos.",
+    "cta": "Unirme A Un Viaje",
+    "cta-2": "Ayúdame A Buscar Mi Viaje",
+    "cta-3": "Wonder GPT (beta)"
+  },
+  "how-travel": "<span>¿Cómo</span><br /> viajamos?",
+  "many-travelers": "Más de <strong>4,600 aventureros</strong> han viajado con nosotros porlos paisajes de Colombia 🇨🇴 y Sudamérica.",
+  "helpme-search-trip": "Ayúdame a buscar mi viaje",
+  "fix-departures": "Fechas fijas",
+  "curated-xperiences": "Experiencias únicas, planificadas al detalle",
+  "small-groups": "Viajes en grupos pequeños",
+
+  "custom-travel": "Viajes personalizados, hechos a tu medida",
+  "custom-travel-desc-1": "Te ofrecemos asesoramiento e información para tu viaje ideal.",
+  "custom-travel-desc-2": "Imagina tu viaje soñado y permítenos darle vida con nuestro servicio personalizado y experiencia",
+  "custom-travel-cta": "Habla con Nuestros Expertos",
+
+  "travelPurpose": {
+    "Travel with": "Viajar con",
+    "Purpose": "propósito",
+    "description": "En Wonder, buscamos no solo transformar tu vida con viajes, sino que cada vez que viajamos juntos creamos comunidades más fuertes, y junto con Treeoma para cada viajero:"
+  },
+  "weWork": {
+    "We work with local families": "Trabajamos con familias locales",
+    "description": "En Wonder creemos que es posible enriquecer la experiencia de viaje tanto para los viajeros como para los anfitriones. Trabajamos con familias locales en cada destino y las apoyamos para garantizar un impacto duradero y una mejora en sus comunidades."
+  },
+  "ourPartners": {
+    "Our partners and certifications": "Nuestros partners y certificaciones"
+  },
+  "Traveler Stories": "Lo que dicen los viajeros",
+  "to": "a",
+  "Lets Go": "¡Vamos!",
+  "Scroll to know more": "Desplázate para saber más",
+  "View Trip": "Ver Viaje",
+  "Start now": "Empezar ahora",
+  "Descubre las Joyas Ocultas de Latinoamérica": "Descubre las Joyas Ocultas de Latinoamérica",
+  "Vive y Viaja como un Local": "Vive y Viaja como un Local",
+  "Transforma Vidas y Genera un Impacto Positivo Duradero": "Transforma Vidas y Genera un Impacto Positivo Duradero",
+  "testing": {
+    "title": "¿Necesitas recomendaciones personalizadas?",
+    "description": "Diseña el viaje de tus sueños con expertos locales.",
+    "cta": "Quiero contactar un experto"
+  },
+    "tailor-form": {
+      "destination": "¿Qué destino quieres explorar?",
+      "persons": "¿Cuantás personas viajan?",
+      "dates": "¿Qué fecha o mes piensas viajar?",
+      "tailor": "Viajes Hechos",
+      "made": "a Medida",
+      "description": "Este es el primer paso para organizar tu viaje soñado. Déjanos tus datos y te contactaremos lo más pronto posible",
+      "cta": "Hablar con asesor"
+    }
+}

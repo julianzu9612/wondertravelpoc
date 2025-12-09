@@ -1,0 +1,125 @@
+@import '/src/app/[lng]/variables';
+
+@mixin flex($direction, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+.container {
+    border: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 60;
+    background-color: #00000059;
+    display: flex;
+    align-items: flex-end;
+    padding: 0%;
+    transition: all 1s ease-in;
+
+    &__content {
+        display: flex;
+        flex-basis: 100%;
+        height: auto;
+        min-height: 12em;
+
+        .content {
+
+
+            &__modal {
+                flex-basis: 100%;
+                background-color: white;
+                border-radius: 0.5em;
+                max-height: 260px;
+
+                .modal {
+                    &__btn-close {
+                        @include flex(row, "", flex-end);
+
+                        & span {
+                            @include flex(row, center, center);
+                            margin: 0.5em;
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            border-radius: 50%;
+                            background-color: black;
+                            cursor: pointer;
+
+                            & img {
+                                fill: black;
+                            }
+                        }
+                    }
+
+                    &__content {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.8em;
+                        padding: 0 1em;
+
+                        .content {
+
+                            &__copy {
+                                @include flex(row, center, flex-start);
+                                gap: 0.5em;
+                                margin: 1em 10%;
+
+                                h3 {
+
+                                    font-size: 14px;
+                                    font-family: $subtitle-font;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        align-items: center;
+
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            flex-basis: 100%;
+
+            .content {
+
+
+                &__modal {
+                    grid-column: span 2 / span 2;
+                    grid-column-start: 4;
+                    background-color: white;
+                    border-radius: 0.5em;
+                    max-width: 500px;
+
+                    .modal {
+                        &__close {
+                            grid-column: span 6 / span 6;
+                            display: flex;
+                            justify-content: flex-end;
+                        }
+
+                        &__copy {
+
+                            h3 {
+
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+
+                &__modal-center {
+                    grid-column-start: 3;
+                }
+            }
+        }
+    }
+}

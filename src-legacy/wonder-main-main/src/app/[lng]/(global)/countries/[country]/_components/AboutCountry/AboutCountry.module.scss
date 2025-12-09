@@ -1,0 +1,80 @@
+@import "/src/app/[lng]/variables";
+
+.about {
+    max-width: $min-desktop;
+    margin-top: 42px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    min-height: 409px;
+    align-items: center;
+    padding: 0 24px;
+    gap: 20px;
+    height: 100%;
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        color: $blue-700;
+
+        .description {
+            &__title {
+                position: relative;
+
+                h2 {
+                    font-size: 16px;
+                    border-bottom: 4px solid $orange-500;
+                    width: fit-content;
+
+                    &::before {
+                        content: "";
+                        width: 100%;
+                        height: 2px;
+                        background-color: $orange-500;
+                        position: absolute;
+                        bottom: 1px;
+                    }
+                }
+            }
+
+            &__description {
+                font-size: 14px;
+                font-family: $secondary-font;
+                gap: 20px;
+                color: $blue-700;
+            }
+        }
+    }
+
+    &__images {
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+        max-height: 123px;
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        padding: 0 48px;
+        min-height: 300px;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 60px;
+        margin-top: 64px;
+
+        &__description {
+            gap: 42px;
+            grid-column: 3 span;
+
+            .description {
+                &__description {
+                    gap: 42px;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        &__images {
+            min-height: 409px;
+            grid-column: 4 span;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.about-us {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: $blue-700;
+  @include wonder-grid;
+
+  &__title {
+    grid-column: 2 / span 4;
+    font-size: 36px;
+    span {
+      color: $orange-500;
+    }
+  }
+
+  &__description {
+    grid-column: 2 / span 4;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  &__purpose {
+    grid-column: 2 / span 4;
+    grid-row: span 2;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__wonder,
+  &__subtitle,
+  &__impact {
+    grid-column: 7 / span 4;
+  }
+
+  &__subtitle {
+    line-height: 24px;
+  }
+
+  &__wonder {
+    grid-row: 3 / span 1;
+  }
+
+  @media screen and (max-width: $min-tablet) {
+    padding: 0 16px;
+    margin:  40px auto;
+    align-items: center;
+
+    &__title,
+    &__description,
+    &__purpose,
+    &__wonder,
+    &__subtitle,
+    &__impact,
+    &__wonder {
+      grid-column: 1 / -1;
+    }
+    &__description {
+      padding-bottom: 24px ;
+    }
+
+    &__purpose {
+      grid-row: 3 / span 1;
+      font-size: 24px;
+      line-height: 26px;
+      padding-bottom: 32px;
+    }
+    
+    &__wonder {
+      align-self: center;
+      padding-bottom: 20px;
+      grid-row: 4 / span 1;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

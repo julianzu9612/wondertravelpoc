@@ -1,0 +1,35 @@
+@import '/src/app/[lng]/variables';
+
+
+.buttons {
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+        padding: 18px 16px;
+        align-items: center;
+        border-bottom: 1px solid $grey-300;
+        text-decoration: none;
+        color: $blue-700;
+        font-family: $subtitle-font;
+        font-size: 16px;
+
+
+        .arrow {
+            left: auto;
+        }
+
+        .btn__title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            p {
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__btn--active {
+        cursor: pointer;
+    }
+}

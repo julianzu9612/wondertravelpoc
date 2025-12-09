@@ -1,0 +1,457 @@
+@import '../../app/[lng]/variables';
+
+
+
+.main-header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.3) 70%,
+      rgba(0, 0, 0, 0) 100%);
+
+  &--sticky {
+    @extend .main-header;
+    position: sticky;
+  }
+
+  &--banner {
+    margin-bottom: -4.6rem;
+  }
+
+  &.dark-header {
+    background-color: #565656;
+  }
+
+  &.ligth-header {
+    background: $white;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  font-family: $subtitle-font;
+
+  a {
+    text-decoration: none;
+  }
+
+  .submenu__dropdown {
+    position: absolute;
+    right: 0;
+    background-color: $cream;
+    border-radius: 8px;
+    min-width: 150px;
+    z-index: 10;
+    padding: 1rem;
+    text-align: left;
+    display: none;
+
+    li {
+      padding: .5rem;
+      list-style: none;
+      margin: 4px 0;
+
+      button {
+        width: 100%;
+        text-align: left;
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: $black;
+        transition: color 300ms;
+      }
+    }
+  }
+
+  .show {
+    display: block;
+  }
+
+  .navbar__logo {
+    width: 71px;
+    height: 30px;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      height: 100%;
+    }
+
+    @media screen and (min-width: $min-tablet) {
+      width: 118px;
+      height: 50px;
+      margin-right: 48px;
+    }
+  }
+
+  .navbar__list {
+    padding: 0;
+    display: none;
+    align-items: center;
+    width: 70%;
+    justify-content: flex-start;
+    gap: 52px;
+
+    a {
+      color: $white;
+      font-weight: 600;
+
+      &:hover {
+        color: $orange-500;
+      }
+    }
+  }
+
+  .navbar__item-hamburguer li {
+    list-style: none;
+    font-family: $primary-font;
+    color: $black;
+
+    &:hover {
+      color: $orange-500;
+    }
+
+    a {
+      font-family: $primary-font;
+      text-decoration: none;
+      color: $black;
+
+      &:hover {
+        color: $orange-500;
+      }
+    }
+  }
+
+  .navbar__icons-group {
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    .currency-icon {
+      position: relative;
+      cursor: pointer;
+
+      &__menu-btn {
+        display: flex;
+        gap: 2px;
+        align-items: center;
+        color: $white;
+
+        p {
+          display: none;
+        }
+
+        img {
+          width: 18px;
+        }
+
+        img.arrow {
+          width: 13px;
+          height: 12px;
+          margin-top: 5px;
+
+          &.active {
+            transition: 300ms;
+            transition-timing-function: ease-in-out;
+            transform: rotate(180deg);
+          }
+
+          &.deactive {
+            transition: 300ms;
+            transition-timing-function: ease-in-out;
+            transform: rotate(0deg);
+          }
+        }
+
+
+
+        span {
+          position: absolute;
+          right: 7px;
+          top: 17px;
+          color: #fff;
+          font-size: 12px;
+          font-weight: 700;
+          text-transform: capitalize;
+        }
+      }
+
+      button {
+        text-decoration: none;
+        padding: 0;
+        display: block;
+        color: $black;
+        font-weight: 500;
+
+        &:hover,
+        &.current {
+          color: $orange-500;
+        }
+      }
+    }
+  }
+
+  .hamburger-menu {
+    padding: 56px 40px;
+    background-color: $cream;
+    position: fixed;
+    top: 0;
+    right: -200%;
+    width: fit-content;
+    height: 100vh;
+    transition: all .3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 60;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding: .7rem;
+      }
+    }
+
+    &.show-menu {
+      right: 0;
+      overflow: auto;
+      max-width: 320px;
+
+      &::-webkit-scrollbar {
+        width: 0.2em;
+      }
+    }
+  }
+
+  .login-link {
+
+    a {
+      align-items: center;
+      display: flex;
+      color: $white;
+      gap: 0.5rem;
+
+      span {
+        display: none;
+      }
+
+      figure {
+        display: flex;
+
+        img {
+          width: 16px;
+        }
+      }
+    }
+
+    @media screen and (min-width: $min-tablet) {
+      a {
+        figure {
+          img {
+            width: 22px;
+          }
+        }
+      }
+    }
+  }
+
+  .whatsapp,
+  .menu {
+    display: block;
+  }
+
+  .ghost {
+    cursor: pointer;
+    padding: 0;
+    margin-left: 4px;
+    display: flex;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    img {
+      width: 22px;
+      height: 25px;
+    }
+
+    @media screen and (min-width: $min-tablet) {
+      img {
+        width: 42px;
+        height: 28px;
+      }
+    }
+  }
+
+  .button__toggle-menu {
+    position: absolute;
+    top: 16px;
+    right: 0px;
+  }
+
+  @keyframes showMenu {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (min-width: $min-tablet) {
+    padding: 12px 48px;
+
+    .navbar__icons-group {
+      height: 22px;
+      gap: 16px;
+
+      .currency-icon {
+        &__menu-btn {
+          gap: 4px;
+
+          p {
+            display: none;
+          }
+
+          img {
+            width: 24px;
+          }
+        }
+      }
+
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .navbar__icons-group {
+      gap: 16px;
+
+      .currency-icon {
+        &__menu-btn {
+          gap: 4px;
+
+          p {
+            display: initial;
+          }
+        }
+      }
+
+    }
+
+    .login-link {
+      a {
+        span {
+          display: block;
+        }
+      }
+    }
+
+    .navbar__list {
+      display: flex;
+    }
+
+    .navbar {
+      &__list {
+        display: flex;
+        //width: 80%;
+      }
+
+      &__item {
+        display: block;
+
+        a {
+          font-family: $primary-font;
+        }
+      }
+    }
+
+  }
+}
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.lang-icon {
+  position: relative;
+  cursor: pointer;
+
+  figure {
+    top: 3px;
+    position: relative;
+
+    span {
+      position: absolute;
+      right: 12px;
+      top: 2px;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: capitalize;
+
+    }
+
+    img {
+      height: 16px;
+    }
+
+    @media screen and (min-width: $min-tablet) {
+      span {
+        font-size: 16px;
+        right: 4px;
+        top: 3px;
+
+
+      }
+
+      img {
+        height: 24px;
+      }
+    }
+  }
+
+  button {
+    text-decoration: none;
+    padding: 0;
+    display: block;
+    color: $black;
+    font-weight: 500;
+
+    &:hover,
+    &.current {
+      color: $orange-500;
+    }
+  }
+}
+
+.submenu {
+  &__option {
+    padding: 0.6rem 0 0 0 !important;
+    cursor: pointer;
+
+    &:first-child {
+      padding-top: 0 !important;
+    }
+  }
+}

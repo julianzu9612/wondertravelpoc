@@ -1,0 +1,83 @@
+@import "/src/app/[lng]/variables";
+
+.filterDuration {
+    display: flex;
+    justify-items: center;
+    position: relative;
+    height: 60px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+.filterInformation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+
+    p {
+        font-size: 12px;
+        font-weight: 700;
+        text-align: center;
+        font-family: $secondary-font;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    @media screen and (min-width: $min-desktop) {
+
+        margin-top: 12px;
+    }
+}
+
+.multi-range {
+    width: 100%;
+    position: relative;
+    display: block;
+    height: 36px;
+
+    input[type=range] {
+        padding: 0;
+        position: absolute;
+        box-sizing: border-box;
+        appearance: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 0;
+        border-radius: 1px;
+        outline: none;
+        background: linear-gradient(grey, grey) no-repeat center;
+        /* Use a linear gradient to generate only the 2px height background */
+        background-size: 100% 2px;
+        pointer-events: none;
+
+        &:active,
+        &:focus {
+            outline: none;
+        }
+
+        &::-webkit-slider-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 28px;
+            background-color: $orange-500;
+            position: relative;
+            margin: 5px 0;
+            cursor: pointer;
+            appearance: none;
+            pointer-events: all;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+
+
+
+        &:nth-child(2) {
+            background: none;
+        }
+    }
+}

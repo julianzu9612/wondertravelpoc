@@ -1,0 +1,52 @@
+@import "/src/app/[lng]/variables";
+
+.rating {
+    position: relative;
+    min-width: 100px;
+
+    &__star {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        background-color: $grey-300;
+        display: inline-block;
+
+
+
+        &--static {
+            &--active {
+                background-color: $orange-500;
+            }
+        }
+
+        &--active {
+            background-color: $orange-500;
+            float: right;
+        }
+
+        &--disabled {
+            background-color: $grey-300;
+            float: right;
+
+            &:hover {
+                background-color: $orange-500;
+
+                &~div {
+                    background-color: $orange-500;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $min-desktop) {
+        width: fit-content;
+
+        &__star {
+            width: 40%;
+            width: 24px;
+            height: 24px;
+        }
+
+    }
+}

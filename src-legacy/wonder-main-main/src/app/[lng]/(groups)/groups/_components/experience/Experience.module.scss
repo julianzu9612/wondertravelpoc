@@ -1,0 +1,80 @@
+@import '/src/app/[lng]/variables';
+@import '/src/app/[lng]/mixin';
+
+.experience {
+  @include wonder-grid;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  text-align: center;
+
+  &__title {
+    font-size: 32px;
+  }
+
+  &__desc-1,
+  &__desc-2 {
+    font-size: 24px;
+  }
+
+  &__universities,
+  &__business {
+    background-color: $blue-700;
+    height: 180px;
+    border-radius: 10px;
+    display: grid;
+    justify-items: center;
+
+    img {
+      object-fit: contain;
+      align-self: center;
+    }
+  }
+
+  &__universities {
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    width: 100%;
+  }
+
+  &__business {
+    grid-template-columns: repeat(3, 200px);
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+  }
+
+  &__universities {
+    margin-bottom: 24px;
+  }
+
+  @media screen and (max-width: $min-tablet) {
+    padding: 16px;
+
+    &__title,
+    &__desc-1,
+    &__desc-2,
+    &__business,
+    &__universities {
+      grid-column: 1 / -1;
+      grid-row: span 1;
+    }
+    &__desc-1 {
+      margin-bottom: 16px;
+    }
+
+    &__desc-2 {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    &__universities,
+    &__business {
+      padding: 24px 0;
+      grid-template-columns: 1fr;
+      height: fit-content;
+      row-gap: 24px;
+    width: 100%;
+
+    }
+  }
+}

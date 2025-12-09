@@ -1,0 +1,41 @@
+@import "/src/app/[lng]/variables";
+
+.chathWithUs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 52px;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        list-style: disc;
+        padding-left: 20px;
+
+        li {
+            list-style: disc;
+        }
+    }
+
+    &>p {
+        font-size: 14px;
+    }
+
+    &__button {
+        width: fit-content;
+        font-weight: 600;
+        padding: 9px 25px;
+        font-family: $secondary-font;
+        font-size: 14px;
+    }
+
+    @media screen and (min-width: $min-tablet) {
+
+        &__button {
+
+            font-size: 16px;
+        }
+    }
+}

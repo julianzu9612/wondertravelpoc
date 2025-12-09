@@ -1,0 +1,81 @@
+@import '/src/app/[lng]/variables';
+
+.sign-in {
+  padding: 16px;
+
+  &__socials-btns {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    &__btn {
+      width: 100%;
+
+    }
+  }
+
+  &__basic-auth {
+    padding: 40px 0;
+
+    .basic-auth {
+      &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        margin: 1em 0;
+      }
+
+      &__title {
+        font-weight: bold;
+        font-family: $subtitle-font;
+        font-size: 20px;
+      }
+    }
+
+
+
+    .input-checkbox {
+      label {
+        padding: 10px;
+        font-weight: bold;
+        color: $orange-500;
+        font-family: $secondary-font;
+      }
+    }
+
+    &__half {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      .input-text {
+        width: 50%;
+      }
+    }
+  }
+
+  .error-input {
+    color: $error;
+    font-size: 12px;
+    text-align: right;
+    padding: 0 0 1em;
+  }
+
+  &__title {
+    width: 328px;
+    color: $blue-700;
+    font-family: $subtitle-font;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 12px;
+  }
+
+  &__description {
+    margin: 20px 0;
+    font-family: $secondary-font;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}

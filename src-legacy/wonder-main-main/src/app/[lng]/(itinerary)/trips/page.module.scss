@@ -1,0 +1,91 @@
+@import '/src/app/[lng]/variables';
+
+.vertical-page {
+  font-family: $subtitle-font;
+
+  h1,
+  h2,
+  h3 {
+    font-family: $subtitle-font;
+  }
+
+  h1 {
+    font-size: 68px;
+  }
+
+  h2 {
+    font-size: 38px;
+  }
+
+  .top-section {
+    position: relative;
+    top: -4.4rem;
+    margin-bottom: 1.5rem;
+    background: url('/assets/images/calendar/top-banner-calendar.jpg') no-repeat center;
+    background-size: cover;
+    min-height: 50vh;
+    color: $white;
+
+    .inner-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 70vh;
+    }
+
+    .main-info {
+      padding: 1rem;
+      padding: 2rem 1rem;
+      max-width: 800px;
+
+      h1 {
+        line-height: 1;
+        padding: 1rem 0;
+        color: $white;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 28px;
+        font-family: $subtitle-font;
+        font-weight: 600;
+        padding: 1rem 0;
+        margin-bottom: 16px;
+      }
+
+      .search-wrap {
+        padding: 4rem 0 0;
+      }
+    }
+  }
+
+  .section-page {
+    padding: 1rem;
+  }
+
+  .section-page-filter {
+    padding: 0 1rem;
+  }
+
+  .section-page-grid {
+    padding: 0 1rem 3rem;
+  }
+
+  @media screen and (max-width: 620px) {
+    h1 {
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    .top-section {
+      .main-info {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

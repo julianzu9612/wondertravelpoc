@@ -1,0 +1,46 @@
+@import "/src/app/[lng]/variables";
+
+.frequentlyQuestions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    flex: 1 1 45%;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        h3,
+        p {
+            font-size: 14px;
+        }
+
+        h3 {
+            font-weight: 600;
+        }
+
+        &>div {
+            &>div {
+
+                &:first-child,
+                &:last-child {
+                    background-color: $cream;
+                    padding: 8px;
+                    padding-left: 12px;
+                    border-radius: 8px;
+                    border: none;
+                }
+            }
+
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+
+    @media screen and (min-width: $min-tablet) {
+        width: 45%;
+    }
+}

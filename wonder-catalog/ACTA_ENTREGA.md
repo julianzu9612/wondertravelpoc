@@ -32,10 +32,15 @@
 
 ### Completado
 - [x] Google Maps embed en `/contacto` (iframe responsive con dirección Calle 98 # 10 - 32, Bogotá).
-- [x] Trustpilot badge en Home (link a reviews 4.7/5, 29 reviews).
+- [x] Trustpilot badge en Home (link a reviews 4.7/5, 29 reviews) con estilo destacado (gradiente verde, CTA “Ver reseñas”).
 
 ### Detalles de implementación
 - Archivos modificados: `src/app/contacto/page.tsx` (bloque Encuéntranos + iframe), `src/components/home/trustpilot-badge.tsx`, `src/app/page.tsx` (se agrega badge en Home).
 - Ubicación del mapa: bloque “Encuéntranos” al final de la página de contacto, altura 320–400 px responsive.
 - Ubicación Trustpilot: debajo de testimonios en Home, badge estático que enlaza a Trustpilot.
 - URL de preview verificada: local (`http://localhost:3000`); pendiente deploy en Vercel para preview público.
+
+### Deploy en Vercel
+- Proyecto previo: `axis-wondertravel` (root `wonder-catalog`). Al hacer push a la rama principal, Vercel redeploya.
+- Configurar `NEXT_PUBLIC_SITE_URL` en Vercel antes de producción para OG/canonicals.
+- Si se usa `next export`/GitHub Pages, setear `output: 'export'` y `NEXT_PUBLIC_SITE_URL` acorde al dominio de Pages.

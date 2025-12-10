@@ -27,3 +27,15 @@
 - Hero y layout ajustados para full-bleed e inmersión; copy comercial aplicado.
 - Flotante de WhatsApp se oculta en detalle (CTA sticky activo).
 - Partners cargados con logos reales del pack; se pueden añadir más si se proveen.
+
+## Quick Wins - 2025-12-10
+
+### Completado
+- [x] Google Maps embed en `/contacto` (iframe responsive con dirección Calle 98 # 10 - 32, Bogotá).
+- [x] Trustpilot badge en Home (link a reviews 4.7/5, 29 reviews).
+
+### Detalles de implementación
+- Archivos modificados: `src/app/contacto/page.tsx` (bloque Encuéntranos + iframe), `src/components/home/trustpilot-badge.tsx`, `src/app/page.tsx` (se agrega badge en Home).
+- Ubicación del mapa: bloque “Encuéntranos” al final de la página de contacto, altura 320–400 px responsive.
+- Ubicación Trustpilot: debajo de testimonios en Home, badge estático que enlaza a Trustpilot.
+- URL de preview verificada: local (`http://localhost:3000`); pendiente deploy en Vercel para preview público.

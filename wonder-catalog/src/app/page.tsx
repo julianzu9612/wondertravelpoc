@@ -8,6 +8,7 @@ import { TrustBand } from "@/components/home/trust-band";
 import { StaggerList } from "@/components/motion/stagger";
 import { siteConfig } from "@/config/site";
 import type { Metadata } from "next";
+import { TrustpilotBadge } from "@/components/home/trustpilot-badge";
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -24,6 +25,7 @@ export default function Home() {
           <FeaturedSection />
           <SearchBar />
           <Testimonials />
+          <TrustpilotBadge />
           <TrustBand />
           <Partners />
         </StaggerList>

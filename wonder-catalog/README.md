@@ -9,6 +9,12 @@ npm run dev -- --hostname 0.0.0.0 --port 3000
 npm run lint
 ```
 
+## Despliegue en Vercel (monorepo)
+- El repo completo incluye documentación y otras carpetas; el proyecto Next vive en `v2.0/wonder-catalog`. En Vercel, selecciona esa ruta como **Root Directory** al importar.
+- Variables: `NEXT_PUBLIC_SITE_URL` con la URL pública (la que asigne Vercel o el dominio final).
+- Build: `npm run build` (install: `npm install`). Framework: Next.js (detección automática). Output: `.next`.
+- Assets: video de hero ~5MB en `public/hero/video-hero.mp4`; servido estático por Vercel.
+
 ## Estructura relevante
 - `src/app/page.tsx`: Home (hero, campaña, destacados, buscador, testimonios, confianza).
 - `src/app/trips/page.tsx`: listado completo.

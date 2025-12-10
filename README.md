@@ -57,4 +57,11 @@ wondertravel/
 
 ---
 
+## 📌 Estado actual (Dic 2025)
+- El proyecto activo vive en `v2.0/wonder-catalog` (Next 16 + Tailwind v4). Se despliega desde el repo público `julianzu9612/wondertravelpoc` (Root Directory: `wonder-catalog`).
+- Acta y detalles operativos en `ACTA_ENTREGA.md` (raíz) y `v2.0/DEPLOYMENT.md`.
+- Deploy Vercel (Hobby): comandos `npm install` / `npm run build`; variable `NEXT_PUBLIC_SITE_URL` con el dominio Vercel.
+
+---
+
 *Orbital Lab - 2025*

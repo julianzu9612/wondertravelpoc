@@ -44,3 +44,69 @@
 - Proyecto previo: `axis-wondertravel` (root `wonder-catalog`). Al hacer push a la rama principal, Vercel redeploya.
 - Configurar `NEXT_PUBLIC_SITE_URL` en Vercel antes de producción para OG/canonicals.
 - Si se usa `next export`/GitHub Pages, setear `output: 'export'` y `NEXT_PUBLIC_SITE_URL` acorde al dominio de Pages.
+
+---
+
+## Secciones B2B - 2025-12-14
+
+### Wonder Groups (`/universidades`)
+Landing completa para programas académicos (MBA, LLM, MPA, Executive Education).
+
+**Estructura:**
+- Hero con video Veo 3 (profesionales jóvenes en mercado latinoamericano)
+- Pilares: Servicio 24/7, Experiencias Únicas, Seguridad Garantizada
+- Program Types: MBA, LLM, MPA cards
+- Stats: +7,000 viajeros, +25 destinos, 15+ años, 4.9/5
+- Logo Grid: Harvard, MIT, Stanford, Chicago, Berkeley, Wharton, Columbia, YPO
+- Gallery: 7 fotos de grupos
+- Certificaciones: TourCert, Sello Paz, ACOTUR
+- Testimonios: 3 coordinadores universitarios
+- CTA: WhatsApp grupos (+57 310 236 1480)
+
+### Wonder Corporate (`/empresas`)
+Landing para experiencias corporativas (Team Building, Incentivos, Integraciones).
+
+**Estructura:**
+- Hero con video Veo 3 (colaboración de equipos corporativos)
+- Pilares: Team Building, Incentivos, Logística
+- Stats: +50 empresas, +80 NPS, 8 destinos, 100% satisfacción
+- Services Cards: 3 cards con imagen (Team Building, Viajes Incentivo, Retiros)
+- Destinations Map: Mapa Colombia interactivo con 8 ciudades
+- CTA: WhatsApp corporativo (+57 310 236 1480)
+
+### Videos Hero (Veo 3 + FFmpeg)
+
+| Archivo | Formato | Tamaño | Uso |
+|---------|---------|--------|-----|
+| hero-universidades.webm | VP9 | 1.4 MB | Navegadores modernos |
+| hero-universidades.mp4 | H.264 | 2.2 MB | Safari fallback |
+| hero-empresas.webm | VP9 | 1.3 MB | Navegadores modernos |
+| hero-empresas.mp4 | H.264 | 966 KB | Safari fallback |
+
+**Técnica watermark:** Video escalado 110% con `object-position: left top` para ocultar marca Veo.
+
+### Sistema WhatsApp Multi-Contacto
+
+| Sección | Número | Email |
+|---------|--------|-------|
+| Wonder Signature | +57 314 305 5465 | travelbuddy@wondertravel.co |
+| Universidades | +57 310 236 1480 | travelbuddygroups@wondertravel.co |
+| Empresas | +57 310 236 1480 | travelbuddygroups@wondertravel.co |
+
+El WhatsApp flotante detecta la ruta y usa el contacto apropiado automáticamente.
+
+### Archivos creados
+
+```
+src/components/b2b/           # 7 componentes reutilizables
+src/components/universidades/ # 2 componentes específicos
+src/components/empresas/      # 2 componentes específicos
+src/app/universidades/page.tsx
+src/app/empresas/page.tsx
+public/b2b/                   # Logos, fotos, videos (~15MB)
+```
+
+### Pendientes B2B (bloqueados)
+- Landings por ciudad `/empresas/[ciudad]` — esperando contenido JP
+- Nuevas experiencias Signature — esperando contenido JP
+- Links WeTravel — esperando URLs JP

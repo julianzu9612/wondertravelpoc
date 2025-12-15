@@ -1,0 +1,24 @@
+# Configuración del protocolo HANDOFF para este repo
+
+project:
+  name: "Wonder Travel - Catálogo Digital"
+  id: "fac8eeaa-4ac5-44c9-849f-8fbed239b496"  # Supabase project_id
+  vertical: "AXIS"
+  client: "Wonder Travel"
+
+repo:
+  org: "julianzu9612"  # o OrbitalLabBOG cuando se sincronice
+  name: "wondertravelpoc"
+  default_branch: "master"
+
+contacts:
+  - name: "Juan Pablo Gaviria"
+    role: "CEO"
+    decision_maker: true
+  - name: "Alejandro Guerrero"
+    role: "Operaciones"
+
+protocol:
+  version: "1.0"
+  initialized_at: "2025-12-14T21:05:00"
+  initialized_by: "orbix"

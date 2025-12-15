@@ -42,7 +42,7 @@ export function LogoGrid({ logos, title, description }: Props) {
                   alt={logo.alt}
                   width={120}
                   height={60}
-                  className="h-12 w-auto object-contain"
+                  className="h-12 w-auto object-contain invert"
                 />
               </div>
             ))}

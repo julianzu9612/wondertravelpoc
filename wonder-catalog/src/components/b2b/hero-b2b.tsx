@@ -6,6 +6,7 @@ type Props = {
   subtitle: string;
   description: string;
   backgroundImage: string;
+  backgroundVideo?: string; // Path without extension, e.g. "/b2b/videos/hero-universidades"
   contactType: ContactType;
   ctaText?: string;
   secondaryCtaText?: string;
@@ -18,6 +19,7 @@ export function HeroB2B({
   subtitle,
   description,
   backgroundImage,
+  backgroundVideo,
   contactType,
   ctaText = "Solicitar informacion",
   secondaryCtaText = "Conocer mas",
@@ -28,13 +30,30 @@ export function HeroB2B({
 
   return (
     <section className="relative isolate w-screen max-w-none -mx-[calc(50vw-50%)] overflow-hidden bg-black text-white">
-      <Image
-        src={backgroundImage}
-        alt={title}
-        fill
-        className="object-cover"
-        priority
-      />
+      {backgroundVideo ? (
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={backgroundImage}
+            className="h-[110%] w-[110%] object-cover"
+            style={{ objectPosition: "left top" }}
+          >
+            <source src={`${backgroundVideo}.webm`} type="video/webm" />
+            <source src={`${backgroundVideo}.mp4`} type="video/mp4" />
+          </video>
+        </div>
+      ) : (
+        <Image
+          src={backgroundImage}
+          alt={title}
+          fill
+          className="object-cover"
+          priority
+        />
+      )}
       <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/60 to-black/35" />
 
       <div className="relative mx-auto flex min-h-[85vh] w-full max-w-5xl flex-col justify-center px-4 pb-12 pt-14 sm:px-8 lg:px-12">

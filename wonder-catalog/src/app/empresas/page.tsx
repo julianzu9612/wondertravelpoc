@@ -82,6 +82,7 @@ export default function EmpresasPage() {
         subtitle="Wonder Corporate"
         description="Diseñamos viajes y actividades que fortalecen la cultura organizacional, premian el talento y crean conexiones reales entre tu equipo."
         backgroundImage="/b2b/corporate/hero-corporate.jpg"
+        backgroundVideo="/b2b/videos/hero-empresas"
         contactType="corporate"
         ctaText="Cotizar experiencia"
         secondaryCtaText="Ver servicios"

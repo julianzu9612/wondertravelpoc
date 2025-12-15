@@ -116,6 +116,7 @@ export default function UniversidadesPage() {
         subtitle="Wonder Groups"
         description="Diseñamos experiencias inmersivas para programas MBA, LLM y MPA de las universidades más prestigiosas del mundo. Cada viaje es una oportunidad de aprendizaje único."
         backgroundImage="/b2b/universities/hero-groups.jpg"
+        backgroundVideo="/b2b/videos/hero-universidades"
         contactType="groups"
         ctaText="Solicitar cotización"
         secondaryCtaText="Ver programas"

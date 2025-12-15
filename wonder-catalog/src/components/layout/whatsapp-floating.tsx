@@ -1,8 +1,12 @@
 import { MessageCircle } from "lucide-react";
-import { getWhatsAppHref } from "@/lib/whatsapp";
+import { getWhatsAppHref, ContactType } from "@/lib/whatsapp";
 
-export function WhatsAppFloating() {
-  const whatsappHref = getWhatsAppHref();
+type Props = {
+  contactType?: ContactType;
+};
+
+export function WhatsAppFloating({ contactType = "signature" }: Props) {
+  const whatsappHref = getWhatsAppHref(undefined, contactType);
 
   return (
     <a

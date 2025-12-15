@@ -43,7 +43,19 @@ export function Footer() {
                 href="/trips"
                 className="transition-colors hover:text-foreground"
               >
-                Viajes
+                Wonder Signature
+              </Link>
+              <Link
+                href="/universidades"
+                className="transition-colors hover:text-foreground"
+              >
+                Universidades
+              </Link>
+              <Link
+                href="/empresas"
+                className="transition-colors hover:text-foreground"
+              >
+                Empresas
               </Link>
               <Link
                 href="/contacto"

@@ -1,0 +1,23 @@
+# .orbital/config.yaml
+project:
+  name: "Catálogo Digital con IA - Wonder Travel"
+  id: "fac8eeaa-4ac5-44c9-849f-8fbed239b496"
+  vertical: "AXIS"
+  repo: "OrbitalLabBOG/axis-wondertravel"
+  client: "Wonder Travel"
+
+metadata:
+  created_at: "2025-12-16T15:40:21"
+  created_by: "orbix"
+  version: "1.0"
+
+contacts:
+  client:
+    - name: "Juan Pablo Gaviria"
+      role: "CEO"
+      decision_maker: true
+    - name: "Alejandro Guerrero"
+      role: "Operaciones"
+    - name: "Sebastián Rivera"
+      role: "IT/Sistemas"
+      phone: "+57 318 8134406"

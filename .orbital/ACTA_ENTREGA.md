@@ -38,6 +38,7 @@ El servidor local se validó con rutas principales respondiendo 200.
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — Mejora visual: gradientes + textura sutil, labels en hover/selección y animación del marker seleccionado.
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — “Más vida”: capas de color (gradientes tipo biomas) y rutas animadas entre ciudades.
 - `wonder-catalog/public/b2b/corporate/colombia-map-ai.png` — Base visual IA para el mapa (se usa como textura dentro del SVG, responsive).
+- `wonder-catalog/public/b2b/corporate/colombia-map-ai.webp` — Versión optimizada (mucho más liviana) usada por defecto para performance.
 - `wonder-catalog/src/components/home/hero.tsx` — Copy ajustado a “Latinoamérica” en el hero de Signature.
 
 ## Validación

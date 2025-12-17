@@ -115,7 +115,7 @@ export function DestinationsMap({
                 }))}
                 selectedId={selectedId}
                 hoveredId={hoveredId}
-                textureHref="/b2b/corporate/colombia-map-ai.png"
+                textureHref="/b2b/corporate/colombia-map-ai.webp"
                 showRoutes={false}
                 onSelect={setSelectedId}
                 onHover={setHoveredId}

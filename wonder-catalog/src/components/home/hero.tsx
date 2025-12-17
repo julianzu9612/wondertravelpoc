@@ -23,12 +23,12 @@ export function Hero() {
             Wonder Travel
           </span>
           <span className="h-px w-10 bg-white/25" />
-          <span className="font-semibold">Colombia auténtica</span>
+          <span className="font-semibold">Latinoamérica auténtica</span>
         </div>
 
         <div className="max-w-4xl space-y-6">
           <h1 className="font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-7xl">
-            Explora la Colombia que pocos conocen
+            Explora la Latinoamérica que pocos conocen
           </h1>
           <p className="text-lg text-white/85 sm:text-xl">
             Ciudad Perdida, Amazonas, Caño Cristales y más. Planes boutique con

@@ -103,7 +103,7 @@ export function DestinationsMap({
         </div>
 
         <div className="space-y-6">
-          <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-white shadow-sm">
+          <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-background via-background to-primary/5 shadow-sm">
             <div className="relative aspect-[16/10] sm:aspect-[16/9] p-4 sm:p-6">
               <ColombiaMap
                 markers={destinations.map((destination) => ({
@@ -114,6 +114,7 @@ export function DestinationsMap({
                   lon: destination.lon,
                 }))}
                 selectedId={selectedId}
+                hoveredId={hoveredId}
                 onSelect={setSelectedId}
                 onHover={setHoveredId}
               />

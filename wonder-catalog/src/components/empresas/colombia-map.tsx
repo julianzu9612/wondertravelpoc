@@ -15,6 +15,7 @@ type Marker = {
 type Props = {
   markers: Marker[];
   selectedId: string | null;
+  hoveredId?: string | null;
   onSelect: (id: string) => void;
   onHover?: (id: string | null) => void;
 };
@@ -22,7 +23,13 @@ type Props = {
 const VIEWBOX_WIDTH = 800;
 const VIEWBOX_HEIGHT = 980;
 
-export function ColombiaMap({ markers, selectedId, onSelect, onHover }: Props) {
+export function ColombiaMap({
+  markers,
+  selectedId,
+  hoveredId,
+  onSelect,
+  onHover,
+}: Props) {
   const { outlinePath, points } = useMemo(() => {
     const projection = geoMercator().fitSize(
       [VIEWBOX_WIDTH, VIEWBOX_HEIGHT],
@@ -43,6 +50,8 @@ export function ColombiaMap({ markers, selectedId, onSelect, onHover }: Props) {
     return { outlinePath, points };
   }, [markers]);
 
+  const activeId = hoveredId ?? selectedId;
+
   return (
     <svg
       viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`}
@@ -52,11 +61,29 @@ export function ColombiaMap({ markers, selectedId, onSelect, onHover }: Props) {
     >
       <defs>
         <linearGradient id="colombiaFill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="hsl(var(--muted))" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="hsl(var(--muted))" stopOpacity="0.15" />
+          <stop offset="0%" stopColor="hsl(var(--muted))" stopOpacity="0.42" />
+          <stop offset="55%" stopColor="hsl(var(--background))" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="hsl(var(--muted))" stopOpacity="0.18" />
         </linearGradient>
+        <radialGradient id="colombiaGlow" cx="30%" cy="20%" r="70%">
+          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.16" />
+          <stop offset="60%" stopColor="hsl(var(--primary))" stopOpacity="0.04" />
+          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+        </radialGradient>
+        <pattern
+          id="colombiaTexture"
+          width="18"
+          height="18"
+          patternUnits="userSpaceOnUse"
+        >
+          <circle cx="3" cy="4" r="1.2" fill="hsl(var(--foreground))" opacity="0.06" />
+          <circle cx="13" cy="12" r="1" fill="hsl(var(--foreground))" opacity="0.04" />
+        </pattern>
         <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
           <feDropShadow dx="0" dy="8" stdDeviation="12" floodOpacity="0.12" />
+        </filter>
+        <filter id="markerShadow" x="-60%" y="-60%" width="220%" height="220%">
+          <feDropShadow dx="0" dy="6" stdDeviation="6" floodOpacity="0.18" />
         </filter>
       </defs>
 
@@ -67,11 +94,21 @@ export function ColombiaMap({ markers, selectedId, onSelect, onHover }: Props) {
           stroke="hsl(var(--border))"
           strokeWidth={2}
         />
+        <path d={outlinePath} fill="url(#colombiaGlow)" />
+        <path d={outlinePath} fill="url(#colombiaTexture)" />
+        <path
+          d={outlinePath}
+          fill="transparent"
+          stroke="hsl(var(--primary))"
+          strokeOpacity={0.18}
+          strokeWidth={2}
+        />
       </g>
 
       {points.map((point) => {
         const isSelected = point.id === selectedId;
-        const radius = isSelected ? 10 : 8;
+        const isActive = point.id === activeId;
+        const radius = isSelected ? 10 : isActive ? 9 : 8;
 
         return (
           <g
@@ -95,20 +132,55 @@ export function ColombiaMap({ markers, selectedId, onSelect, onHover }: Props) {
           >
             <title>{point.label}</title>
             {isSelected ? (
-              <circle r={18} fill="hsl(var(--primary))" opacity={0.12} />
+              <circle
+                r={24}
+                fill="hsl(var(--primary))"
+                opacity={0.12}
+                className="animate-pulse"
+              />
             ) : null}
-            <circle
-              r={radius}
-              fill={isSelected ? "hsl(var(--primary))" : "hsl(var(--foreground))"}
-              opacity={isSelected ? 1 : 0.7}
-            />
-            <circle
-              r={radius + 3}
-              fill="transparent"
-              stroke="white"
-              strokeOpacity={0.9}
-              strokeWidth={2}
-            />
+
+            {isActive && !isSelected ? (
+              <circle r={20} fill="hsl(var(--primary))" opacity={0.09} />
+            ) : null}
+
+            <g filter="url(#markerShadow)">
+              <circle
+                r={radius + 4}
+                fill={isSelected ? "hsl(var(--primary))" : "hsl(var(--foreground))"}
+                opacity={isSelected ? 1 : 0.9}
+              />
+              <circle r={radius} fill="white" opacity={0.94} />
+              <circle
+                r={radius - 3}
+                fill={isSelected ? "hsl(var(--primary))" : "hsl(var(--foreground))"}
+                opacity={isSelected ? 1 : 0.7}
+              />
+            </g>
+
+            {isActive ? (
+              <g transform="translate(16, -18)">
+                <rect
+                  x={0}
+                  y={0}
+                  width={150}
+                  height={28}
+                  rx={14}
+                  fill="hsl(var(--background))"
+                  opacity={0.92}
+                  stroke="hsl(var(--border))"
+                />
+                <text
+                  x={12}
+                  y={19}
+                  fontSize={12}
+                  fontWeight={600}
+                  fill="hsl(var(--foreground))"
+                >
+                  {point.label}
+                </text>
+              </g>
+            ) : null}
           </g>
         );
       })}

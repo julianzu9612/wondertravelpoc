@@ -1,8 +1,8 @@
 ---
 task_id: "WT-2025-12-16-FASE1-CIERRE"
-completed_at: 2025-12-17T02:05:00Z
+completed_at: 2025-12-17T02:15:00Z
 executor: "agent"
-actual_hours: 4.0
+actual_hours: 4.5
 status: partial
 ---
 
@@ -36,6 +36,7 @@ El servidor local se validó con rutas principales respondiendo 200.
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — Nuevo componente de mapa de Colombia con proyección y markers por coordenadas.
 - `wonder-catalog/src/data/geo/colombia-110m.json` — Geometría Colombia (fuente: Natural Earth vía `world-atlas`).
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — Mejora visual: gradientes + textura sutil, labels en hover/selección y animación del marker seleccionado.
+- `wonder-catalog/src/components/empresas/colombia-map.tsx` — “Más vida”: capas de color (gradientes tipo biomas) y rutas animadas entre ciudades.
 - `wonder-catalog/src/components/home/hero.tsx` — Copy ajustado a “Latinoamérica” en el hero de Signature.
 
 ## Validación

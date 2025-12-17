@@ -1,6 +1,6 @@
 "use client";
 
-import { geoMercator, geoPath } from "d3-geo";
+import { geoInterpolate, geoMercator, geoPath } from "d3-geo";
 import { useMemo } from "react";
 import colombia from "@/data/geo/colombia-110m.json";
 
@@ -30,7 +30,7 @@ export function ColombiaMap({
   onSelect,
   onHover,
 }: Props) {
-  const { outlinePath, points } = useMemo(() => {
+  const { outlinePath, points, routes } = useMemo(() => {
     const projection = geoMercator().fitSize(
       [VIEWBOX_WIDTH, VIEWBOX_HEIGHT],
       colombia as unknown as GeoJSON.Feature
@@ -47,7 +47,43 @@ export function ColombiaMap({
       })
       .filter((point): point is NonNullable<typeof point> => Boolean(point));
 
-    return { outlinePath, points };
+    const markerById = new Map(markers.map((marker) => [marker.id, marker]));
+    const routePairs: Array<[string, string]> = [
+      ["bogota", "medellin"],
+      ["bogota", "cartagena"],
+      ["bogota", "cali"],
+      ["bogota", "san-andres"],
+      ["medellin", "cartagena"],
+      ["medellin", "santa-marta"],
+      ["eje-cafetero", "cali"],
+      ["cartagena", "santa-marta"],
+    ];
+
+    const routes = routePairs
+      .map(([from, to]) => {
+        const start = markerById.get(from);
+        const end = markerById.get(to);
+        if (!start || !end) return null;
+
+        const interpolate = geoInterpolate(
+          [start.lon, start.lat],
+          [end.lon, end.lat]
+        );
+        const steps = 22;
+        const coordinates = Array.from({ length: steps + 1 }, (_, index) =>
+          interpolate(index / steps)
+        );
+        const d =
+          path({
+            type: "LineString",
+            coordinates,
+          } as unknown as GeoJSON.LineString) ?? "";
+
+        return { id: `${from}-${to}`, d };
+      })
+      .filter((route): route is NonNullable<typeof route> => Boolean(route));
+
+    return { outlinePath, points, routes };
   }, [markers]);
 
   const activeId = hoveredId ?? selectedId;
@@ -59,16 +95,61 @@ export function ColombiaMap({
       role="img"
       aria-label="Mapa de Colombia con destinos seleccionables"
     >
+      <style>{`
+        @keyframes routeDash {
+          to {
+            stroke-dashoffset: -160;
+          }
+        }
+        .route {
+          stroke-dasharray: 7 10;
+          animation: routeDash 18s linear infinite;
+        }
+        .routeSlow {
+          stroke-dasharray: 2 12;
+          animation: routeDash 28s linear infinite;
+          opacity: 0.35;
+        }
+      `}</style>
+
       <defs>
         <linearGradient id="colombiaFill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="hsl(var(--muted))" stopOpacity="0.42" />
-          <stop offset="55%" stopColor="hsl(var(--background))" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="hsl(var(--muted))" stopOpacity="0.18" />
+          <stop
+            offset="0%"
+            stopColor="hsl(var(--background))"
+            stopOpacity="0.98"
+          />
+          <stop offset="100%" stopColor="hsl(var(--muted))" stopOpacity="0.25" />
+        </linearGradient>
+        <linearGradient id="ocean" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#eff6ff" stopOpacity="0.95" />
+          <stop offset="50%" stopColor="#ffffff" stopOpacity="0.9" />
+          <stop offset="100%" stopColor="#fff7ed" stopOpacity="0.95" />
         </linearGradient>
         <radialGradient id="colombiaGlow" cx="30%" cy="20%" r="70%">
           <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.16" />
           <stop offset="60%" stopColor="hsl(var(--primary))" stopOpacity="0.04" />
           <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="biomeCaribbean" cx="62%" cy="10%" r="48%">
+          <stop offset="0%" stopColor="#fde047" stopOpacity="0.52" />
+          <stop offset="55%" stopColor="#fde047" stopOpacity="0.14" />
+          <stop offset="100%" stopColor="#fde047" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="biomePacific" cx="16%" cy="58%" r="55%">
+          <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.38" />
+          <stop offset="60%" stopColor="#38bdf8" stopOpacity="0.12" />
+          <stop offset="100%" stopColor="#38bdf8" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="biomeAndes" cx="48%" cy="45%" r="60%">
+          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.32" />
+          <stop offset="65%" stopColor="hsl(var(--primary))" stopOpacity="0.1" />
+          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="biomeAmazon" cx="78%" cy="88%" r="70%">
+          <stop offset="0%" stopColor="#22c55e" stopOpacity="0.28" />
+          <stop offset="70%" stopColor="#22c55e" stopOpacity="0.08" />
+          <stop offset="100%" stopColor="#22c55e" stopOpacity="0" />
         </radialGradient>
         <pattern
           id="colombiaTexture"
@@ -85,19 +166,66 @@ export function ColombiaMap({
         <filter id="markerShadow" x="-60%" y="-60%" width="220%" height="220%">
           <feDropShadow dx="0" dy="6" stdDeviation="6" floodOpacity="0.18" />
         </filter>
+        <path id="colombia-outline" d={outlinePath} />
+        <clipPath id="colombia-clip">
+          <use href="#colombia-outline" />
+        </clipPath>
+        <linearGradient id="routeStroke" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.65" />
+          <stop offset="60%" stopColor="#38bdf8" stopOpacity="0.5" />
+          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.7" />
+        </linearGradient>
       </defs>
 
+      <rect width={VIEWBOX_WIDTH} height={VIEWBOX_HEIGHT} fill="url(#ocean)" />
+
       <g filter="url(#softShadow)">
-        <path
-          d={outlinePath}
-          fill="url(#colombiaFill)"
+        <use href="#colombia-outline" fill="url(#colombiaFill)" />
+        <g clipPath="url(#colombia-clip)">
+          <rect
+            width={VIEWBOX_WIDTH}
+            height={VIEWBOX_HEIGHT}
+            fill="url(#biomeCaribbean)"
+          />
+          <rect
+            width={VIEWBOX_WIDTH}
+            height={VIEWBOX_HEIGHT}
+            fill="url(#biomePacific)"
+          />
+          <rect width={VIEWBOX_WIDTH} height={VIEWBOX_HEIGHT} fill="url(#biomeAndes)" />
+          <rect width={VIEWBOX_WIDTH} height={VIEWBOX_HEIGHT} fill="url(#biomeAmazon)" />
+          <use href="#colombia-outline" fill="url(#colombiaGlow)" />
+          <use href="#colombia-outline" fill="url(#colombiaTexture)" />
+
+          {routes.map((route) => (
+            <g key={route.id}>
+              <path
+                d={route.d}
+                className="routeSlow"
+                stroke="hsl(var(--foreground))"
+                strokeOpacity={0.25}
+                strokeWidth={3}
+                fill="none"
+              />
+              <path
+                d={route.d}
+                className="route"
+                stroke="url(#routeStroke)"
+                strokeWidth={2}
+                fill="none"
+              />
+            </g>
+          ))}
+        </g>
+
+        <use
+          href="#colombia-outline"
+          fill="transparent"
           stroke="hsl(var(--border))"
           strokeWidth={2}
         />
-        <path d={outlinePath} fill="url(#colombiaGlow)" />
-        <path d={outlinePath} fill="url(#colombiaTexture)" />
-        <path
-          d={outlinePath}
+        <use
+          href="#colombia-outline"
           fill="transparent"
           stroke="hsl(var(--primary))"
           strokeOpacity={0.18}

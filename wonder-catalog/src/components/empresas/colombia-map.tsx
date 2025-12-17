@@ -16,6 +16,8 @@ type Props = {
   markers: Marker[];
   selectedId: string | null;
   hoveredId?: string | null;
+  textureHref?: string;
+  showRoutes?: boolean;
   onSelect: (id: string) => void;
   onHover?: (id: string | null) => void;
 };
@@ -27,6 +29,8 @@ export function ColombiaMap({
   markers,
   selectedId,
   hoveredId,
+  textureHref,
+  showRoutes = false,
   onSelect,
   onHover,
 }: Props) {
@@ -182,40 +186,77 @@ export function ColombiaMap({
       <g filter="url(#softShadow)">
         <use href="#colombia-outline" fill="url(#colombiaFill)" />
         <g clipPath="url(#colombia-clip)">
+          {textureHref ? (
+            <>
+              <image
+                href={textureHref}
+                x={0}
+                y={0}
+                width={VIEWBOX_WIDTH}
+                height={VIEWBOX_HEIGHT}
+                preserveAspectRatio="xMidYMid slice"
+                opacity={0.98}
+              />
+              <use
+                href="#colombia-outline"
+                fill="white"
+                opacity={0.1}
+              />
+            </>
+          ) : null}
+
           <rect
             width={VIEWBOX_WIDTH}
             height={VIEWBOX_HEIGHT}
             fill="url(#biomeCaribbean)"
+            opacity={textureHref ? 0.18 : 1}
           />
           <rect
             width={VIEWBOX_WIDTH}
             height={VIEWBOX_HEIGHT}
             fill="url(#biomePacific)"
+            opacity={textureHref ? 0.14 : 1}
           />
-          <rect width={VIEWBOX_WIDTH} height={VIEWBOX_HEIGHT} fill="url(#biomeAndes)" />
-          <rect width={VIEWBOX_WIDTH} height={VIEWBOX_HEIGHT} fill="url(#biomeAmazon)" />
+          <rect
+            width={VIEWBOX_WIDTH}
+            height={VIEWBOX_HEIGHT}
+            fill="url(#biomeAndes)"
+            opacity={textureHref ? 0.16 : 1}
+          />
+          <rect
+            width={VIEWBOX_WIDTH}
+            height={VIEWBOX_HEIGHT}
+            fill="url(#biomeAmazon)"
+            opacity={textureHref ? 0.12 : 1}
+          />
           <use href="#colombia-outline" fill="url(#colombiaGlow)" />
-          <use href="#colombia-outline" fill="url(#colombiaTexture)" />
+          <use
+            href="#colombia-outline"
+            fill="url(#colombiaTexture)"
+            opacity={textureHref ? 0.55 : 1}
+          />
 
-          {routes.map((route) => (
-            <g key={route.id}>
-              <path
-                d={route.d}
-                className="routeSlow"
-                stroke="hsl(var(--foreground))"
-                strokeOpacity={0.25}
-                strokeWidth={3}
-                fill="none"
-              />
-              <path
-                d={route.d}
-                className="route"
-                stroke="url(#routeStroke)"
-                strokeWidth={2}
-                fill="none"
-              />
-            </g>
-          ))}
+          {showRoutes
+            ? routes.map((route) => (
+                <g key={route.id}>
+                  <path
+                    d={route.d}
+                    className="routeSlow"
+                    stroke="hsl(var(--foreground))"
+                    strokeOpacity={0.25}
+                    strokeWidth={3}
+                    fill="none"
+                  />
+                  <path
+                    d={route.d}
+                    className="route"
+                    stroke="url(#routeStroke)"
+                    strokeWidth={2}
+                    fill="none"
+                  />
+                </g>
+              ))
+            : null}
         </g>
 
         <use

@@ -115,6 +115,8 @@ export function DestinationsMap({
                 }))}
                 selectedId={selectedId}
                 hoveredId={hoveredId}
+                textureHref="/b2b/corporate/colombia-map-ai.png"
+                showRoutes={false}
                 onSelect={setSelectedId}
                 onHover={setHoveredId}
               />

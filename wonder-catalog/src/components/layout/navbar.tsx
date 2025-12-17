@@ -7,7 +7,9 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { type ContactType, getWhatsAppHref } from "@/lib/whatsapp";
 
-const navLinks = [
+type NavLink = { href: string; label: string };
+
+const navLinks: NavLink[] = [
   { href: "/", label: "Inicio" },
   { href: "/trips", label: "Wonder Signature" },
   { href: "/universidades", label: "Universidades" },
@@ -35,7 +37,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-function MobileMenu({ navLinks }: { navLinks: typeof navLinks }) {
+function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {

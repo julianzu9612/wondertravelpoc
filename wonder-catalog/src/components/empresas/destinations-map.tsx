@@ -1,24 +1,73 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useState } from "react";
+import { ColombiaMap } from "@/components/empresas/colombia-map";
 
 type Destination = {
+  id: string;
   city: string;
   description: string;
-  top: number;
-  left: number;
+  lat: number;
+  lon: number;
 };
 
 const destinations: Destination[] = [
-  { city: "Cartagena", description: "Historia y mar Caribe", top: 22, left: 58 },
-  { city: "Santa Marta", description: "Sierra Nevada y playas", top: 20, left: 64 },
-  { city: "San Andrés", description: "Mar de los siete colores", top: 26, left: 26 },
-  { city: "Medellín", description: "Innovación y transformación", top: 36, left: 50 },
-  { city: "Eje Cafetero", description: "Paisaje cultural cafetero", top: 47, left: 50 },
-  { city: "Cali", description: "Salsa y alegría", top: 57, left: 47 },
-  { city: "Bogotá", description: "Capital cultural y empresarial", top: 49, left: 60 },
-  { city: "Villa de Leyva", description: "Pueblo colonial mágico", top: 44, left: 61 },
+  {
+    id: "cartagena",
+    city: "Cartagena",
+    description: "Historia, Caribe y experiencias premium.",
+    lat: 10.391,
+    lon: -75.4794,
+  },
+  {
+    id: "santa-marta",
+    city: "Santa Marta",
+    description: "Sierra Nevada, Tayrona y naturaleza.",
+    lat: 11.2408,
+    lon: -74.199,
+  },
+  {
+    id: "san-andres",
+    city: "San Andrés",
+    description: "Mar de los siete colores.",
+    lat: 12.5847,
+    lon: -81.7006,
+  },
+  {
+    id: "medellin",
+    city: "Medellín",
+    description: "Innovación, cultura y transformación.",
+    lat: 6.2442,
+    lon: -75.5812,
+  },
+  {
+    id: "eje-cafetero",
+    city: "Eje Cafetero",
+    description: "Paisaje cultural cafetero.",
+    lat: 4.5339,
+    lon: -75.6811,
+  },
+  {
+    id: "cali",
+    city: "Cali",
+    description: "Salsa, alegría y buen clima.",
+    lat: 3.4516,
+    lon: -76.532,
+  },
+  {
+    id: "bogota",
+    city: "Bogotá",
+    description: "Capital cultural y empresarial.",
+    lat: 4.711,
+    lon: -74.0721,
+  },
+  {
+    id: "villa-de-leyva",
+    city: "Villa de Leyva",
+    description: "Pueblo colonial mágico.",
+    lat: 5.6333,
+    lon: -73.5231,
+  },
 ];
 
 type Props = {
@@ -30,10 +79,15 @@ export function DestinationsMap({
   title = "Destinos en toda Colombia",
   description = "Operamos en los destinos más icónicos del país, con conocimiento local y red de aliados en cada región.",
 }: Props) {
-  const [selectedCity, setSelectedCity] = useState<string>(destinations[0]?.city ?? "");
+  const [selectedId, setSelectedId] = useState<string>(destinations[0]?.id ?? "");
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const selected = useMemo(
-    () => destinations.find((destination) => destination.city === selectedCity) ?? null,
-    [selectedCity]
+    () => destinations.find((destination) => destination.id === selectedId) ?? null,
+    [selectedId]
+  );
+  const hovered = useMemo(
+    () => destinations.find((destination) => destination.id === hoveredId) ?? null,
+    [hoveredId]
   );
 
   return (
@@ -50,36 +104,31 @@ export function DestinationsMap({
 
         <div className="space-y-6">
           <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-white shadow-sm">
-            <div className="relative aspect-[16/10] sm:aspect-[16/9]">
-              <Image
-                src="/b2b/corporate/colombia-destinations-map.png"
-                alt="Mapa de Colombia"
-                fill
-                priority={false}
-                className="object-cover origin-right scale-[1.35]"
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] p-4 sm:p-6">
+              <ColombiaMap
+                markers={destinations.map((destination) => ({
+                  id: destination.id,
+                  label: destination.city,
+                  description: destination.description,
+                  lat: destination.lat,
+                  lon: destination.lon,
+                }))}
+                selectedId={selectedId}
+                onSelect={setSelectedId}
+                onHover={setHoveredId}
               />
 
-              {destinations.map((destination) => {
-                const isSelected = destination.city === selectedCity;
-
-                return (
-                  <button
-                    key={destination.city}
-                    type="button"
-                    title={destination.city}
-                    aria-label={`Seleccionar ${destination.city}`}
-                    onClick={() => setSelectedCity(destination.city)}
-                    className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full border shadow-sm transition ${
-                      isSelected
-                        ? "border-primary bg-primary text-primary-foreground"
-                        : "border-white/70 bg-white/90 text-foreground hover:bg-white"
-                    }`}
-                    style={{ top: `${destination.top}%`, left: `${destination.left}%` }}
-                  >
-                    <span className="block h-3.5 w-3.5 sm:h-4 sm:w-4 rounded-full bg-current opacity-90" />
-                  </button>
-                );
-              })}
+              <div className="pointer-events-none absolute left-4 top-4 rounded-2xl border border-border/60 bg-background/90 px-4 py-3 text-left shadow-sm backdrop-blur sm:left-6 sm:top-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                  {hovered ? "Explorar" : "Seleccionado"}
+                </p>
+                <p className="mt-1 font-display text-lg font-semibold leading-tight">
+                  {(hovered ?? selected)?.city ?? "—"}
+                </p>
+                <p className="mt-0.5 max-w-[18rem] text-xs text-muted-foreground">
+                  {(hovered ?? selected)?.description ?? ""}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -99,11 +148,11 @@ export function DestinationsMap({
             <div className="flex flex-wrap justify-center gap-2 sm:justify-end">
               {destinations.map((destination) => (
                 <button
-                  key={destination.city}
+                  key={destination.id}
                   type="button"
-                  onClick={() => setSelectedCity(destination.city)}
+                  onClick={() => setSelectedId(destination.id)}
                   className={`rounded-full border px-3 py-1 text-xs font-semibold transition ${
-                    destination.city === selectedCity
+                    destination.id === selectedId
                       ? "border-primary bg-primary text-primary-foreground"
                       : "border-border/70 bg-white text-foreground/80 hover:text-foreground"
                   }`}

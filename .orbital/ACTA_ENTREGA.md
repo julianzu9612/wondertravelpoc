@@ -1,8 +1,8 @@
 ---
 task_id: "WT-2025-12-16-FASE1-CIERRE"
-completed_at: 2025-12-17T01:40:00Z
+completed_at: 2025-12-17T01:55:00Z
 executor: "agent"
-actual_hours: 1.5
+actual_hours: 3.5
 status: partial
 ---
 
@@ -32,7 +32,9 @@ El servidor local se validó con rutas principales respondiendo 200.
 - `.gitignore` — Permite videos `*.mp4/*.webm` necesarios dentro de `wonder-catalog/public/`.
 - `wonder-catalog/` — Proyecto web consolidado en el root (antes estaba bajo `v2.0/wonder-catalog`).
 - `wonder-catalog/src/components/layout/navbar.tsx` — Menú hamburguesa mobile (overlay) + botón WhatsApp como ícono, con link dinámico por sección.
-- `wonder-catalog/src/components/empresas/destinations-map.tsx` — Mapa simplificado (sin números/stats visibles) y 8 ciudades clickeables.
+- `wonder-catalog/src/components/empresas/destinations-map.tsx` — Refactor del mapa a vector (SVG) con 8 ciudades clickeables, sin depender de imagen.
+- `wonder-catalog/src/components/empresas/colombia-map.tsx` — Nuevo componente de mapa de Colombia con proyección y markers por coordenadas.
+- `wonder-catalog/src/data/geo/colombia-110m.json` — Geometría Colombia (fuente: Natural Earth vía `world-atlas`).
 - `wonder-catalog/src/components/home/hero.tsx` — Copy ajustado a “Latinoamérica” en el hero de Signature.
 
 ## Validación

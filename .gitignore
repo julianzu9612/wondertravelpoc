@@ -5,6 +5,10 @@
 *.avi
 *.mkv
 
+# Allowlist: assets necesarios del sitio
+!wonder-catalog/public/**/*.mp4
+!wonder-catalog/public/**/*.webm
+
 # Node
 node_modules/
 .next/

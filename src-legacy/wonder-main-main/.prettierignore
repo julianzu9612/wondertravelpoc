@@ -1,6 +1,0 @@
-.cache
-dist/
-package.json
-package-lock.json
-public
-yarn.lock

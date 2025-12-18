@@ -45,6 +45,7 @@ El servidor local se validó con rutas principales respondiendo 200.
 - `wonder-catalog/public/b2b/corporate/destinations/` — Imágenes de destinos descargadas desde Lovable para uso local (paths estables).
 - `wonder-catalog/src/components/empresas/destination-detail-panel.tsx` — Panel de detalle premium: hero image + tagline + experiencias (data-driven).
 - `wonder-catalog/src/components/empresas/destinations-map.tsx` — Ajuste layout: columnas alineadas (misma altura en desktop) y listas con scroll sin cortes.
+- `wonder-catalog/src/components/empresas/destinations-map.tsx` — Nuevo layout: chips (tags) de destinos arriba full-width; mapa más compacto a la izquierda y detalle expandido a la derecha.
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — Fix tooltip: colores con fallback (evita tooltip negro/invisible en SVG).
 - `wonder-catalog/src/components/home/hero.tsx` — Copy ajustado a “Latinoamérica” en el hero de Signature.
 

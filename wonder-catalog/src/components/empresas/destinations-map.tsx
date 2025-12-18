@@ -36,9 +36,61 @@ export function DestinationsMap({
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_460px] lg:items-stretch">
-          <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-background via-background to-primary/5 shadow-sm">
-            <div className="relative aspect-[16/10] p-4 sm:aspect-[16/9] sm:p-6 lg:aspect-auto lg:h-[640px]">
+        <div className="rounded-3xl border border-border/70 bg-white p-4 shadow-sm sm:p-5">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                Destinos
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Hover para preview; click para fijar.
+              </p>
+            </div>
+            <p className="text-xs font-semibold text-foreground/60">
+              {destinations.length} destinos
+            </p>
+          </div>
+
+          <div
+            className="mt-4 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:flex-wrap lg:overflow-visible"
+            onMouseLeave={() => setHoveredId(null)}
+          >
+            {destinations.map((destination) => {
+              const isSelected = destination.id === selectedId;
+              const isActive = destination.id === activeId;
+
+              return (
+                <button
+                  key={destination.id}
+                  type="button"
+                  onClick={() => setSelectedId(destination.id)}
+                  onMouseEnter={() => setHoveredId(destination.id)}
+                  onFocus={() => setHoveredId(destination.id)}
+                  onBlur={() => setHoveredId(null)}
+                  className={`group inline-flex flex-none items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
+                    isSelected
+                      ? "border-primary/40 bg-primary/10 text-primary"
+                      : isActive
+                        ? "border-primary/30 bg-muted/40 text-foreground"
+                        : "border-border/70 bg-white text-foreground/80"
+                  }`}
+                >
+                  <span
+                    className={`h-2 w-2 rounded-full ${
+                      isSelected ? "bg-primary" : "bg-muted-foreground/40"
+                    }`}
+                    aria-hidden="true"
+                  />
+                  {destination.name}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-12 lg:items-stretch">
+          <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-background via-background to-primary/5 shadow-sm lg:col-span-5 lg:h-[720px]">
+            <div className="relative aspect-[16/10] p-4 sm:aspect-[16/9] sm:p-6 lg:aspect-auto lg:h-full">
               <ColombiaMap
                 markers={destinations.map((destination) => ({
                   id: destination.id,
@@ -57,64 +109,9 @@ export function DestinationsMap({
             </div>
           </div>
 
-          <aside className="lg:sticky lg:top-24 lg:h-[640px]">
-            <div className="grid h-full gap-4 lg:grid-rows-[minmax(0,1fr)_240px]">
-              <div className="min-h-0">
-                {selected ? <DestinationDetailPanel destination={selected} /> : null}
-              </div>
-
-              <div className="flex h-full min-h-0 flex-col overflow-hidden rounded-3xl border border-border/70 bg-white p-4 shadow-sm sm:p-5">
-                <div className="mb-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                    Destinos (hover para preview)
-                  </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Pasa el mouse por el mapa o la lista; haz click para fijar.
-                  </p>
-                </div>
-
-                <div className="grid min-h-0 flex-1 gap-3 overflow-auto pr-1">
-                  {destinations.map((destination) => {
-                    const isSelected = destination.id === selectedId;
-                    const isActive = destination.id === activeId;
-
-                    return (
-                      <button
-                        key={destination.id}
-                        type="button"
-                        onClick={() => setSelectedId(destination.id)}
-                        onMouseEnter={() => setHoveredId(destination.id)}
-                        onMouseLeave={() => setHoveredId(null)}
-                        onFocus={() => setHoveredId(destination.id)}
-                        onBlur={() => setHoveredId(null)}
-                        className={`rounded-2xl border p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
-                          isSelected
-                            ? "border-primary/40 bg-primary/5"
-                            : isActive
-                              ? "border-primary/30 bg-muted/30"
-                              : "border-border/70 bg-white"
-                        }`}
-                      >
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="min-w-0">
-                            <p className="font-semibold">{destination.name}</p>
-                            <p className="mt-1 text-xs text-muted-foreground">
-                              {destination.tagline}
-                            </p>
-                          </div>
-
-                          <span
-                            className={`mt-0.5 inline-flex h-2.5 w-2.5 rounded-full ${
-                              isSelected ? "bg-primary" : "bg-muted-foreground/40"
-                            }`}
-                            aria-hidden="true"
-                          />
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
+          <aside className="lg:col-span-7 lg:h-[720px]">
+            <div className="h-full min-h-0">
+              {selected ? <DestinationDetailPanel destination={selected} /> : null}
             </div>
           </aside>
         </div>

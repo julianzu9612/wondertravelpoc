@@ -95,7 +95,7 @@ export function DestinationDetailPanel({ destination }: Props) {
             fill
             className="object-cover"
             priority={false}
-            sizes="(min-width: 1024px) 460px, 100vw"
+            sizes="(min-width: 1024px) 720px, 100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-white/0" />
         </div>

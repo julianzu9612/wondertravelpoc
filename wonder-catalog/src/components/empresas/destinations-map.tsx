@@ -2,73 +2,9 @@
 
 import { useMemo, useState } from "react";
 import { ColombiaMap } from "@/components/empresas/colombia-map";
+import { CORPORATE_DESTINATIONS } from "@/data/empresas/destinations";
 
-type Destination = {
-  id: string;
-  city: string;
-  description: string;
-  lat: number;
-  lon: number;
-};
-
-const destinations: Destination[] = [
-  {
-    id: "cartagena",
-    city: "Cartagena",
-    description: "Historia, Caribe y experiencias premium.",
-    lat: 10.391,
-    lon: -75.4794,
-  },
-  {
-    id: "santa-marta",
-    city: "Santa Marta",
-    description: "Sierra Nevada, Tayrona y naturaleza.",
-    lat: 11.2408,
-    lon: -74.199,
-  },
-  {
-    id: "san-andres",
-    city: "San Andrés",
-    description: "Mar de los siete colores.",
-    lat: 12.5847,
-    lon: -81.7006,
-  },
-  {
-    id: "medellin",
-    city: "Medellín",
-    description: "Innovación, cultura y transformación.",
-    lat: 6.2442,
-    lon: -75.5812,
-  },
-  {
-    id: "eje-cafetero",
-    city: "Eje Cafetero",
-    description: "Paisaje cultural cafetero.",
-    lat: 4.5339,
-    lon: -75.6811,
-  },
-  {
-    id: "cali",
-    city: "Cali",
-    description: "Salsa, alegría y buen clima.",
-    lat: 3.4516,
-    lon: -76.532,
-  },
-  {
-    id: "bogota",
-    city: "Bogotá",
-    description: "Capital cultural y empresarial.",
-    lat: 4.711,
-    lon: -74.0721,
-  },
-  {
-    id: "villa-de-leyva",
-    city: "Villa de Leyva",
-    description: "Pueblo colonial mágico.",
-    lat: 5.6333,
-    lon: -73.5231,
-  },
-];
+const destinations = CORPORATE_DESTINATIONS;
 
 type Props = {
   title?: string;
@@ -85,15 +21,11 @@ export function DestinationsMap({
     () => destinations.find((destination) => destination.id === selectedId) ?? null,
     [selectedId]
   );
-  const hovered = useMemo(
-    () => destinations.find((destination) => destination.id === hoveredId) ?? null,
-    [hoveredId]
-  );
 
   return (
     <section className="py-16 sm:py-20 bg-muted/30">
-      <div className="mx-auto max-w-5xl px-4 sm:px-8">
-        <div className="mb-12 text-center">
+      <div className="mx-auto max-w-6xl px-4 sm:px-8">
+        <div className="mb-10 text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
             {title}
           </h2>
@@ -102,9 +34,9 @@ export function DestinationsMap({
           </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
           <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-background via-background to-primary/5 shadow-sm">
-            <div className="relative aspect-[16/10] sm:aspect-[16/9] p-4 sm:p-6">
+            <div className="relative aspect-[16/10] p-4 sm:aspect-[16/9] sm:p-6 lg:aspect-auto lg:min-h-[520px]">
               <ColombiaMap
                 markers={destinations.map((destination) => ({
                   id: destination.id,
@@ -120,51 +52,74 @@ export function DestinationsMap({
                 onSelect={setSelectedId}
                 onHover={setHoveredId}
               />
-
-              <div className="pointer-events-none absolute left-4 top-4 rounded-2xl border border-border/60 bg-background/90 px-4 py-3 text-left shadow-sm backdrop-blur sm:left-6 sm:top-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                  {hovered ? "Explorar" : "Seleccionado"}
-                </p>
-                <p className="mt-1 font-display text-lg font-semibold leading-tight">
-                  {(hovered ?? selected)?.city ?? "—"}
-                </p>
-                <p className="mt-0.5 max-w-[18rem] text-xs text-muted-foreground">
-                  {(hovered ?? selected)?.description ?? ""}
-                </p>
-              </div>
             </div>
           </div>
 
-          <div className="mx-auto flex max-w-3xl flex-col items-center gap-3 rounded-2xl border border-border/70 bg-white p-5 text-center shadow-sm sm:flex-row sm:justify-between sm:text-left">
-            <div>
+          <aside className="rounded-3xl border border-border/70 bg-white p-4 shadow-sm sm:p-5">
+            <div className="mb-4">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                Ciudad seleccionada
+                Destinos
               </p>
               <h3 className="mt-1 font-display text-2xl font-semibold">
-                {selected?.city ?? "—"}
+                {selected?.city ?? "Explora Colombia"}
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                {selected?.description ?? ""}
+                Pasa el mouse por el mapa o la lista para ver detalles.
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-2 sm:justify-end">
-              {destinations.map((destination) => (
-                <button
-                  key={destination.id}
-                  type="button"
-                  onClick={() => setSelectedId(destination.id)}
-                  className={`rounded-full border px-3 py-1 text-xs font-semibold transition ${
-                    destination.id === selectedId
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border/70 bg-white text-foreground/80 hover:text-foreground"
-                  }`}
-                >
-                  {destination.city}
-                </button>
-              ))}
+            <div className="grid gap-3">
+              {destinations.map((destination) => {
+                const isSelected = destination.id === selectedId;
+
+                return (
+                  <button
+                    key={destination.id}
+                    type="button"
+                    onClick={() => setSelectedId(destination.id)}
+                    onMouseEnter={() => setHoveredId(destination.id)}
+                    onMouseLeave={() => setHoveredId(null)}
+                    onFocus={() => setHoveredId(destination.id)}
+                    onBlur={() => setHoveredId(null)}
+                    className={`rounded-2xl border p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
+                      isSelected
+                        ? "border-primary/40 bg-primary/5"
+                        : "border-border/70 bg-white"
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <p className="font-semibold">{destination.city}</p>
+                        <p className="mt-1 text-xs text-muted-foreground">
+                          {destination.description}
+                        </p>
+                      </div>
+
+                      <span
+                        className={`mt-0.5 inline-flex h-2.5 w-2.5 rounded-full ${
+                          isSelected ? "bg-primary" : "bg-muted-foreground/40"
+                        }`}
+                        aria-hidden="true"
+                      />
+                    </div>
+
+                    {isSelected && destination.highlights?.length ? (
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {destination.highlights.slice(0, 3).map((highlight) => (
+                          <span
+                            key={highlight}
+                            className="rounded-full border border-border/70 bg-white px-2.5 py-1 text-[11px] font-semibold text-foreground/80"
+                          >
+                            {highlight}
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
+                  </button>
+                );
+              })}
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>

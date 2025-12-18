@@ -25,6 +25,37 @@ type Props = {
 const VIEWBOX_WIDTH = 800;
 const VIEWBOX_HEIGHT = 980;
 
+function wrapText(text: string, maxCharsPerLine: number, maxLines: number) {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  const lines: string[] = [];
+  let current = "";
+
+  for (const word of words) {
+    const candidate = current ? `${current} ${word}` : word;
+    if (candidate.length <= maxCharsPerLine) {
+      current = candidate;
+      continue;
+    }
+
+    if (current) lines.push(current);
+    current = word;
+    if (lines.length >= maxLines) break;
+  }
+
+  if (lines.length < maxLines && current) lines.push(current);
+  if (lines.length > maxLines) lines.length = maxLines;
+
+  if (lines.length === maxLines && words.length) {
+    const joined = lines.join(" ");
+    if (joined.length < text.trim().length) {
+      const last = lines[maxLines - 1] ?? "";
+      lines[maxLines - 1] = last.length > 1 ? `${last.replace(/[.,;:!?]$/, "")}…` : `${last}…`;
+    }
+  }
+
+  return lines;
+}
+
 export function ColombiaMap({
   markers,
   selectedId,
@@ -278,6 +309,24 @@ export function ColombiaMap({
         const isSelected = point.id === selectedId;
         const isActive = point.id === activeId;
         const radius = isSelected ? 10 : isActive ? 9 : 8;
+        const tooltipWidth = 240;
+        const tooltipPaddingX = 14;
+        const tooltipTopPadding = 14;
+        const tooltipLineHeight = 16;
+        const tooltipTitleSize = 13;
+        const tooltipDescSize = 12;
+        const descriptionLines = isActive
+          ? wrapText(point.description ?? "", 34, 2)
+          : [];
+        const tooltipHeight =
+          tooltipTopPadding +
+          18 +
+          (descriptionLines.length ? 6 + descriptionLines.length * tooltipLineHeight : 0) +
+          14;
+        const prefersLeft = point.x > VIEWBOX_WIDTH * 0.62;
+        const prefersBottom = point.y < VIEWBOX_HEIGHT * 0.2;
+        const tooltipX = prefersLeft ? -tooltipWidth - 18 : 18;
+        const tooltipY = prefersBottom ? 18 : -tooltipHeight - 18;
 
         return (
           <g
@@ -328,26 +377,42 @@ export function ColombiaMap({
             </g>
 
             {isActive ? (
-              <g transform="translate(16, -18)">
+              <g transform={`translate(${tooltipX}, ${tooltipY})`}>
                 <rect
                   x={0}
                   y={0}
-                  width={150}
-                  height={28}
-                  rx={14}
+                  width={tooltipWidth}
+                  height={tooltipHeight}
+                  rx={18}
                   fill="hsl(var(--background))"
                   opacity={0.92}
                   stroke="hsl(var(--border))"
                 />
                 <text
-                  x={12}
-                  y={19}
-                  fontSize={12}
+                  x={tooltipPaddingX}
+                  y={tooltipTopPadding + 16}
+                  fontSize={tooltipTitleSize}
                   fontWeight={600}
                   fill="hsl(var(--foreground))"
                 >
                   {point.label}
                 </text>
+
+                {descriptionLines.length ? (
+                  <text
+                    x={tooltipPaddingX}
+                    y={tooltipTopPadding + 16 + 22}
+                    fontSize={tooltipDescSize}
+                    fontWeight={500}
+                    fill="hsl(var(--muted-foreground))"
+                  >
+                    {descriptionLines.map((line, index) => (
+                      <tspan key={index} x={tooltipPaddingX} dy={index === 0 ? 0 : tooltipLineHeight}>
+                        {line}
+                      </tspan>
+                    ))}
+                  </text>
+                ) : null}
               </g>
             ) : null}
           </g>

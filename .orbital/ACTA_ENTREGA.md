@@ -2,7 +2,7 @@
 task_id: "WT-2025-12-16-FASE1-CIERRE"
 completed_at: 2025-12-17T02:40:00Z
 executor: "agent"
-actual_hours: 6.5
+actual_hours: 6.7
 status: partial
 ---
 
@@ -41,6 +41,7 @@ El servidor local se validó con rutas principales respondiendo 200.
 - `wonder-catalog/public/b2b/corporate/colombia-map-ai.webp` — Versión optimizada (mucho más liviana) usada por defecto para performance.
 - `wonder-catalog/src/components/empresas/destinations-map.tsx` — Rediseño del macro layout: mapa a la izquierda + lista de destinos a la derecha (hover/click sincronizados).
 - `wonder-catalog/src/data/empresas/destinations.ts` — Fuente única de destinos (agregar/quitar/editar desde un solo lugar).
+- `wonder-catalog/src/components/empresas/colombia-map.tsx` — Fix tooltip: colores con fallback (evita tooltip negro/invisible en SVG).
 - `wonder-catalog/src/components/home/hero.tsx` — Copy ajustado a “Latinoamérica” en el hero de Signature.
 
 ## Validación

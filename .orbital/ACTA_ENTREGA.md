@@ -1,17 +1,17 @@
 ---
 task_id: "WT-2025-12-16-FASE1-CIERRE"
-completed_at: 2025-12-17T02:40:00Z
+completed_at: 2025-12-18T18:55:00Z
 executor: "agent"
-actual_hours: 6.7
+actual_hours: 10.0
 status: partial
 ---
 
-# Acta de Entrega (Parcial) — Cierre Fase 1 - Wonder Travel
+# Acta de Entrega (Actualizada) — Cierre Fase 1 - Wonder Travel
 
 ## Resumen
 
-Se dejó el repo en un estado más limpio y ejecutable, manteniendo el protocolo `.orbital/` y la web activa en `wonder-catalog/`.
-El servidor local se validó con rutas principales respondiendo 200.
+Se dejó el repo en un estado limpio y ejecutable, manteniendo el protocolo `.orbital/` y la web activa en `wonder-catalog/`.
+Se modernizó la sección de destinos corporativos: ahora el contenido se sincroniza desde Lovable (fuente de verdad) y se renderiza con un macrocomponente premium, escalable y 100% data-driven.
 
 ## Entregables Completados
 
@@ -32,7 +32,7 @@ El servidor local se validó con rutas principales respondiendo 200.
 - `.gitignore` — Permite videos `*.mp4/*.webm` necesarios dentro de `wonder-catalog/public/`.
 - `wonder-catalog/` — Proyecto web consolidado en el root (antes estaba bajo `v2.0/wonder-catalog`).
 - `wonder-catalog/src/components/layout/navbar.tsx` — Menú hamburguesa mobile (overlay) + botón WhatsApp como ícono, con link dinámico por sección.
-- `wonder-catalog/src/components/empresas/destinations-map.tsx` — Macrocomponente B2B “Destinos”: mapa interactivo + panel premium (detail + lista) sincronizados por hover/click.
+- `wonder-catalog/src/components/empresas/destinations-map.tsx` — Macrocomponente B2B “Destinos”: chips de destinos arriba (full-width), mapa interactivo y panel premium de detalle (hover/click sincronizados).
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — Nuevo componente de mapa de Colombia con proyección y markers por coordenadas.
 - `wonder-catalog/src/data/geo/colombia-110m.json` — Geometría Colombia (fuente: Natural Earth vía `world-atlas`).
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — Mejora visual: gradientes + textura sutil, labels en hover/selección y animación del marker seleccionado.
@@ -44,18 +44,33 @@ El servidor local se validó con rutas principales respondiendo 200.
 - `wonder-catalog/src/data/empresas/destinations.ts` — Capa local: define orden/activación y coordenadas (lat/lon) para el mapa.
 - `wonder-catalog/public/b2b/corporate/destinations/` — Imágenes de destinos descargadas desde Lovable para uso local (paths estables).
 - `wonder-catalog/src/components/empresas/destination-detail-panel.tsx` — Panel de detalle premium: hero image + tagline + experiencias (data-driven).
-- `wonder-catalog/src/components/empresas/destinations-map.tsx` — Ajuste layout: columnas alineadas (misma altura en desktop) y listas con scroll sin cortes.
-- `wonder-catalog/src/components/empresas/destinations-map.tsx` — Nuevo layout: chips (tags) de destinos arriba full-width; mapa más compacto a la izquierda y detalle expandido a la derecha.
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — Fix tooltip: colores con fallback (evita tooltip negro/invisible en SVG).
 - `wonder-catalog/src/components/home/hero.tsx` — Copy ajustado a “Latinoamérica” en el hero de Signature.
+
+## Operación (Cómo mantenerlo)
+
+### Sincronizar destinos desde Lovable (fuente de verdad)
+
+Desde `wonder-catalog/`:
+
+- `npm run sync:lovable:corporate-destinations`
+- Para forzar re-descarga de imágenes/JSON (si cambian en Lovable): `npm run sync:lovable:corporate-destinations -- --force`
+
+### Dónde se edita cada cosa
+
+- Copy + imagen + experiencias por destino (sin tocar código): `wonder-catalog/src/data/empresas/lovable-corporate-destinations.json` (se regenera con la sync).
+- Orden/activación + coordenadas para el mapa: `wonder-catalog/src/data/empresas/destinations.ts`.
+- UI/maquetación: `wonder-catalog/src/components/empresas/destinations-map.tsx` y `wonder-catalog/src/components/empresas/destination-detail-panel.tsx`.
 
 ## Validación
 
 - Dev server OK en `http://localhost:3000`
 - Rutas OK: `/`, `/trips`, `/contacto`, `/universidades`, `/empresas`
+- `next build` OK
 
 ## Pendientes Inmediatos (Quick Wins)
 
+- E1.2 Video hero Empresas (nuevo video colombiano/latino; WebM + MP4, <6MB).
 - Afinar coordenadas/posición de markers (si se requiere más precisión por destino).
 - Definir proceso de actualización: cuándo correr `npm run sync:lovable:corporate-destinations`.
 - (Opcional) Pipeline de optimización a WebP/AVIF para imágenes descargadas (si se agrega `cwebp`/`sharp` al entorno).

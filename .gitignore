@@ -9,6 +9,10 @@
 !wonder-catalog/public/**/*.mp4
 !wonder-catalog/public/**/*.webm
 
+# Generación local (no versionar)
+colombiamap.png
+wonder-catalog/public/b2b/videos/_backup/
+
 # Node
 node_modules/
 .next/

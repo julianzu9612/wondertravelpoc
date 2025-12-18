@@ -2,7 +2,7 @@
 task_id: "WT-2025-12-16-FASE1-CIERRE"
 completed_at: 2025-12-18T18:55:00Z
 executor: "agent"
-actual_hours: 10.0
+actual_hours: 11.0
 status: partial
 ---
 
@@ -16,7 +16,7 @@ Se modernizó la sección de destinos corporativos: ahora el contenido se sincro
 ## Entregables Completados
 
 - [x] E1.1 Hamburger Menu Mobile
-- [ ] E1.2 Cambiar Video Hero Empresas
+- [x] E1.2 Cambiar Video Hero Empresas
 - [x] E1.3 Cambiar Botón WhatsApp por Logo
 - [x] E1.4 Simplificar Mapa Colombia
 - [x] E1.5 Ajustar One-Liner Signature
@@ -46,6 +46,8 @@ Se modernizó la sección de destinos corporativos: ahora el contenido se sincro
 - `wonder-catalog/src/components/empresas/destination-detail-panel.tsx` — Panel de detalle premium: hero image + tagline + experiencias (data-driven).
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — Fix tooltip: colores con fallback (evita tooltip negro/invisible en SVG).
 - `wonder-catalog/src/components/home/hero.tsx` — Copy ajustado a “Latinoamérica” en el hero de Signature.
+- `wonder-catalog/public/b2b/videos/hero-empresas.mp4` — Video hero Empresas actualizado (Colombia/Cartagena, enfoque corporate) sin watermark, sin audio.
+- `wonder-catalog/public/b2b/videos/hero-empresas.webm` — Fallback WebM del video hero Empresas actualizado (sin watermark, sin audio).
 
 ## Operación (Cómo mantenerlo)
 
@@ -70,7 +72,6 @@ Desde `wonder-catalog/`:
 
 ## Pendientes Inmediatos (Quick Wins)
 
-- E1.2 Video hero Empresas (nuevo video colombiano/latino; WebM + MP4, <6MB).
 - Afinar coordenadas/posición de markers (si se requiere más precisión por destino).
 - Definir proceso de actualización: cuándo correr `npm run sync:lovable:corporate-destinations`.
 - (Opcional) Pipeline de optimización a WebP/AVIF para imágenes descargadas (si se agrega `cwebp`/`sharp` al entorno).

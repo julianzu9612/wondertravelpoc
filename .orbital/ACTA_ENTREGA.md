@@ -32,15 +32,18 @@ El servidor local se validó con rutas principales respondiendo 200.
 - `.gitignore` — Permite videos `*.mp4/*.webm` necesarios dentro de `wonder-catalog/public/`.
 - `wonder-catalog/` — Proyecto web consolidado en el root (antes estaba bajo `v2.0/wonder-catalog`).
 - `wonder-catalog/src/components/layout/navbar.tsx` — Menú hamburguesa mobile (overlay) + botón WhatsApp como ícono, con link dinámico por sección.
-- `wonder-catalog/src/components/empresas/destinations-map.tsx` — Refactor del mapa a vector (SVG) con 8 ciudades clickeables, sin depender de imagen.
+- `wonder-catalog/src/components/empresas/destinations-map.tsx` — Macrocomponente B2B “Destinos”: mapa interactivo + panel premium (detail + lista) sincronizados por hover/click.
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — Nuevo componente de mapa de Colombia con proyección y markers por coordenadas.
 - `wonder-catalog/src/data/geo/colombia-110m.json` — Geometría Colombia (fuente: Natural Earth vía `world-atlas`).
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — Mejora visual: gradientes + textura sutil, labels en hover/selección y animación del marker seleccionado.
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — “Más vida”: capas de color (gradientes tipo biomas) y rutas animadas entre ciudades.
 - `wonder-catalog/public/b2b/corporate/colombia-map-ai.png` — Base visual IA para el mapa (se usa como textura dentro del SVG, responsive).
 - `wonder-catalog/public/b2b/corporate/colombia-map-ai.webp` — Versión optimizada (mucho más liviana) usada por defecto para performance.
-- `wonder-catalog/src/components/empresas/destinations-map.tsx` — Rediseño del macro layout: mapa a la izquierda + lista de destinos a la derecha (hover/click sincronizados).
-- `wonder-catalog/src/data/empresas/destinations.ts` — Fuente única de destinos (agregar/quitar/editar desde un solo lugar).
+- `wonder-catalog/scripts/sync-lovable-corporate-destinations.mjs` — Sincronización automatizada desde Lovable: extrae destinos (DU) + descarga imágenes.
+- `wonder-catalog/src/data/empresas/lovable-corporate-destinations.json` — Fuente de verdad sincronizada desde Lovable (copy + actividades + imágenes).
+- `wonder-catalog/src/data/empresas/destinations.ts` — Capa local: define orden/activación y coordenadas (lat/lon) para el mapa.
+- `wonder-catalog/public/b2b/corporate/destinations/` — Imágenes de destinos descargadas desde Lovable para uso local (paths estables).
+- `wonder-catalog/src/components/empresas/destination-detail-panel.tsx` — Panel de detalle premium: hero image + tagline + experiencias (data-driven).
 - `wonder-catalog/src/components/empresas/colombia-map.tsx` — Fix tooltip: colores con fallback (evita tooltip negro/invisible en SVG).
 - `wonder-catalog/src/components/home/hero.tsx` — Copy ajustado a “Latinoamérica” en el hero de Signature.
 
@@ -51,7 +54,6 @@ El servidor local se validó con rutas principales respondiendo 200.
 
 ## Pendientes Inmediatos (Quick Wins)
 
-- Implementar menú hamburguesa mobile en navbar.
-- Reemplazar texto “WhatsApp” del header por ícono.
-- Ajustar copy del hero de Signature (“Colombia” → “Latinoamérica”).
-- Mantener ciudades clickeables en Empresas + mapa sin números/stats.
+- Afinar coordenadas/posición de markers (si se requiere más precisión por destino).
+- Definir proceso de actualización: cuándo correr `npm run sync:lovable:corporate-destinations`.
+- (Opcional) Pipeline de optimización a WebP/AVIF para imágenes descargadas (si se agrega `cwebp`/`sharp` al entorno).

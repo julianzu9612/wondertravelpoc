@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:lovable:corporate-destinations": "node scripts/sync-lovable-corporate-destinations.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

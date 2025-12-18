@@ -384,20 +384,16 @@ export function ColombiaMap({
                   width={tooltipWidth}
                   height={tooltipHeight}
                   rx={18}
-                  opacity={0.92}
-                  style={{
-                    fill: "hsl(var(--background, 0 0% 100%))",
-                    stroke: "hsl(var(--border, 214.3 31.8% 91.4%))",
-                  }}
+                  fill="#ffffff"
+                  fillOpacity={0.96}
+                  stroke="rgba(15, 23, 42, 0.14)"
                 />
                 <text
                   x={tooltipPaddingX}
                   y={tooltipTopPadding + 16}
                   fontSize={tooltipTitleSize}
                   fontWeight={600}
-                  style={{
-                    fill: "hsl(var(--foreground, 222.2 84% 4.9%))",
-                  }}
+                  fill="#0f172a"
                 >
                   {point.label}
                 </text>
@@ -408,10 +404,7 @@ export function ColombiaMap({
                     y={tooltipTopPadding + 16 + 22}
                     fontSize={tooltipDescSize}
                     fontWeight={500}
-                    style={{
-                      fill:
-                        "hsl(var(--muted-foreground, 215.4 16.3% 46.9%))",
-                    }}
+                    fill="#475569"
                   >
                     {descriptionLines.map((line, index) => (
                       <tspan key={index} x={tooltipPaddingX} dy={index === 0 ? 0 : tooltipLineHeight}>

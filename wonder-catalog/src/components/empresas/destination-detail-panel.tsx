@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import type { ComponentType } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Anchor,
   Bike,
@@ -33,6 +34,8 @@ import type { CorporateDestination } from "@/data/empresas/destinations";
 type Props = {
   destination: CorporateDestination;
 };
+
+const DEFAULT_VISIBLE_ACTIVITIES = 4;
 
 const ICONS: Record<string, ComponentType<{ className?: string }>> = {
   Anchor,
@@ -71,9 +74,20 @@ function ActivityIcon({ name }: { name: string }) {
 }
 
 export function DestinationDetailPanel({ destination }: Props) {
+  const [showAllActivities, setShowAllActivities] = useState(false);
+
+  useEffect(() => {
+    setShowAllActivities(false);
+  }, [destination.id]);
+
+  const visibleActivities = useMemo(() => {
+    if (showAllActivities) return destination.activities;
+    return destination.activities.slice(0, DEFAULT_VISIBLE_ACTIVITIES);
+  }, [destination.activities, showAllActivities]);
+
   return (
-    <div className="rounded-3xl border border-border/70 bg-white shadow-sm overflow-hidden">
-      <div className="relative">
+    <div className="flex h-full min-h-0 flex-col overflow-hidden rounded-3xl border border-border/70 bg-white shadow-sm">
+      <div className="relative flex-none">
         <div className="relative h-44 sm:h-48">
           <Image
             src={destination.image}
@@ -81,7 +95,7 @@ export function DestinationDetailPanel({ destination }: Props) {
             fill
             className="object-cover"
             priority={false}
-            sizes="(min-width: 1024px) 420px, 100vw"
+            sizes="(min-width: 1024px) 460px, 100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-white/0" />
         </div>
@@ -116,18 +130,24 @@ export function DestinationDetailPanel({ destination }: Props) {
         </div>
       </div>
 
-      <div className="px-5 pb-5">
+      <div className="min-h-0 flex-1 overflow-auto px-5 pb-5">
         <div className="flex items-center justify-between gap-3">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
             Experiencias
           </p>
-          <span className="text-xs font-semibold text-muted-foreground">
-            {destination.activities.length}
-          </span>
+          <button
+            type="button"
+            onClick={() => setShowAllActivities((current) => !current)}
+            className="rounded-full border border-border/70 bg-white px-3 py-1 text-xs font-semibold text-foreground/70 transition hover:bg-muted/40"
+          >
+            {showAllActivities
+              ? "Ver menos"
+              : `Ver todas (${destination.activities.length})`}
+          </button>
         </div>
 
         <div className="mt-4 grid gap-3">
-          {destination.activities.map((activity) => (
+          {visibleActivities.map((activity) => (
             <div
               key={`${destination.id}-${activity.title}`}
               className="rounded-2xl border border-border/70 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md"

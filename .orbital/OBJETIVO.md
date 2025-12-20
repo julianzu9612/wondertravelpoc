@@ -5,10 +5,34 @@ assigned_by: "orbix"
 priority: "high"
 estimated_hours: 16
 deadline: "2025-12-23"
-status: "assigned"
+status: "in_progress"
+last_reviewed: "2025-12-20"
 ---
 
 # OBJETIVO: Cierre Fase 1 - Wonder Travel
+
+## Status Actual (20 dic 2025)
+
+✅ **E1 COMPLETADO** (5/5 entregables):
+- E1.1 Hamburger menu mobile
+- E1.2 Video hero empresas
+- E1.3 Botón WhatsApp como logo
+- E1.4 Mapa Colombia simplificado
+- E1.5 One-liner "Latinoamérica"
+
+⏳ **PENDIENTE Vercel:**
+- Autorizar OrbitalLabBOG en Vercel de Orbital Lab
+- Crear proyecto conectado a `OrbitalLabBOG/axis-wondertravel`
+- Documentar arquitectura de deploy
+
+⏳ **PENDIENTES para 23 dic:**
+- E2 Internacionalización
+- E3 Landings por ciudad
+- E4 Integraciones (WeTravel, BuyTravel)
+- E5 Backup GCP
+- E6 Deploy + entrega final
+
+---
 
 ## Contexto
 
@@ -28,34 +52,34 @@ Catálogo digital para Wonder Travel (turismo corporativo/educativo). Demo aprob
 
 ## Entregables
 
-### E1. Ajustes UI (Prioridad Alta) — 18 dic
+### E1. Ajustes UI ✅ COMPLETADO — 18 dic
 
-#### E1.1 Hamburger Menu Mobile (~1.5h)
-- [ ] Implementar menú hamburguesa para navegación móvil
-- [ ] Debe permitir acceso a: Signature, Universidades, Empresas
-- [ ] Animación suave de apertura/cierre
-- [ ] Cerrar al hacer click en enlace o fuera del menú
+#### E1.1 Hamburger Menu Mobile ✅
+- [x] Implementar menú hamburguesa para navegación móvil
+- [x] Debe permitir acceso a: Signature, Universidades, Empresas
+- [x] Animación suave de apertura/cierre
+- [x] Cerrar al hacer click en enlace o fuera del menú
 
-#### E1.2 Cambiar Video Hero Empresas (~1h)
-- [ ] Reemplazar video actual (tiene personas asiáticas)
-- [ ] Generar nuevo video con IA (estilo colombiano/latinoamericano)
-- [ ] Mantener formato actual: WebM + MP4 fallback
-- [ ] Comprimir con FFmpeg (~6MB máximo)
+#### E1.2 Cambiar Video Hero Empresas ✅
+- [x] Reemplazar video actual (tiene personas asiáticas)
+- [x] Generar nuevo video con IA (estilo colombiano/latinoamericano)
+- [x] Mantener formato actual: WebM + MP4 fallback
+- [x] Comprimir con FFmpeg (~6MB máximo)
 
-#### E1.3 Cambiar Botón WhatsApp por Logo (~0.5h)
-- [ ] En header: reemplazar texto "WhatsApp" por icono de WhatsApp
-- [ ] Aplicar en todas las secciones (Signature, Universidades, Empresas)
-- [ ] Mantener funcionalidad de link al número correcto por sección
+#### E1.3 Cambiar Botón WhatsApp por Logo ✅
+- [x] En header: reemplazar texto "WhatsApp" por icono de WhatsApp
+- [x] Aplicar en todas las secciones (Signature, Universidades, Empresas)
+- [x] Mantener funcionalidad de link al número correcto por sección
 
-#### E1.4 Simplificar Mapa Colombia (~1h)
-- [ ] Sección Empresas: quitar números/estadísticas del mapa
-- [ ] Dejar solo el mapa grande de Colombia
-- [ ] Mantener las 8 ciudades clickeables
-- [ ] Requerimiento de Pro Colombia
+#### E1.4 Simplificar Mapa Colombia ✅
+- [x] Sección Empresas: quitar números/estadísticas del mapa
+- [x] Dejar solo el mapa grande de Colombia
+- [x] Mantener las 8 ciudades clickeables
+- [x] Requerimiento de Pro Colombia
 
-#### E1.5 Ajustar One-Liner Signature (~0.5h)
-- [ ] Cambiar "Colombia" por "Latinoamérica" en hero de Signature
-- [ ] Razón: el video tiene tomas de Perú/Machu Picchu
+#### E1.5 Ajustar One-Liner Signature ✅
+- [x] Cambiar "Colombia" por "Latinoamérica" en hero de Signature
+- [x] Razón: el video tiene tomas de Perú/Machu Picchu
 
 ### E2. Internacionalización (Prioridad Alta) — 17-19 dic
 

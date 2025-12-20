@@ -1,2 +1,0 @@
-export const policiesWonderEs = 'https://drive.google.com/file/d/1PWQL41LsL7YSYWu2s-xo-81egn42rixg/view?usp=sharing';
-export const policiesWonderEn = 'https://drive.google.com/file/d/13WcZnLXQQHnx5dxB5JyiaVQkFYmWmzU1/view?usp=sharing';

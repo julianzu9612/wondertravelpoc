@@ -1,0 +1,353 @@
+{
+  "source": {
+    "baseUrl": "https://wonder-travel-clone.lovable.app",
+    "bundleUrl": "https://wonder-travel-clone.lovable.app/assets/index-BROKRvHf.js"
+  },
+  "syncedAt": "2025-12-18T18:33:03.979Z",
+  "destinations": [
+    {
+      "id": "cartagena",
+      "name": "Cartagena",
+      "tagline": "Historic Coastal City",
+      "description": "Discover the magic of Cartagena, where colonial history meets Caribbean charm. This UNESCO World Heritage city offers an unparalleled blend of luxury, culture, and coastal beauty for your corporate experience.",
+      "image": "/b2b/corporate/destinations/cartagena.jpg",
+      "source": {
+        "bundleUrl": "https://wonder-travel-clone.lovable.app/assets/index-BROKRvHf.js",
+        "imageUrl": "https://wonder-travel-clone.lovable.app/assets/destination-cartagena-BXzid9QS.jpg"
+      },
+      "activities": [
+        {
+          "title": "Hoteles de Primer Nivel",
+          "description": "Alojamiento en los mejores hoteles boutique y de lujo dentro de la ciudad amurallada y frente al mar.",
+          "icon": "Hotel"
+        },
+        {
+          "title": "Experiencias Culturales y Gastronómicas",
+          "description": "Tours gastronómicos, cenas privadas en restaurantes de alta cocina y experiencias culturales únicas.",
+          "icon": "UtensilsCrossed"
+        },
+        {
+          "title": "Navegación a Islas del Rosario",
+          "description": "Excursiones en yate o catamarán hacia las paradisíacas Islas del Rosario con snorkeling y almuerzo incluido.",
+          "icon": "Ship"
+        },
+        {
+          "title": "Casas Frente al Mar",
+          "description": "Alquiler de exclusivas casas y villas frente al mar para eventos privados y retiros corporativos.",
+          "icon": "Home"
+        },
+        {
+          "title": "Beach Clubs",
+          "description": "Acceso a los mejores beach clubs de la región con servicio VIP y ambientes exclusivos.",
+          "icon": "Umbrella"
+        },
+        {
+          "title": "Retiros de Well-being",
+          "description": "Programas de bienestar integral con spa, yoga, meditación y terapias holísticas frente al mar.",
+          "icon": "Heart"
+        }
+      ]
+    },
+    {
+      "id": "medellin",
+      "name": "Medellín",
+      "tagline": "City of Eternal Spring",
+      "description": "Experience the innovation capital of Colombia, where perfect weather meets world-class infrastructure. Medellín offers the ideal setting for corporate events, conferences, and team-building experiences.",
+      "image": "/b2b/corporate/destinations/medellin.jpg",
+      "source": {
+        "bundleUrl": "https://wonder-travel-clone.lovable.app/assets/index-BROKRvHf.js",
+        "imageUrl": "https://wonder-travel-clone.lovable.app/assets/destination-medellin-BLX9x0g1.jpg"
+      },
+      "activities": [
+        {
+          "title": "Charlas con Referentes de la Industria",
+          "description": "Conferencias y sesiones con líderes empresariales, emprendedores exitosos y expertos de diversos sectores.",
+          "icon": "Mic"
+        },
+        {
+          "title": "Visita al Orquideorama",
+          "description": "Experiencias en el icónico Jardín Botánico con su arquitectura única y biodiversidad impresionante.",
+          "icon": "Flower2"
+        },
+        {
+          "title": "Eventos de Primer Nivel",
+          "description": "Organización de eventos corporativos en venues exclusivos con tecnología de punta y servicios premium.",
+          "icon": "CalendarDays"
+        },
+        {
+          "title": "Experiencias Culturales",
+          "description": "Tours por Comuna 13, museos, galerías de arte y experiencias gastronómicas de alta cocina.",
+          "icon": "Palette"
+        },
+        {
+          "title": "Metrocable y City Tours",
+          "description": "Recorridos panorámicos en el sistema de metrocable con vistas espectaculares de la ciudad.",
+          "icon": "Cable"
+        },
+        {
+          "title": "Networking Empresarial",
+          "description": "Eventos de networking en rooftops y espacios exclusivos con la comunidad empresarial local.",
+          "icon": "Users"
+        }
+      ]
+    },
+    {
+      "id": "bogota",
+      "name": "Bogotá",
+      "tagline": "Vibrant Capital City",
+      "description": "Colombia's cosmopolitan capital offers world-class venues, rich culture, and endless opportunities for impactful corporate experiences. From historic Candelaria to modern financial districts.",
+      "image": "/b2b/corporate/destinations/bogota.jpg",
+      "source": {
+        "bundleUrl": "https://wonder-travel-clone.lovable.app/assets/index-BROKRvHf.js",
+        "imageUrl": "https://wonder-travel-clone.lovable.app/assets/destination-bogota-D5RDLv0-.jpg"
+      },
+      "activities": [
+        {
+          "title": "Charlas con Referentes de la Industria",
+          "description": "Acceso a conferencias con los principales líderes empresariales y pensadores del país.",
+          "icon": "Mic"
+        },
+        {
+          "title": "Experiencias Culturales Premium",
+          "description": "Visitas privadas a museos, galerías y espacios culturales emblemáticos de la capital.",
+          "icon": "Building2"
+        },
+        {
+          "title": "Eventos de Primer Nivel",
+          "description": "Venues de categoría mundial para conferencias, lanzamientos y eventos corporativos de alto impacto.",
+          "icon": "CalendarDays"
+        },
+        {
+          "title": "Gastronomía de Autor",
+          "description": "Experiencias culinarias en los mejores restaurantes de la ciudad con chefs reconocidos.",
+          "icon": "UtensilsCrossed"
+        },
+        {
+          "title": "Monserrate y City Tours",
+          "description": "Excursiones al icónico cerro de Monserrate y recorridos por los barrios más emblemáticos.",
+          "icon": "Mountain"
+        },
+        {
+          "title": "Networking Empresarial",
+          "description": "Conexiones con el ecosistema empresarial más grande y diverso de Colombia.",
+          "icon": "Users"
+        }
+      ]
+    },
+    {
+      "id": "coffee-region",
+      "name": "Coffee Region",
+      "tagline": "Lush Coffee Landscapes",
+      "description": "Immerse your team in the heart of Colombia's coffee culture. The Eje Cafetero offers breathtaking landscapes, authentic experiences, and the perfect environment for team bonding and corporate retreats.",
+      "image": "/b2b/corporate/destinations/coffee-region.jpg",
+      "source": {
+        "bundleUrl": "https://wonder-travel-clone.lovable.app/assets/index-BROKRvHf.js",
+        "imageUrl": "https://wonder-travel-clone.lovable.app/assets/destination-coffee-region-TaVFWm8J.jpg"
+      },
+      "activities": [
+        {
+          "title": "Charlas con Referentes de la Industria",
+          "description": "Sesiones con expertos en sostenibilidad, agricultura y emprendimiento rural.",
+          "icon": "Mic"
+        },
+        {
+          "title": "Tour Cafetero Premium",
+          "description": "Experiencias completas en fincas cafeteras con catación, proceso del café y paisajes únicos.",
+          "icon": "Coffee"
+        },
+        {
+          "title": "Eventos en Haciendas",
+          "description": "Organización de eventos corporativos en haciendas históricas con ambientes únicos.",
+          "icon": "CalendarDays"
+        },
+        {
+          "title": "Valle de Cocora",
+          "description": "Excursiones al icónico valle con las palmas de cera más altas del mundo.",
+          "icon": "TreePalm"
+        },
+        {
+          "title": "Termales y Bienestar",
+          "description": "Experiencias de relax en aguas termales naturales rodeados de naturaleza.",
+          "icon": "Droplets"
+        },
+        {
+          "title": "Aventura en Naturaleza",
+          "description": "Actividades al aire libre como canopy, cabalgatas y senderismo por paisajes cafeteros.",
+          "icon": "Mountain"
+        }
+      ]
+    },
+    {
+      "id": "tayrona",
+      "name": "Región Tayrona",
+      "tagline": "Caribbean Paradise",
+      "description": "Where the jungle meets the Caribbean Sea. The Tayrona region offers pristine beaches, ancient archaeological sites, and unforgettable nature experiences for transformative corporate retreats.",
+      "image": "/b2b/corporate/destinations/tayrona.jpg",
+      "source": {
+        "bundleUrl": "https://wonder-travel-clone.lovable.app/assets/index-BROKRvHf.js",
+        "imageUrl": "https://wonder-travel-clone.lovable.app/assets/destination-tayrona-DHiwC7gv.jpg"
+      },
+      "activities": [
+        {
+          "title": "Trekking y Senderismo",
+          "description": "Rutas de senderismo a través de la selva tropical hacia playas vírgenes y sitios arqueológicos.",
+          "icon": "Footprints"
+        },
+        {
+          "title": "Ecolodges de Naturaleza",
+          "description": "Alojamiento en ecolodges sostenibles inmersos en la naturaleza con servicios premium.",
+          "icon": "TreePine"
+        },
+        {
+          "title": "Retiros de Well-being",
+          "description": "Programas de bienestar integral, retiros espirituales y de salud en entornos naturales únicos.",
+          "icon": "Heart"
+        },
+        {
+          "title": "Cabalgatas",
+          "description": "Paseos a caballo por senderos costeros y a través de la Sierra Nevada de Santa Marta.",
+          "icon": "Horse"
+        },
+        {
+          "title": "Tubing y Aventura Acuática",
+          "description": "Experiencias de tubing en ríos cristalinos y actividades acuáticas en el Caribe.",
+          "icon": "Waves"
+        },
+        {
+          "title": "Ciudad Perdida",
+          "description": "Expediciones hacia la legendaria Ciudad Perdida, tesoro arqueológico de Colombia.",
+          "icon": "Landmark"
+        }
+      ]
+    },
+    {
+      "id": "pacifico",
+      "name": "Pacífico",
+      "tagline": "Biodiversity Hotspot",
+      "description": "Experience one of the most biodiverse regions on Earth. The Colombian Pacific offers extraordinary wildlife encounters, pristine ecosystems, and authentic cultural immersion for unforgettable corporate adventures.",
+      "image": "/b2b/corporate/destinations/pacifico.jpg",
+      "source": {
+        "bundleUrl": "https://wonder-travel-clone.lovable.app/assets/index-BROKRvHf.js",
+        "imageUrl": "https://wonder-travel-clone.lovable.app/assets/destination-pacifico-CGYkQfok.jpg"
+      },
+      "activities": [
+        {
+          "title": "Avistamiento de Ballenas",
+          "description": "Encuentros cercanos con ballenas jorobadas durante su temporada de migración (julio-octubre).",
+          "icon": "Fish"
+        },
+        {
+          "title": "Ecolodges Premium",
+          "description": "Alojamiento en ecolodges exclusivos con acceso directo a la selva y el océano.",
+          "icon": "TreePine"
+        },
+        {
+          "title": "Buceo y Snorkeling",
+          "description": "Inmersiones en arrecifes vírgenes con abundante vida marina y aguas cristalinas.",
+          "icon": "Waves"
+        },
+        {
+          "title": "Trekking en la Selva",
+          "description": "Expediciones guiadas a través de uno de los bosques más biodiversos del planeta.",
+          "icon": "Footprints"
+        },
+        {
+          "title": "Avistamiento de Aves",
+          "description": "Observación de especies endémicas y exóticas con guías expertos ornitólogos.",
+          "icon": "Bird"
+        },
+        {
+          "title": "Avistamiento de Herpetos",
+          "description": "Tours especializados para observar ranas, serpientes y reptiles únicos de la región.",
+          "icon": "Bug"
+        }
+      ]
+    },
+    {
+      "id": "amazonas",
+      "name": "Amazonas",
+      "tagline": "Untamed Rainforest",
+      "description": "Journey into the world's largest rainforest. The Colombian Amazon offers transformative experiences connecting with nature, wildlife, and indigenous cultures for profound team bonding experiences.",
+      "image": "/b2b/corporate/destinations/amazonas.jpg",
+      "source": {
+        "bundleUrl": "https://wonder-travel-clone.lovable.app/assets/index-BROKRvHf.js",
+        "imageUrl": "https://wonder-travel-clone.lovable.app/assets/destination-amazonas-Bj9QOice.jpg"
+      },
+      "activities": [
+        {
+          "title": "Caminatas y Hiking",
+          "description": "Expediciones guiadas por la selva amazónica descubriendo flora y fauna únicas.",
+          "icon": "Footprints"
+        },
+        {
+          "title": "Navegación por el Río Amazonas",
+          "description": "Travesías en bote por el majestuoso río Amazonas y sus afluentes.",
+          "icon": "Ship"
+        },
+        {
+          "title": "Avistamiento de Delfines Rosados",
+          "description": "Encuentros con los míticos delfines rosados del Amazonas en su hábitat natural.",
+          "icon": "Fish"
+        },
+        {
+          "title": "Avistamiento de Fauna Salvaje",
+          "description": "Safari amazónico para observar monos, caimanes, anacondas y aves exóticas.",
+          "icon": "Binoculars"
+        },
+        {
+          "title": "Comunidades Indígenas",
+          "description": "Intercambio cultural con comunidades locales, sus tradiciones y conocimientos ancestrales.",
+          "icon": "Users"
+        },
+        {
+          "title": "Pesca Deportiva",
+          "description": "Experiencias de pesca de pirañas y otras especies emblemáticas del Amazonas.",
+          "icon": "Anchor"
+        }
+      ]
+    },
+    {
+      "id": "santander",
+      "name": "Santander",
+      "tagline": "Adventure Capital",
+      "description": "Colombia's adventure capital awaits. Santander offers extreme sports, dramatic canyons, and adrenaline-pumping experiences perfect for team building and pushing corporate boundaries.",
+      "image": "/b2b/corporate/destinations/santander.jpg",
+      "source": {
+        "bundleUrl": "https://wonder-travel-clone.lovable.app/assets/index-BROKRvHf.js",
+        "imageUrl": "https://wonder-travel-clone.lovable.app/assets/destination-santander-CrgyY2T6.jpg"
+      },
+      "activities": [
+        {
+          "title": "Deportes de Aventura",
+          "description": "Parapente, bungee jumping, rappel y otras actividades extremas en el Cañón del Chicamocha.",
+          "icon": "Plane"
+        },
+        {
+          "title": "Senderismo y Hiking",
+          "description": "Rutas de trekking por cañones, montañas y paisajes espectaculares de la región.",
+          "icon": "Footprints"
+        },
+        {
+          "title": "Kayak",
+          "description": "Descenso en kayak por ríos de aguas cristalinas con diferentes niveles de dificultad.",
+          "icon": "Anchor"
+        },
+        {
+          "title": "Rafting",
+          "description": "Emocionantes descensos en balsa por rápidos del río Fonce y Suárez.",
+          "icon": "Waves"
+        },
+        {
+          "title": "Mountain Bike",
+          "description": "Rutas de ciclismo de montaña por senderos técnicos con paisajes impresionantes.",
+          "icon": "Bike"
+        },
+        {
+          "title": "Retiros de Well-being",
+          "description": "Programas de bienestar combinando aventura suave con relajación y naturaleza.",
+          "icon": "Heart"
+        }
+      ]
+    }
+  ]
+}

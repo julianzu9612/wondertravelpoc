@@ -1,4 +1,4 @@
-# Wonder Catalog (Next 14 + Tailwind + shadcn)
+# Wonder Catalog (Next 16 + Tailwind + next-intl)
 
 Catálogo estático para Wonder Travel, con CTA a WhatsApp y datos en JSON.
 
@@ -9,19 +9,43 @@ npm run dev -- --hostname 0.0.0.0 --port 3000
 npm run lint
 ```
 
+## Troubleshooting (dev server)
+
+Si `next dev` no levanta:
+- **EPERM / operation not permitted**: el entorno puede bloquear puertos. Prueba cerrar procesos previos y reintentar.
+- **Lock error** (`.next/dev/lock`): hay otra instancia corriendo.
+
+Pasos rápidos:
+```bash
+# Ver procesos en el puerto 3000
+lsof -i :3000
+
+# Ver procesos de Next
+ps -ef | rg "next dev"
+
+# Detener el proceso (reemplaza PID)
+kill <PID>
+
+# Borrar lock si quedó colgado
+rm -f .next/dev/lock
+
+# Reintentar
+npm run dev -- --hostname 0.0.0.0 --port 3000
+```
+
 ## Secciones del Sitio
 
-### Wonder Signature (/)
+### Wonder Signature (`/en`, `/es`, `/fr`)
 Catálogo principal de viajes para viajeros individuales. Hero con video, buscador, testimonios.
 
-### Wonder Groups (/universidades)
+### Wonder Groups (`/{locale}/universidades`)
 Landing B2B para programas académicos (MBA, LLM, MPA, Executive Education).
 - **Hero**: Video generado con IA (Veo 3) de profesionales jóvenes en mercado latinoamericano
 - **Pilares**: Servicio 24/7, Experiencias Únicas, Seguridad Garantizada
 - **Logos**: Harvard, MIT, Stanford, Chicago, Berkeley, Wharton, Columbia, YPO
 - **Contacto**: WhatsApp dedicado a grupos (+57 310 236 1480)
 
-### Wonder Corporate (/empresas)
+### Wonder Corporate (`/{locale}/empresas`)
 Landing B2B para experiencias corporativas (Team Building, Incentivos, Integraciones).
 - **Hero**: Video generado con IA (Veo 3) de colaboración de equipos corporativos
 - **Servicios**: Team Building, Viajes de Incentivo, Retiros Ejecutivos
@@ -85,27 +109,38 @@ El componente `HeroB2B` escala el video 110% y lo ancla arriba-izquierda para em
 | groups | +57 310 236 1480 | travelbuddygroups@wondertravel.co |
 | corporate | +57 310 236 1480 | travelbuddygroups@wondertravel.co |
 
+## Internacionalización (i18n)
+- **Locales**: `en` (default), `es`, `fr` con prefijo en ruta (`/en`, `/es`, `/fr`).
+- **Mensajes**: `src/messages/en.json`, `src/messages/es.json`, `src/messages/fr.json`.
+- **Routing**: `src/i18n/routing.ts` + `middleware.ts`.
+- **Server components**: usar `setRequestLocale(locale)` y `getTranslations({ locale })` cuando se renderiza en servidor.
+
+### Datos traducidos
+- **Trips**: `src/data/trips.ts` contiene `translations` por idioma (slugs, títulos e itinerarios).
+- **Corporate Destinations**: `src/data/empresas/destinations.ts` usa EN como base y overrides ES/FR. Hay validación que falla si falta traducción de un destino habilitado.
+
 ## Despliegue en Vercel (monorepo)
-- El repo completo incluye documentación y otras carpetas; el proyecto Next vive en `v2.0/wonder-catalog`. En Vercel, selecciona esa ruta como **Root Directory** al importar.
+- El repo completo incluye documentación y otras carpetas; el proyecto Next vive en `wonder-catalog`. En Vercel, selecciona esa ruta como **Root Directory** al importar.
 - Variables: `NEXT_PUBLIC_SITE_URL` con la URL pública (la que asigne Vercel o el dominio final).
 - Build: `npm run build` (install: `npm install`). Framework: Next.js (detección automática). Output: `.next`.
 - Assets: videos de hero ~5MB total en `public/b2b/videos/`; servidos estáticos por Vercel.
 
 ## Estructura de Archivos
-- `src/app/page.tsx`: Home (hero, campaña, destacados, buscador, testimonios, confianza).
-- `src/app/trips/page.tsx`: listado completo.
-- `src/app/trips/[slug]/page.tsx`: detalle con facts, itinerario, galería, relacionados y CTA WhatsApp.
-- `src/app/universidades/page.tsx`: Landing Wonder Groups (B2B académico).
-- `src/app/empresas/page.tsx`: Landing Wonder Corporate (B2B empresarial).
-- `src/app/contacto/page.tsx`: contacto con CTA y datos.
-- `src/data/trips.json`: fuente única de viajes.
+- `src/app/[locale]/page.tsx`: Home (hero, campaña, destacados, buscador, testimonios, confianza).
+- `src/app/[locale]/trips/page.tsx`: listado completo.
+- `src/app/[locale]/trips/[slug]/page.tsx`: detalle con facts, itinerario, galería, relacionados y CTA WhatsApp.
+- `src/app/[locale]/universidades/page.tsx`: Landing Wonder Groups (B2B académico).
+- `src/app/[locale]/empresas/page.tsx`: Landing Wonder Corporate (B2B empresarial).
+- `src/app/[locale]/contacto/page.tsx`: contacto con CTA y datos.
+- `src/data/trips.ts`: fuente única de viajes con traducciones por idioma.
+- `src/data/empresas/destinations.ts`: destinos corporativos con traducciones ES/FR.
 - `public/images/trips/`: imágenes por `slug`.
 - `public/b2b/`: assets de secciones B2B (logos, videos, imágenes).
 - `src/lib/whatsapp.ts`: sistema multi-contacto WhatsApp.
 
 ## Pendientes críticos
 - **WhatsApp**: actualizar número y mensaje en `src/lib/whatsapp.ts` antes de release.
-- **Imágenes**: reemplazar placeholders en `public/images/trips/*.jpg` por fotos reales y actualizar rutas en `src/data/trips.json`.
+- **Imágenes**: reemplazar placeholders en `public/images/trips/*.jpg` por fotos reales y actualizar rutas en `src/data/trips.ts`.
 - **Partners**: añadir logos reales en `public/partners` y apuntarlos en la sección de partners (cuando se implemente).
 - **Dominio**: configurar `NEXT_PUBLIC_SITE_URL` para OG/canonicals antes de desplegar.
 

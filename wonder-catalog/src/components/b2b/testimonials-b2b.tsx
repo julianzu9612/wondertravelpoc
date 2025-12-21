@@ -15,22 +15,26 @@ type Props = {
 
 export function TestimonialsB2B({
   testimonials,
-  title = "Lo que dicen nuestros clientes",
+  title,
   description,
 }: Props) {
   return (
     <section className="py-16 sm:py-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-8">
-        <div className="mb-12 text-center">
-          <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            {title}
-          </h2>
-          {description && (
-            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-              {description}
-            </p>
-          )}
-        </div>
+        {(title || description) && (
+          <div className="mb-12 text-center">
+            {title && (
+              <h2 className="font-display text-3xl font-semibold sm:text-4xl">
+                {title}
+              </h2>
+            )}
+            {description && (
+              <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+                {description}
+              </p>
+            )}
+          </div>
+        )}
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (

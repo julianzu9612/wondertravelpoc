@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
 
 const partners = [
   { name: "ProColombia", logo: "/partners/acotur-procolombia.png" },
@@ -7,23 +9,29 @@ const partners = [
   { name: "Destinos de Paz", logo: "/partners/sello.png" },
 ];
 
-export function Partners() {
+type Props = {
+  locale: Locale;
+};
+
+export async function Partners({ locale }: Props) {
+  const t = await getTranslations({ locale, namespace: "home.partners" });
+
   return (
     <section className="rounded-3xl border border-border/70 bg-white p-6 shadow-sm sm:p-8">
       <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.12em] text-foreground/60">
-            Partners y certificaciones
+            {t("eyebrow")}
           </p>
           <h3 className="text-2xl font-semibold text-foreground">
-            Alianzas de confianza
+            {t("title")}
           </h3>
           <p className="text-sm text-foreground/70">
-            Sustituye los placeholders por logos reales en <code>public/partners</code>.
+            {t("description")} <code>public/partners</code>.
           </p>
         </div>
         <span className="rounded-full bg-secondary px-4 py-2 text-xs font-semibold text-foreground">
-          Certificaciones y aliados
+          {t("badge")}
         </span>
       </div>
 
@@ -47,7 +55,7 @@ export function Partners() {
                 {partner.name}
               </p>
               <p className="text-xs uppercase tracking-[0.1em] text-foreground/60">
-                Aliado certificado
+                {t("certified")}
               </p>
             </div>
           </div>

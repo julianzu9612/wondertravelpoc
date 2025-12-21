@@ -1,20 +1,27 @@
+import { getTranslations } from "next-intl/server";
 import { getFeaturedTrips } from "@/data/trips";
+import type { Locale } from "@/i18n/routing";
 import { TripCard } from "@/components/trips/trip-card";
 
-export function FeaturedSection() {
-  const featured = getFeaturedTrips();
+type Props = {
+  locale: Locale;
+};
+
+export async function FeaturedSection({ locale }: Props) {
+  const t = await getTranslations({ locale, namespace: "home.featured" });
+  const featured = getFeaturedTrips(locale);
 
   return (
     <section id="featured" className="space-y-4">
       <div className="flex flex-col gap-2">
         <p className="text-xs uppercase tracking-[0.12em] text-foreground/60">
-          Destacados
+          {t("eyebrow")}
         </p>
         <h2 className="text-2xl font-semibold text-foreground">
-          Aventuras curadas por Wonder
+          {t("title")}
         </h2>
         <p className="max-w-2xl text-sm text-foreground/70">
-          Experiencias con alta demanda, logística probada y feedback sobresaliente.
+          {t("description")}
         </p>
       </div>
 

@@ -1,40 +1,34 @@
-const testimonials = [
-  {
-    name: "Amanda N.",
-    country: "Classic Colombia",
-    quote:
-      "El viaje fue impecable: logística, guías y experiencias auténticas. 11/10.",
-  },
-  {
-    name: "Camila V.",
-    country: "Tesoro Escondido",
-    quote:
-      "Superó todas las expectativas. Cada experiencia fue mágica y bien cuidada.",
-  },
-  {
-    name: "Michael A.",
-    country: "Amazonas 3 fronteras",
-    quote: "Simplemente increíble. Atención al detalle y seguridad en ruta.",
-  },
-];
+import { getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
 
-export function Testimonials() {
+type Props = {
+  locale: Locale;
+};
+
+export async function Testimonials({ locale }: Props) {
+  const t = await getTranslations({ locale, namespace: "home.testimonials" });
+  const testimonials = t.raw("items") as Array<{
+    name: string;
+    country: string;
+    quote: string;
+  }>;
+
   return (
     <section className="rounded-3xl border border-border/70 bg-white p-6 shadow-sm sm:p-8">
       <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.12em] text-foreground/60">
-            Testimonios
+            {t("eyebrow")}
           </p>
           <h3 className="text-2xl font-semibold text-foreground">
-            Lo que dicen los viajeros
+            {t("title")}
           </h3>
           <p className="text-sm text-foreground/70">
-            Historias reales de experiencias Wonder.
+            {t("description")}
           </p>
         </div>
         <span className="rounded-full bg-secondary px-4 py-2 text-xs font-semibold text-foreground">
-          4.9/5 · 30 reseñas
+          {t("badge")}
         </span>
       </div>
 

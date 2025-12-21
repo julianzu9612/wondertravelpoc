@@ -1,14 +1,19 @@
- "use client";
+"use client";
 
 import { useState } from "react";
-import { trips, getCategories } from "@/data/trips";
+import { useLocale, useTranslations } from "next-intl";
+import { getCategories, getTrips } from "@/data/trips";
 import { TripCard } from "@/components/trips/trip-card";
+import type { Locale } from "@/i18n/routing";
 
 export function SearchBar() {
+  const t = useTranslations("home.search");
+  const locale = useLocale() as Locale;
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<string | null>(null);
 
-  const categories = getCategories();
+  const categories = getCategories(locale);
+  const trips = getTrips(locale);
 
   const filtered = trips.filter((trip) => {
     const matchesQuery =
@@ -24,16 +29,16 @@ export function SearchBar() {
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.12em] text-foreground/60">
-            Explora
+            {t("eyebrow")}
           </p>
           <h2 className="text-2xl font-semibold text-foreground">
-            Busca por nombre o categoría
+            {t("title")}
           </h2>
         </div>
         <div className="flex w-full max-w-md items-center gap-2 rounded-full border border-border/80 bg-muted px-4 py-2 shadow-inner">
           <input
             type="search"
-            placeholder="Amazonas, trekking, cultura..."
+            placeholder={t("placeholder")}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="w-full bg-transparent text-sm text-foreground outline-none placeholder:text-foreground/50"
@@ -50,7 +55,7 @@ export function SearchBar() {
               : "bg-secondary text-foreground"
           }`}
         >
-          Todas
+          {t("all")}
         </button>
         {categories.map((cat) => (
           <button
@@ -73,8 +78,7 @@ export function SearchBar() {
         ))}
         {filtered.length === 0 && (
           <div className="col-span-full rounded-2xl border border-dashed border-border/80 bg-muted/60 p-6 text-center text-sm text-foreground/70">
-            No encontramos viajes con ese criterio. Prueba otra palabra o
-            categoría.
+            {t("empty")}
           </div>
         )}
       </div>

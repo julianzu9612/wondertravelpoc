@@ -1,6 +1,15 @@
+import { getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
+
 const stars = Array.from({ length: 5 });
 
-export function TrustpilotBadge() {
+type Props = {
+  locale: Locale;
+};
+
+export async function TrustpilotBadge({ locale }: Props) {
+  const t = await getTranslations({ locale, namespace: "home.trustpilot" });
+
   return (
     <a
       href="https://ca.trustpilot.com/review/wondertravel.co"
@@ -10,12 +19,12 @@ export function TrustpilotBadge() {
     >
       <div className="space-y-1">
         <p className="text-xs uppercase tracking-[0.12em] text-foreground/60">
-          Trustpilot
+          {t("label")}
         </p>
-        <p className="text-2xl font-bold text-emerald-700">4.7 / 5</p>
-        <p className="text-xs text-foreground/70">29 reseñas verificadas</p>
+        <p className="text-2xl font-bold text-emerald-700">{t("score")}</p>
+        <p className="text-xs text-foreground/70">{t("reviews")}</p>
         <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700">
-          Ver reseñas en Trustpilot
+          {t("cta")}
           <span aria-hidden="true" className="transition group-hover:translate-x-0.5">
             →
           </span>

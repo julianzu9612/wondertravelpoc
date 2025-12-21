@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { getWhatsAppHref, ContactType } from "@/lib/whatsapp";
+import { useTranslations } from "next-intl";
+import { getContactInfo, getWhatsAppHref, ContactType } from "@/lib/whatsapp";
 
 type Props = {
   title: string;
@@ -21,12 +22,17 @@ export function HeroB2B({
   backgroundImage,
   backgroundVideo,
   contactType,
-  ctaText = "Solicitar informacion",
-  secondaryCtaText = "Conocer mas",
+  ctaText,
+  secondaryCtaText,
   secondaryCtaHref = "#servicios",
   badges = [],
 }: Props) {
-  const whatsapp = getWhatsAppHref(undefined, contactType);
+  const tWhatsApp = useTranslations("whatsapp");
+  const contact = getContactInfo(contactType);
+  const whatsapp = getWhatsAppHref({
+    contactType,
+    message: tWhatsApp("interestGeneral", { label: contact.label }),
+  });
 
   return (
     <section className="relative isolate w-screen max-w-none -mx-[calc(50vw-50%)] overflow-hidden bg-black text-white">
@@ -80,12 +86,14 @@ export function HeroB2B({
             >
               {ctaText}
             </a>
-            <a
-              href={secondaryCtaHref}
-              className="inline-flex items-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white"
-            >
-              {secondaryCtaText}
-            </a>
+            {secondaryCtaText ? (
+              <a
+                href={secondaryCtaHref}
+                className="inline-flex items-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white"
+              >
+                {secondaryCtaText}
+              </a>
+            ) : null}
           </div>
 
           {badges.length > 0 && (

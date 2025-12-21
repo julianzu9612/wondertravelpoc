@@ -1,0 +1,442 @@
+{
+  "metadata": {
+    "title": "Wonder Travel | Digital Catalog",
+    "description": "Discover Colombia with Wonder Travel: Lost City, Amazon, Cano Cristales and more. Tailored trips and immediate WhatsApp support."
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French"
+  },
+  "nav": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menuTitle": "Menu",
+    "close": "Close",
+    "links": {
+      "home": "Home",
+      "trips": "Wonder Signature",
+      "universities": "Universities",
+      "corporate": "Corporate",
+      "contact": "Contact"
+    }
+  },
+  "whatsapp": {
+    "interestTrip": "Hi, I'm interested in the {trip} trip with Wonder Travel",
+    "interestGeneral": "Hi, I'm interested in a travel experience with {label}",
+    "aria": "Chat on WhatsApp"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Wonder Travel",
+      "tagline": "Authentic Latin America",
+      "title": "Explore the Latin America few people know",
+      "description": "Lost City, Amazon, Cano Cristales and more. Boutique trips with proven logistics, local experts, and immediate WhatsApp support.",
+      "ctaPrimary": "Chat on WhatsApp",
+      "ctaSecondary": "View featured trips",
+      "chips": [
+        "Reply in minutes",
+        "Local experts",
+        "Curated logistics",
+        "Curated adventure"
+      ]
+    },
+    "campaign": {
+      "eyebrow": "Campaign",
+      "title": "Wonder Expeditions · current season",
+      "description": "Curated departures with logistics ready. Talk to the team for available slots and dates.",
+      "ctaPrimary": "Check availability",
+      "ctaSecondary": "View catalog"
+    },
+    "featured": {
+      "eyebrow": "Featured",
+      "title": "Wonder-curated adventures",
+      "description": "High-demand experiences with proven logistics and outstanding feedback."
+    },
+    "search": {
+      "eyebrow": "Explore",
+      "title": "Search by name or category",
+      "placeholder": "Amazon, trekking, culture...",
+      "all": "All",
+      "empty": "We couldn't find trips with that criteria. Try another word or category."
+    },
+    "testimonials": {
+      "eyebrow": "Testimonials",
+      "title": "What travelers say",
+      "description": "Real stories from Wonder experiences.",
+      "badge": "4.9/5 · 30 reviews",
+      "items": [
+        {
+          "name": "Amanda N.",
+          "country": "Classic Colombia",
+          "quote": "The trip was flawless: logistics, guides, and authentic experiences. 11/10."
+        },
+        {
+          "name": "Camila V.",
+          "country": "Hidden Treasure",
+          "quote": "It exceeded all expectations. Every experience felt magical and well cared for."
+        },
+        {
+          "name": "Michael A.",
+          "country": "Amazon 3 Borders",
+          "quote": "Simply incredible. Attention to detail and safety on every step."
+        }
+      ]
+    },
+    "trustpilot": {
+      "label": "Trustpilot",
+      "score": "4.7 / 5",
+      "reviews": "29 verified reviews",
+      "cta": "Read reviews on Trustpilot"
+    },
+    "trustBand": {
+      "eyebrow": "Trust",
+      "title": "4.9/5 happy travelers · Trusted partners",
+      "description": "Reference ratings and key certifications for peace of mind."
+    },
+    "partners": {
+      "eyebrow": "Partners & Certifications",
+      "title": "Trusted alliances",
+      "description": "Replace placeholders with real logos in",
+      "badge": "Certifications & allies",
+      "certified": "Certified partner"
+    }
+  },
+  "trips": {
+    "meta": {
+      "title": "Trips | Wonder Travel",
+      "description": "Explore all Wonder Travel experiences. Curated adventures ready to inspire."
+    },
+    "heading": {
+      "eyebrow": "Full catalog",
+      "title": "All experiences",
+      "description": "Filter by name or explore the cards. Coming soon: advanced filters."
+    },
+    "card": {
+      "from": "From"
+    },
+    "detail": {
+      "eyebrow": "Trip",
+      "facts": {
+        "duration": "Duration",
+        "difficulty": "Difficulty",
+        "from": "From"
+      },
+      "ctaWhatsapp": "Ask on WhatsApp",
+      "ctaItinerary": "View itinerary",
+      "stickyWhatsapp": "Ask on WhatsApp",
+      "itineraryTitle": "Itinerary",
+      "itineraryDay": "Day {day}",
+      "galleryTitle": "Gallery"
+    },
+    "related": {
+      "eyebrow": "You might also like",
+      "title": "Related trips"
+    },
+    "gallery": {
+      "title": "Gallery",
+      "empty": "Add more images in /public/images/trips and update the array in the JSON."
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact | Wonder Travel",
+      "description": "Let's talk on WhatsApp or email to plan your next adventure with Wonder Travel."
+    },
+    "eyebrow": "Contact",
+    "title": "Ready to travel?",
+    "description": "Message us on WhatsApp for an immediate response or email us your request.",
+    "ctaWhatsapp": "Chat on WhatsApp",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address",
+    "address": "Calle 98 # 10 - 32 · Bogota, Colombia",
+    "mapTitle": "Find us",
+    "mapLabel": "Wonder Travel map"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The route you're looking for doesn't exist or moved. Return home or explore trips.",
+    "ctaHome": "Go home",
+    "ctaTrips": "View trips"
+  },
+  "footer": {
+    "eyebrow": "Wonder Travel",
+    "title": "Ready to travel?",
+    "cta": "Message us on WhatsApp",
+    "contactLine": "Tel: +{phone} · travelbuddy@wondertravel.co",
+    "address": "Calle 98 # 10 - 32 · Bogota, Colombia",
+    "explore": "Explore",
+    "legal": "Legal",
+    "links": {
+      "home": "Home",
+      "trips": "Wonder Signature",
+      "universities": "Universities",
+      "corporate": "Corporate",
+      "contact": "Contact",
+      "data": "Personal data",
+      "terms": "Terms & conditions",
+      "sustainability": "Sustainability"
+    },
+    "copyright": "© {year} Wonder Travel.",
+    "catalogVersion": "Static catalog v2.0"
+  },
+  "b2b": {
+    "contact": {
+      "title": "Ready to get started?",
+      "description": "Contact us and let's design the perfect experience for your group.",
+      "whatsapp": "WhatsApp",
+      "call": "Call",
+      "email": "Email",
+      "cta": "Message on WhatsApp"
+    }
+  },
+  "corporate": {
+    "meta": {
+      "title": "Wonder Corporate | Corporate Experiences in Colombia",
+      "description": "Team building, incentive trips, and corporate experiences designed to transform teams. +50 companies trust us."
+    },
+    "hero": {
+      "subtitle": "Wonder Corporate",
+      "title": "Corporate experiences that transform teams",
+      "description": "We design trips and activities that strengthen culture, reward talent, and build real connections across your team.",
+      "ctaPrimary": "Request a quote",
+      "ctaSecondary": "View services",
+      "badges": ["Team building", "Incentives", "Integrations", "Retreats"]
+    },
+    "pillars": {
+      "title": "Why Wonder Corporate?",
+      "description": "We combine tourism expertise with organizational development to create experiences that make an impact.",
+      "items": {
+        "teamBuilding": {
+          "title": "Team Building",
+          "description": "Scientifically designed activities to strengthen bonds, improve communication, and increase engagement."
+        },
+        "adventure": {
+          "title": "Adventure & Nature",
+          "description": "Outdoor experiences that challenge, inspire, and build shared memories. From hiking to extreme sports."
+        },
+        "logistics": {
+          "title": "Full Logistics",
+          "description": "We handle everything: transport, lodging, meals, and coordination. You only need to enjoy."
+        }
+      }
+    },
+    "services": {
+      "title": "Our corporate services",
+      "description": "Comprehensive solutions for every business need.",
+      "items": {
+        "teamBuilding": {
+          "title": "Team Building",
+          "description": "Activities designed to strengthen team cohesion, improve communication, and create lasting bonds.",
+          "features": ["Integration dynamics", "Collaborative challenges", "Leadership workshops"]
+        },
+        "incentives": {
+          "title": "Incentive Trips",
+          "description": "Reward your team with memorable experiences that celebrate achievements and motivate new goals.",
+          "features": ["Exclusive destinations", "Premium experiences", "Personalized recognition"]
+        },
+        "logistics": {
+          "title": "End-to-end logistics",
+          "description": "We handle every detail: transportation, lodging, meals, and activities.",
+          "features": ["Point-to-point coordination", "Private fleet", "24/7 support"]
+        }
+      }
+    },
+    "stats": {
+      "title": "Results that build trust",
+      "description": "Our numbers reflect the commitment we bring to every company we serve.",
+      "items": {
+        "companies": "Companies served",
+        "nps": "Average NPS",
+        "destinations": "Destinations operated",
+        "satisfaction": "Satisfaction guaranteed"
+      }
+    },
+    "testimonials": {
+      "title": "Companies that trust us",
+      "description": "What leaders say after living the Wonder Corporate experience.",
+      "items": [
+        {
+          "quote": "The team-building trip exceeded every expectation. Our team came back more united and motivated than ever.",
+          "author": "Laura Mendez",
+          "role": "HR Director",
+          "organization": "Tecnoglass"
+        },
+        {
+          "quote": "The attention to detail is impressive. Every activity was designed around our team-building goals.",
+          "author": "Andres Vargas",
+          "role": "CEO",
+          "organization": "Rappi Colombia"
+        },
+        {
+          "quote": "Professional, flexible, and creative. They have run our incentives for 3 years in a row.",
+          "author": "Patricia Lopez",
+          "role": "Sales Manager",
+          "organization": "Bancolombia"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Ready to transform your team?",
+      "description": "Tell us about your company and let's design the perfect experience together.",
+      "cta": "Schedule a call"
+    }
+  },
+  "universities": {
+    "meta": {
+      "title": "Wonder Groups | Academic Trips for Universities",
+      "description": "Transformative academic trips for MBA, LLM, and MPA programs from top universities worldwide. 15+ years of experience, 7,000+ travelers."
+    },
+    "hero": {
+      "subtitle": "Wonder Groups",
+      "title": "Academic trips that transform perspectives",
+      "description": "We design immersive experiences for MBA, LLM, and MPA programs at the world's most prestigious universities. Every trip is a unique learning opportunity.",
+      "ctaPrimary": "Request a quote",
+      "ctaSecondary": "View programs",
+      "badges": ["MBA", "LLM", "MPA", "Executive Education"]
+    },
+    "pillars": {
+      "title": "Why Wonder Groups?",
+      "description": "More than 15 years creating academic experiences that blend learning, networking, and adventure.",
+      "items": {
+        "support": {
+          "title": "24/7 support",
+          "description": "Dedicated team available at all times. Full coordination from planning through the last day."
+        },
+        "unique": {
+          "title": "Unique experiences",
+          "description": "Exclusive access to companies, institutions, and spaces not available to the general public."
+        },
+        "safety": {
+          "title": "Guaranteed safety",
+          "description": "Certified safety protocols, full insurance, and contingency plans for every group."
+        }
+      }
+    },
+    "programs": {
+      "title": "Academic programs",
+      "description": "We tailor experiences to each academic program, understanding the unique needs of every discipline.",
+      "items": {
+        "mba": {
+          "title": "MBA",
+          "subtitle": "Master in Business Administration",
+          "description": "Immersive trips combining visits to leading companies, executive networking, and unique cultural experiences.",
+          "highlights": [
+            "Visits to startups and corporations",
+            "Networking with C-level executives",
+            "In-field case studies"
+          ]
+        },
+        "llm": {
+          "title": "LLM",
+          "subtitle": "Master of Laws",
+          "description": "Experiences designed for future lawyers, including visits to courts, international firms, and multilateral organizations.",
+          "highlights": [
+            "Visits to courts and tribunals",
+            "Sessions with law firms",
+            "Meetings with NGOs and organizations"
+          ]
+        },
+        "mpa": {
+          "title": "MPA",
+          "subtitle": "Master in Public Administration",
+          "description": "Programs focused on public policy with access to government institutions, think tanks, and social impact projects.",
+          "highlights": [
+            "Meetings with public officials",
+            "Visits to social projects",
+            "Local policy analysis"
+          ]
+        }
+      }
+    },
+    "stats": {
+      "title": "Numbers that speak for us",
+      "description": "Results that reflect our commitment to excellence.",
+      "items": {
+        "travelers": "Travelers served",
+        "destinations": "Unique destinations",
+        "experience": "Years of experience",
+        "rating": "Average rating"
+      }
+    },
+    "logos": {
+      "title": "Universities that trust us",
+      "description": "We collaborate with the world's most prestigious academic institutions."
+    },
+    "gallery": {
+      "title": "Transformative moments",
+      "description": "Every trip is a chance to create connections that transcend borders.",
+      "alts": [
+        "Academic group 1",
+        "Academic group 2",
+        "Academic group 3",
+        "Academic group 4",
+        "Academic group 5",
+        "Academic group 6"
+      ]
+    },
+    "certifications": {
+      "title": "Certifications & recognitions",
+      "description": "We meet the highest standards of quality and safety.",
+      "items": [
+        {
+          "name": "TourCert",
+          "description": "International certification for sustainable and responsible tourism."
+        },
+        {
+          "name": "Peace Commitment Seal",
+          "description": "Recognition for contributing to communities affected by conflict."
+        },
+        {
+          "name": "ACOTUR",
+          "description": "Member of the Colombian Association of Responsible Tourism."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What our clients say",
+      "description": "",
+      "items": [
+        {
+          "quote": "The organization was impeccable. Our students accessed experiences they would never have achieved on their own.",
+          "author": "Maria Gonzalez",
+          "role": "International Programs Coordinator",
+          "organization": "Universidad de los Andes"
+        },
+        {
+          "quote": "Wonder Travel understands the specific needs of each academic program. The level of planning detail is outstanding.",
+          "author": "Carlos Rodriguez",
+          "role": "MBA Director",
+          "organization": "CESA"
+        },
+        {
+          "quote": "We've worked with them for 5 years and every trip tops the previous one. True experts in academic travel.",
+          "author": "Ana Martinez",
+          "role": "LLM Coordinator",
+          "organization": "Universidad Externado"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Planning an academic trip?",
+      "description": "Tell us about your group and let's design a transformative experience together.",
+      "cta": "Quote group trip"
+    }
+  },
+  "destinations": {
+    "title": "Destinations across Colombia",
+    "description": "We operate in the country's most iconic destinations, with local knowledge and a trusted partner network in every region.",
+    "label": "Destinations",
+    "helper": "Hover to preview; click to pin.",
+    "count": "{count} destinations",
+    "experiences": "Experiences",
+    "showAll": "Show all ({count})",
+    "showLess": "Show less",
+    "ctaQuote": "Quote this destination",
+    "ctaAdvisor": "Talk to an advisor"
+  },
+  "map": {
+    "aria": "Map of Colombia with selectable destinations"
+  }
+}

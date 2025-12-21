@@ -42,14 +42,29 @@ export const WHATSAPP_EMAIL = CONTACTS[DEFAULT_CONTACT].email;
  * @param tripTitle - Título del viaje (opcional)
  * @param contactType - Tipo de contacto: signature, groups, corporate
  */
+type WhatsAppOptions = {
+  tripTitle?: string;
+  contactType?: ContactType;
+  message?: string;
+};
+
 export function getWhatsAppHref(
-  tripTitle?: string,
-  contactType: ContactType = DEFAULT_CONTACT
+  tripTitleOrOptions?: string | WhatsAppOptions,
+  contactType: ContactType = DEFAULT_CONTACT,
+  messageOverride?: string
 ): string {
-  const contact = CONTACTS[contactType];
-  const message = tripTitle
-    ? `Hola, me interesa el viaje ${tripTitle} de Wonder Travel`
-    : `Hola, me interesa una experiencia de viaje con ${contact.label}`;
+  const options =
+    typeof tripTitleOrOptions === "object" && tripTitleOrOptions !== null
+      ? tripTitleOrOptions
+      : { tripTitle: tripTitleOrOptions, contactType, message: messageOverride };
+
+  const resolvedContactType = options.contactType ?? DEFAULT_CONTACT;
+  const contact = CONTACTS[resolvedContactType];
+  const message =
+    options.message ??
+    (options.tripTitle
+      ? `Hola, me interesa el viaje ${options.tripTitle} de Wonder Travel`
+      : `Hola, me interesa una experiencia de viaje con ${contact.label}`);
 
   return `https://wa.me/${contact.number}?text=${encodeURIComponent(message)}`;
 }

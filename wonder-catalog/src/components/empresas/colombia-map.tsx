@@ -2,6 +2,7 @@
 
 import { geoInterpolate, geoMercator, geoPath } from "d3-geo";
 import { useMemo } from "react";
+import { useTranslations } from "next-intl";
 import colombia from "@/data/geo/colombia-110m.json";
 
 type Marker = {
@@ -65,6 +66,7 @@ export function ColombiaMap({
   onSelect,
   onHover,
 }: Props) {
+  const t = useTranslations("map");
   const { outlinePath, points, routes } = useMemo(() => {
     const projection = geoMercator().fitSize(
       [VIEWBOX_WIDTH, VIEWBOX_HEIGHT],
@@ -128,7 +130,7 @@ export function ColombiaMap({
       viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`}
       className="h-full w-full"
       role="img"
-      aria-label="Mapa de Colombia con destinos seleccionables"
+      aria-label={t("aria")}
     >
       <style>{`
         @keyframes routeDash {

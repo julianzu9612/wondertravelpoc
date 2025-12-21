@@ -1,17 +1,19 @@
 import Image from "next/image";
-import type { Trip } from "@/data/types";
+import { useTranslations } from "next-intl";
+import type { LocalizedTrip } from "@/data/types";
 
 type Props = {
-  trip: Trip;
+  trip: LocalizedTrip;
 };
 
 export function TripGallery({ trip }: Props) {
+  const t = useTranslations("trips.gallery");
   const images = trip.images.length > 0 ? trip.images : ["/brand/wonder.png"];
   const [hero, ...rest] = images;
 
   return (
     <div className="space-y-4">
-      <h3 className="text-xl font-semibold text-foreground">Galería</h3>
+      <h3 className="text-xl font-semibold text-foreground">{t("title")}</h3>
       <div className="grid gap-3 lg:grid-cols-[1.4fr_1fr]">
         <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border/70 bg-muted">
           <Image
@@ -40,8 +42,7 @@ export function TripGallery({ trip }: Props) {
           ))}
           {rest.length === 0 && (
             <div className="col-span-2 rounded-2xl border border-dashed border-border/70 bg-secondary/60 p-4 text-sm text-foreground/70">
-              Añade más imágenes en <code>/public/images/trips</code> y actualiza
-              el array en el JSON.
+              {t("empty")}
             </div>
           )}
         </div>

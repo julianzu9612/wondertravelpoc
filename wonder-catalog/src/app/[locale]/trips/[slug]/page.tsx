@@ -1,28 +1,37 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { getRelatedTrips, getTripBySlug, trips } from "@/data/trips";
-import type { Trip } from "@/data/types";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getRelatedTrips, getTripBySlug, getTripSlugs } from "@/data/trips";
+import type { LocalizedTrip } from "@/data/types";
 import { getWhatsAppHref } from "@/lib/whatsapp";
 import { TripGallery } from "@/components/trips/gallery";
 import { RelatedTrips } from "@/components/trips/related-trips";
 import { absoluteUrl } from "@/lib/urls";
 import { siteConfig } from "@/config/site";
+import { routing, type Locale } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: Locale; slug: string }>;
 };
 
 export function generateStaticParams() {
-  return trips.map((trip) => ({ slug: trip.slug }));
+  return routing.locales.flatMap((locale) =>
+    getTripSlugs(locale).map((slug) => ({ locale, slug }))
+  );
 }
 
 export async function generateMetadata({ params }: Props) {
-  const { slug } = await params;
-  const trip = getTripBySlug(slug);
+  const { locale, slug } = await params;
+  const trip = getTripBySlug(locale, slug);
   if (!trip) return {};
   const ogImage = trip.images?.[0]
     ? absoluteUrl(trip.images[0])
     : absoluteUrl(siteConfig.ogImage);
+  const pathname = getPathname({
+    locale,
+    href: { pathname: "/trips/[slug]", params: { slug: trip.slug } },
+  });
 
   return {
     title: `${trip.title} | Wonder Travel`,
@@ -30,24 +39,34 @@ export async function generateMetadata({ params }: Props) {
     openGraph: {
       title: `${trip.title} | Wonder Travel`,
       description: trip.shortDescription,
-      url: `${siteConfig.url}/trips/${trip.slug}`,
+      url: absoluteUrl(pathname),
       images: [ogImage],
     },
   };
 }
 
-const currency = new Intl.NumberFormat("es-CO", {
-  style: "currency",
-  currency: "COP",
-  maximumFractionDigits: 0,
-});
+async function TripFacts({
+  trip,
+  locale,
+}: {
+  trip: LocalizedTrip;
+  locale: Locale;
+}) {
+  const t = await getTranslations({
+    locale,
+    namespace: "trips.detail.facts",
+  });
+  const currency = new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: "COP",
+    maximumFractionDigits: 0,
+  });
 
-function TripFacts({ trip }: { trip: Trip }) {
   return (
     <div className="grid gap-3 rounded-2xl border border-border/70 bg-white p-4 shadow-sm sm:grid-cols-3">
-      <Fact label="Duración" value={trip.duration} />
-      <Fact label="Dificultad" value={trip.difficulty} />
-      <Fact label="Desde" value={currency.format(trip.price)} />
+      <Fact label={t("duration")} value={trip.duration} />
+      <Fact label={t("difficulty")} value={trip.difficulty} />
+      <Fact label={t("from")} value={currency.format(trip.price)} />
     </div>
   );
 }
@@ -63,10 +82,23 @@ function Fact({ label, value }: { label: string; value: string }) {
   );
 }
 
-function Itinerary({ trip }: { trip: Trip }) {
+async function Itinerary({
+  trip,
+  locale,
+}: {
+  trip: LocalizedTrip;
+  locale: Locale;
+}) {
+  const t = await getTranslations({
+    locale,
+    namespace: "trips.detail",
+  });
+
   return (
     <div className="space-y-4">
-      <h3 className="text-xl font-semibold text-foreground">Itinerario</h3>
+      <h3 className="text-xl font-semibold text-foreground">
+        {t("itineraryTitle")}
+      </h3>
       <div className="space-y-3">
         {trip.itinerary.map((day) => (
           <div
@@ -74,7 +106,7 @@ function Itinerary({ trip }: { trip: Trip }) {
             className="rounded-2xl border border-border/70 bg-secondary/60 p-4"
           >
             <p className="text-xs uppercase tracking-[0.12em] text-foreground/60">
-              Día {day.day}
+              {t("itineraryDay", { day: day.day })}
             </p>
             <p className="text-base font-semibold text-foreground">{day.title}</p>
             <p className="text-sm text-foreground/70">{day.description}</p>
@@ -86,20 +118,32 @@ function Itinerary({ trip }: { trip: Trip }) {
 }
 
 export default async function TripDetailPage({ params }: Props) {
-  const { slug } = await params;
-  const trip = getTripBySlug(slug);
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+  const trip = getTripBySlug(locale, slug);
   if (!trip) return notFound();
 
   const cover = trip.images?.[0] ?? "/brand/wonder.png";
-  const whatsapp = getWhatsAppHref(trip.title);
-  const related = getRelatedTrips(trip.slug, 3);
+  const t = await getTranslations({
+    locale,
+    namespace: "trips.detail",
+  });
+  const tWhatsApp = await getTranslations({
+    locale,
+    namespace: "whatsapp",
+  });
+  const whatsapp = getWhatsAppHref({
+    contactType: "signature",
+    message: tWhatsApp("interestTrip", { trip: trip.title }),
+  });
+  const related = getRelatedTrips(locale, trip.slug, 3);
 
   return (
     <div className="mx-auto max-w-6xl px-4 pb-20 pt-8 sm:px-6 lg:max-w-7xl">
       <div className="mb-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="space-y-4">
           <p className="text-xs uppercase tracking-[0.12em] text-foreground/60">
-            Viaje
+            {t("eyebrow")}
           </p>
           <h1 className="text-3xl font-semibold text-foreground sm:text-4xl">
             {trip.title}
@@ -115,7 +159,7 @@ export default async function TripDetailPage({ params }: Props) {
               </span>
             ))}
           </div>
-          <TripFacts trip={trip} />
+          <TripFacts trip={trip} locale={locale} />
           <div className="flex flex-wrap gap-3">
             <a
               href={whatsapp}
@@ -123,13 +167,13 @@ export default async function TripDetailPage({ params }: Props) {
               rel="noreferrer"
               className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition hover:-translate-y-0.5 hover:bg-[#ea580c] hover:shadow-lg"
             >
-              Consultar por WhatsApp
+              {t("ctaWhatsapp")}
             </a>
             <a
               href="#itinerario"
               className="inline-flex items-center rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-foreground"
             >
-              Ver itinerario
+              {t("ctaItinerary")}
             </a>
           </div>
         </div>
@@ -151,7 +195,7 @@ export default async function TripDetailPage({ params }: Props) {
       </div>
 
       <div id="itinerario" className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-        <Itinerary trip={trip} />
+        <Itinerary trip={trip} locale={locale} />
         <TripGallery trip={trip} />
       </div>
 
@@ -166,7 +210,7 @@ export default async function TripDetailPage({ params }: Props) {
           rel="noreferrer"
           className="flex items-center justify-center rounded-full bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground shadow-lg transition active:translate-y-[1px]"
         >
-          Consultar por WhatsApp
+          {t("stickyWhatsapp")}
         </a>
       </div>
     </div>

@@ -6,7 +6,7 @@
 - **Listado** `/trips`: cards con precio “Desde”, duración, dificultad y categorías.
 - **Detalle** `/trips/[slug]`: hero imagen, facts (duración/dificultad/precio), categorías, itinerario, galería, relacionados y CTA sticky móvil; flotante de WhatsApp oculto aquí para evitar solape.
 - **Contacto**: CTA WhatsApp, email/tel/dirección.
-- **Datos**: 5 viajes mock en `src/data/trips.json` (Ciudad Perdida, Amazonas, Tatacoa, Mavicure, Caño Cristales) con imágenes del repo original; Tatacoa usa placeholder de desierto.
+- **Datos**: viajes mock en `src/data/trips.ts` (Ciudad Perdida, Amazonas, Tatacoa, Mavicure, Caño Cristales) con imágenes del repo original; Tatacoa usa placeholder de desierto.
 - **Branding/Assets**: Video hero, logos partners y fotos de trips desde el repo original en `public/*`. Paleta/tipografía definidas, motion suave.
 - **SEO base**: `siteConfig` con meta OG/Twitter, helper `absoluteUrl`; `NEXT_PUBLIC_SITE_URL` pendiente de dominio final.
 
@@ -20,8 +20,10 @@
 ## Instrucciones de uso
 - Dev server: `npm run dev -- --hostname 0.0.0.0 --port 3000` (p. ej. PID 178510 en última ejecución).
 - Lint: `npm run lint`.
-- Despliegue: Vercel recomendado. Para GitHub Pages/estático, configurar `output: 'export'` (Next 14) y `NEXT_PUBLIC_SITE_URL`.
-- Assets: `public/hero/*`, `public/images/trips/*`, `public/partners/*`. Datos en `src/data/trips.json`.
+- Despliegue: Vercel recomendado. Para GitHub Pages/estático, configurar `output: 'export'` y `NEXT_PUBLIC_SITE_URL`.
+- Assets: `public/hero/*`, `public/images/trips/*`, `public/partners/*`. Datos en `src/data/trips.ts`.
+- Idiomas: rutas con prefijo (`/en`, `/es`, `/fr`), default `en`. Cambiar idioma desde el switcher en navbar.
+- Traducciones UI: `src/messages/en.json`, `src/messages/es.json`, `src/messages/fr.json`.
 
 ## Observaciones finales
 - Hero y layout ajustados para full-bleed e inmersión; copy comercial aplicado.
@@ -110,3 +112,48 @@ public/b2b/                   # Logos, fotos, videos (~15MB)
 - Landings por ciudad `/empresas/[ciudad]` — esperando contenido JP
 - Nuevas experiencias Signature — esperando contenido JP
 - Links WeTravel — esperando URLs JP
+
+---
+
+## Internacionalización (i18n) - 2025-12-20
+
+### Alcance entregado
+- **Idiomas**: inglés (default), español y francés con rutas prefijadas `/en`, `/es`, `/fr`.
+- **Switch de idioma**: cambia idioma preservando ruta actual y query params (sin duplicar prefijos).
+- **Traducciones UI**: todo el copy visible se mueve a `src/messages/*.json` (home, corporate, universidades, trips, contacto, navbar, footer).
+- **Datos traducidos**:
+  - **Trips**: `src/data/trips.ts` con `translations` por locale (slug/títulos/itinerario/categorías).
+  - **Corporate Destinations**: `src/data/empresas/destinations.ts` con base EN desde Lovable + overrides ES/FR.
+- **Validación de contenido**: si se agrega un destino corporativo nuevo sin traducciones ES/FR, el build falla (fail-fast).
+
+### Cambios técnicos clave
+- **Next-intl** configurado con routing y middleware:
+  - `next-intl.config.ts`, `src/i18n/routing.ts`, `src/i18n/request.ts`, `src/i18n/navigation.ts`.
+  - `middleware.ts` para manejo de locale.
+- **Server Components**: se fuerza locale con `setRequestLocale(locale)` y `getTranslations({ locale })` en páginas SSR.
+- **Home**: refactor de secciones para recibir `locale` desde `src/app/[locale]/page.tsx` y traducir con `getTranslations`.
+
+### Archivos principales tocados
+- `src/app/[locale]/page.tsx`
+- `src/app/[locale]/empresas/page.tsx`
+- `src/app/[locale]/universidades/page.tsx`
+- `src/app/[locale]/trips/page.tsx`
+- `src/app/[locale]/trips/[slug]/page.tsx`
+- `src/app/[locale]/contacto/page.tsx`
+- `src/components/home/*` (Hero, Campaign, Featured, Testimonials, Trustpilot, TrustBand, Partners)
+- `src/components/layout/locale-switcher.tsx`
+- `src/messages/en.json`, `src/messages/es.json`, `src/messages/fr.json`
+- `src/data/empresas/destinations.ts`
+
+### Guía para escalar traducciones
+- **Agregar nuevo texto UI**: insertar en `src/messages/en.json` y traducir en `es.json`/`fr.json`.
+- **Agregar nueva sección Home/B2B**: usar `getTranslations({ locale })` en server o `useTranslations` en client.
+- **Agregar destino corporativo**:
+  1) Añadir en `lovable-corporate-destinations.json` / `ENABLED_DESTINATION_IDS`.
+  2) Agregar traducciones ES/FR en `DESTINATION_TRANSLATIONS`.
+  3) El build fallará si faltan traducciones (validación automática).
+
+### Resolución de incidentes (resumen)
+- **Problema**: Home/hero y algunas secciones quedaban en inglés aun con `/fr`/`/es`.
+- **Causa**: server components usando `useTranslations` sin locale explícito (tomaba default EN).
+- **Solución**: `setRequestLocale(locale)` + `getTranslations({ locale })` y pasar `locale` desde la página.

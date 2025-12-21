@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 type Service = {
   image: string;
@@ -7,41 +8,20 @@ type Service = {
   features: string[];
 };
 
-const services: Service[] = [
+const SERVICE_CONTENT = [
   {
+    id: "teamBuilding",
     image: "/b2b/corporate/team-collaboration.jpg",
-    title: "Team Building",
-    description:
-      "Actividades diseñadas para fortalecer la cohesión del equipo, mejorar la comunicación y crear lazos duraderos.",
-    features: [
-      "Dinámicas de integración",
-      "Retos colaborativos",
-      "Workshops de liderazgo",
-    ],
   },
   {
+    id: "incentives",
     image: "/b2b/corporate/adventure-activities.jpg",
-    title: "Viajes de Incentivo",
-    description:
-      "Recompensa a tu equipo con experiencias memorables que celebran sus logros y motivan nuevas metas.",
-    features: [
-      "Destinos exclusivos",
-      "Experiencias premium",
-      "Reconocimiento personalizado",
-    ],
   },
   {
+    id: "logistics",
     image: "/b2b/corporate/transportation.jpg",
-    title: "Logística Integral",
-    description:
-      "Nos encargamos de todos los detalles: transporte, hospedaje, alimentación y actividades.",
-    features: [
-      "Coordinación punto a punto",
-      "Flota de vehículos propia",
-      "Soporte 24/7",
-    ],
   },
-];
+] as const;
 
 type Props = {
   title?: string;
@@ -49,18 +29,28 @@ type Props = {
 };
 
 export function ServicesCards({
-  title = "Nuestros Servicios Corporativos",
-  description = "Soluciones integrales para cada necesidad de tu empresa.",
+  title,
+  description,
 }: Props) {
+  const t = useTranslations("corporate.services");
+  const services: Service[] = SERVICE_CONTENT.map((service) => ({
+    image: service.image,
+    title: t(`items.${service.id}.title`),
+    description: t(`items.${service.id}.description`),
+    features: t.raw(`items.${service.id}.features`) as string[],
+  }));
+  const resolvedTitle = title ?? t("title");
+  const resolvedDescription = description ?? t("description");
+
   return (
     <section className="py-16 sm:py-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-8">
         <div className="mb-12 text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            {title}
+            {resolvedTitle}
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            {description}
+            {resolvedDescription}
           </p>
         </div>
 

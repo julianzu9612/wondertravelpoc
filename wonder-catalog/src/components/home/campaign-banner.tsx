@@ -1,38 +1,49 @@
-import Link from "next/link";
-import { getWhatsAppHref } from "@/lib/whatsapp";
+import { getTranslations } from "next-intl/server";
+import { getContactInfo, getWhatsAppHref } from "@/lib/whatsapp";
+import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 
-export function CampaignBanner() {
-  const whatsapp = getWhatsAppHref();
+type Props = {
+  locale: Locale;
+};
+
+export async function CampaignBanner({ locale }: Props) {
+  const t = await getTranslations({ locale, namespace: "home.campaign" });
+  const tWhatsApp = await getTranslations({ locale, namespace: "whatsapp" });
+  const contact = getContactInfo("signature");
+  const whatsapp = getWhatsAppHref({
+    contactType: "signature",
+    message: tWhatsApp("interestGeneral", { label: contact.label }),
+  });
 
   return (
     <section className="overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-r from-[#0b1220] via-[#111827] to-[#0b1220] text-white shadow-lg">
       <div className="mx-auto flex flex-col gap-4 px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-10">
         <div className="space-y-2">
           <p className="text-xs uppercase tracking-[0.14em] text-white/60">
-            Campaña
+            {t("eyebrow")}
           </p>
           <h3 className="text-2xl font-semibold leading-tight">
-            Expediciones Wonder · temporada vigente
+            {t("title")}
           </h3>
           <p className="max-w-2xl text-sm text-white/80">
-            Salidas curadas con logística lista. Habla con el equipo para cupos y
-            fechas disponibles.
+            {t("description")}
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <Link
+          <a
             href={whatsapp}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition hover:-translate-y-0.5 hover:bg-[#ea580c] hover:shadow-lg"
           >
-            Consultar cupos
-          </Link>
+            {t("ctaPrimary")}
+          </a>
           <Link
             href="/trips"
             className="inline-flex items-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white"
           >
-            Ver catálogo
+            {t("ctaSecondary")}
           </Link>
         </div>
       </div>

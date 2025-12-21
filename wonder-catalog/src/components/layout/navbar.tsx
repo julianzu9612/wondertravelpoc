@@ -1,25 +1,44 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { type ContactType, getWhatsAppHref } from "@/lib/whatsapp";
+import {
+  type ContactType,
+  getContactInfo,
+  getWhatsAppHref,
+} from "@/lib/whatsapp";
+import { LocaleSwitcher } from "@/components/layout/locale-switcher";
+import { Link } from "@/i18n/navigation";
 
-type NavLink = { href: string; label: string };
+type NavLink = { href: string; labelKey: string };
 
 const navLinks: NavLink[] = [
-  { href: "/", label: "Inicio" },
-  { href: "/trips", label: "Wonder Signature" },
-  { href: "/universidades", label: "Universidades" },
-  { href: "/empresas", label: "Empresas" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "/", labelKey: "links.home" },
+  { href: "/trips", labelKey: "links.trips" },
+  { href: "/universidades", labelKey: "links.universities" },
+  { href: "/empresas", labelKey: "links.corporate" },
+  { href: "/contacto", labelKey: "links.contact" },
 ];
 
 function getContactTypeForPathname(pathname: string): ContactType {
-  if (pathname.startsWith("/universidades")) return "groups";
-  if (pathname.startsWith("/empresas")) return "corporate";
+  const normalized = pathname.toLowerCase();
+  if (
+    normalized.includes("/universidades") ||
+    normalized.includes("/universities") ||
+    normalized.includes("/universites")
+  ) {
+    return "groups";
+  }
+  if (
+    normalized.includes("/empresas") ||
+    normalized.includes("/corporate") ||
+    normalized.includes("/entreprises")
+  ) {
+    return "corporate";
+  }
   return "signature";
 }
 
@@ -39,6 +58,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const t = useTranslations("nav");
 
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -56,7 +76,7 @@ function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
       <button
         type="button"
         className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-background/80 text-foreground/80 shadow-sm backdrop-blur transition hover:bg-background sm:hidden"
-        aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+        aria-label={isMenuOpen ? t("closeMenu") : t("openMenu")}
         aria-expanded={isMenuOpen}
         aria-controls="mobile-menu"
         onClick={() => setIsMenuOpen((open) => !open)}
@@ -90,13 +110,13 @@ function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
         >
           <div className="mx-auto max-w-6xl px-4 pb-6 pt-4">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-semibold">Menú</span>
+              <span className="text-sm font-semibold">{t("menuTitle")}</span>
               <button
                 type="button"
                 className="rounded-full border border-border/70 bg-background/70 px-3 py-1 text-xs font-semibold text-foreground/80 shadow-sm transition hover:bg-background"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Cerrar
+                {t("close")}
               </button>
             </div>
 
@@ -108,7 +128,7 @@ function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
                   className="rounded-xl border border-border/70 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </Link>
               ))}
             </nav>
@@ -121,11 +141,15 @@ function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
 
 export function Navbar() {
   const pathname = usePathname();
+  const t = useTranslations("nav");
+  const tWhatsApp = useTranslations("whatsapp");
 
   const whatsappHref = useMemo(() => {
     const contactType = getContactTypeForPathname(pathname ?? "/");
-    return getWhatsAppHref(undefined, contactType);
-  }, [pathname]);
+    const contact = getContactInfo(contactType);
+    const message = tWhatsApp("interestGeneral", { label: contact.label });
+    return getWhatsAppHref({ contactType, message });
+  }, [pathname, tWhatsApp]);
 
   return (
     <header className="sticky top-0 z-30 border-b border-border/80 bg-background/80 backdrop-blur">
@@ -148,22 +172,23 @@ export function Navbar() {
               href={link.href}
               className="transition-colors hover:text-foreground"
             >
-              {link.label}
+              {t(link.labelKey)}
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
           <MobileMenu key={pathname ?? "root"} navLinks={navLinks} />
+          <LocaleSwitcher />
 
           <a
             href={whatsappHref}
             target="_blank"
             rel="noreferrer"
-            aria-label="WhatsApp"
+            aria-label={tWhatsApp("aria")}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm transition hover:-translate-y-0.5 hover:bg-[#ea580c] hover:shadow-md"
           >
-            <span className="sr-only">WhatsApp</span>
+            <span className="sr-only">{tWhatsApp("aria")}</span>
             <WhatsAppIcon className="h-5 w-5" />
           </a>
         </div>

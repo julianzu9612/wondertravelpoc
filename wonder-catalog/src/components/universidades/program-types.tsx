@@ -1,5 +1,6 @@
 import { GraduationCap, Scale, Building2 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 type Program = {
   icon: LucideIcon;
@@ -9,63 +10,51 @@ type Program = {
   highlights: string[];
 };
 
-const programs: Program[] = [
-  {
-    icon: GraduationCap,
-    title: "MBA",
-    subtitle: "Master in Business Administration",
-    description:
-      "Viajes inmersivos para programas de negocios que combinan visitas a empresas líderes, networking con ejecutivos y experiencias culturales únicas.",
-    highlights: [
-      "Visitas a startups y corporaciones",
-      "Networking con C-level executives",
-      "Casos de estudio en terreno",
-    ],
-  },
-  {
-    icon: Scale,
-    title: "LLM",
-    subtitle: "Master of Laws",
-    description:
-      "Experiencias diseñadas para futuros abogados que incluyen visitas a cortes, bufetes internacionales y organismos multilaterales.",
-    highlights: [
-      "Visitas a tribunales y cortes",
-      "Sesiones con firmas de abogados",
-      "Encuentros con ONGs y organismos",
-    ],
-  },
-  {
-    icon: Building2,
-    title: "MPA",
-    subtitle: "Master in Public Administration",
-    description:
-      "Programas enfocados en políticas públicas con acceso a instituciones gubernamentales, think tanks y proyectos de impacto social.",
-    highlights: [
-      "Reuniones con funcionarios públicos",
-      "Visitas a proyectos sociales",
-      "Análisis de políticas locales",
-    ],
-  },
-];
-
 type Props = {
   title?: string;
   description?: string;
 };
 
 export function ProgramTypes({
-  title = "Programas Académicos",
-  description = "Diseñamos experiencias a la medida de cada programa académico, entendiendo las necesidades específicas de cada disciplina.",
+  title,
+  description,
 }: Props) {
+  const t = useTranslations("universities.programs");
+  const programs: Program[] = [
+    {
+      icon: GraduationCap,
+      title: t("items.mba.title"),
+      subtitle: t("items.mba.subtitle"),
+      description: t("items.mba.description"),
+      highlights: t.raw("items.mba.highlights") as string[],
+    },
+    {
+      icon: Scale,
+      title: t("items.llm.title"),
+      subtitle: t("items.llm.subtitle"),
+      description: t("items.llm.description"),
+      highlights: t.raw("items.llm.highlights") as string[],
+    },
+    {
+      icon: Building2,
+      title: t("items.mpa.title"),
+      subtitle: t("items.mpa.subtitle"),
+      description: t("items.mpa.description"),
+      highlights: t.raw("items.mpa.highlights") as string[],
+    },
+  ];
+  const resolvedTitle = title ?? t("title");
+  const resolvedDescription = description ?? t("description");
+
   return (
     <section className="py-16 sm:py-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-8">
         <div className="mb-12 text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            {title}
+            {resolvedTitle}
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            {description}
+            {resolvedDescription}
           </p>
         </div>
 

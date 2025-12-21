@@ -1,11 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { ColombiaMap } from "@/components/empresas/colombia-map";
 import { DestinationDetailPanel } from "@/components/empresas/destination-detail-panel";
-import { CORPORATE_DESTINATIONS } from "@/data/empresas/destinations";
-
-const destinations = CORPORATE_DESTINATIONS;
+import { getCorporateDestinations } from "@/data/empresas/destinations";
+import type { Locale } from "@/i18n/routing";
 
 type Props = {
   title?: string;
@@ -13,26 +13,31 @@ type Props = {
 };
 
 export function DestinationsMap({
-  title = "Destinos en toda Colombia",
-  description = "Operamos en los destinos más icónicos del país, con conocimiento local y red de aliados en cada región.",
+  title,
+  description,
 }: Props) {
+  const t = useTranslations("destinations");
+  const locale = useLocale() as Locale;
+  const destinations = getCorporateDestinations(locale);
+  const resolvedTitle = title ?? t("title");
+  const resolvedDescription = description ?? t("description");
   const [selectedId, setSelectedId] = useState<string>(destinations[0]?.id ?? "");
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const activeId = hoveredId ?? selectedId;
-  const selected = useMemo(() => {
-    const byId = new Map(destinations.map((destination) => [destination.id, destination]));
-    return byId.get(activeId) ?? byId.get(selectedId) ?? null;
-  }, [activeId, selectedId]);
+  const selected =
+    destinations.find((destination) => destination.id === activeId) ??
+    destinations.find((destination) => destination.id === selectedId) ??
+    null;
 
   return (
     <section className="py-16 sm:py-20 bg-muted/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-10">
         <div className="mb-10 text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            {title}
+            {resolvedTitle}
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            {description}
+            {resolvedDescription}
           </p>
         </div>
 
@@ -40,14 +45,14 @@ export function DestinationsMap({
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                Destinos
+                {t("label")}
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Hover para preview; click para fijar.
+                {t("helper")}
               </p>
             </div>
             <p className="text-xs font-semibold text-foreground/60">
-              {destinations.length} destinos
+              {t("count", { count: destinations.length })}
             </p>
           </div>
 
@@ -111,7 +116,12 @@ export function DestinationsMap({
 
           <aside className="lg:col-span-7 lg:h-[720px]">
             <div className="h-full min-h-0">
-              {selected ? <DestinationDetailPanel destination={selected} /> : null}
+              {selected ? (
+                <DestinationDetailPanel
+                  key={selected.id}
+                  destination={selected}
+                />
+              ) : null}
             </div>
           </aside>
         </div>

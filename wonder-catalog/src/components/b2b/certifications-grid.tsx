@@ -15,22 +15,26 @@ type Props = {
 
 export function CertificationsGrid({
   certifications,
-  title = "Certificaciones y Reconocimientos",
-  description = "Cumplimos con los más altos estándares de calidad y seguridad.",
+  title,
+  description,
 }: Props) {
   return (
     <section className="py-16 sm:py-20 bg-muted/30">
       <div className="mx-auto max-w-5xl px-4 sm:px-8">
-        <div className="mb-12 text-center">
-          <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            {title}
-          </h2>
-          {description && (
-            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-              {description}
-            </p>
-          )}
-        </div>
+        {(title || description) && (
+          <div className="mb-12 text-center">
+            {title && (
+              <h2 className="font-display text-3xl font-semibold sm:text-4xl">
+                {title}
+              </h2>
+            )}
+            {description && (
+              <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+                {description}
+              </p>
+            )}
+          </div>
+        )}
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {certifications.map((cert) => (

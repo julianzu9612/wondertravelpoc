@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import type { ComponentType } from "react";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import {
   Anchor,
   Bike,
@@ -74,11 +75,8 @@ function ActivityIcon({ name }: { name: string }) {
 }
 
 export function DestinationDetailPanel({ destination }: Props) {
+  const t = useTranslations("destinations");
   const [showAllActivities, setShowAllActivities] = useState(false);
-
-  useEffect(() => {
-    setShowAllActivities(false);
-  }, [destination.id]);
 
   const visibleActivities = useMemo(() => {
     if (showAllActivities) return destination.activities;
@@ -118,13 +116,13 @@ export function DestinationDetailPanel({ destination }: Props) {
               href="#contacto"
               className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
             >
-              Cotizar este destino
+              {t("ctaQuote")}
             </a>
             <a
               href="#contacto"
               className="inline-flex items-center justify-center rounded-full border border-border/70 bg-white px-4 py-2 text-sm font-semibold text-foreground/80 transition hover:bg-muted/40"
             >
-              Hablar con un asesor
+              {t("ctaAdvisor")}
             </a>
           </div>
         </div>
@@ -133,7 +131,7 @@ export function DestinationDetailPanel({ destination }: Props) {
       <div className="min-h-0 flex-1 overflow-auto px-5 pb-5">
         <div className="flex items-center justify-between gap-3">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-            Experiencias
+            {t("experiences")}
           </p>
           <button
             type="button"
@@ -141,8 +139,8 @@ export function DestinationDetailPanel({ destination }: Props) {
             className="rounded-full border border-border/70 bg-white px-3 py-1 text-xs font-semibold text-foreground/70 transition hover:bg-muted/40"
           >
             {showAllActivities
-              ? "Ver menos"
-              : `Ver todas (${destination.activities.length})`}
+              ? t("showLess")
+              : t("showAll", { count: destination.activities.length })}
           </button>
         </div>
 

@@ -1,14 +1,19 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
-import type { Trip } from "@/data/types";
+import { useLocale, useTranslations } from "next-intl";
+import type { LocalizedTrip } from "@/data/types";
+import { Link } from "@/i18n/navigation";
 
 type Props = {
-  trip: Trip;
+  trip: LocalizedTrip;
 };
 
 export function TripCard({ trip }: Props) {
+  const t = useTranslations("trips.card");
+  const locale = useLocale();
   const cover = trip.images?.[0] ?? "/brand/wonder.png";
-  const formatter = new Intl.NumberFormat("es-CO", {
+  const formatter = new Intl.NumberFormat(locale, {
     style: "currency",
     currency: "COP",
     maximumFractionDigits: 0,
@@ -16,7 +21,7 @@ export function TripCard({ trip }: Props) {
 
   return (
     <Link
-      href={`/trips/${trip.slug}`}
+      href={{ pathname: "/trips/[slug]", params: { slug: trip.slug } }}
       className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/70 bg-white shadow-sm transition transform-gpu hover:-translate-y-1 hover:shadow-lg focus-visible:-translate-y-1 focus-visible:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-orange-100/60 via-white to-orange-50/40">
@@ -56,7 +61,7 @@ export function TripCard({ trip }: Props) {
         <div className="mt-auto flex items-center justify-between text-sm font-semibold text-foreground">
           <div className="space-y-1">
             <p className="text-xs uppercase tracking-[0.08em] text-foreground/60">
-              Desde
+              {t("from")}
             </p>
             <p className="text-base">{formatter.format(trip.price)}</p>
           </div>

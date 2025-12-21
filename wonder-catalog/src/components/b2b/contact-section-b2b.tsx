@@ -1,4 +1,5 @@
 import { Mail, Phone, MessageCircle } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { getWhatsAppHref, getContactInfo, ContactType } from "@/lib/whatsapp";
 
 type Props = {
@@ -10,12 +11,21 @@ type Props = {
 
 export function ContactSectionB2B({
   contactType,
-  title = "¿Listo para comenzar?",
-  description = "Contáctanos y diseñemos juntos la experiencia perfecta para tu grupo.",
-  ctaText = "Escribir por WhatsApp",
+  title,
+  description,
+  ctaText,
 }: Props) {
+  const t = useTranslations("b2b.contact");
+  const tWhatsApp = useTranslations("whatsapp");
   const contact = getContactInfo(contactType);
-  const whatsappHref = getWhatsAppHref(undefined, contactType);
+  const whatsappHref = getWhatsAppHref({
+    contactType,
+    message: tWhatsApp("interestGeneral", { label: contact.label }),
+  });
+
+  const resolvedTitle = title ?? t("title");
+  const resolvedDescription = description ?? t("description");
+  const resolvedCta = ctaText ?? t("cta");
 
   // Format phone for display
   const phoneDisplay = `+${contact.number.slice(0, 2)} ${contact.number.slice(2, 5)} ${contact.number.slice(5, 8)} ${contact.number.slice(8)}`;
@@ -26,10 +36,10 @@ export function ContactSectionB2B({
         <div className="rounded-3xl border border-border/70 bg-white p-8 shadow-sm sm:p-12">
           <div className="text-center">
             <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-              {title}
+              {resolvedTitle}
             </h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-              {description}
+              {resolvedDescription}
             </p>
           </div>
 
@@ -43,7 +53,7 @@ export function ContactSectionB2B({
               <div className="rounded-full bg-green-100 p-3">
                 <MessageCircle className="h-6 w-6 text-green-600" />
               </div>
-              <span className="mt-3 font-semibold">WhatsApp</span>
+              <span className="mt-3 font-semibold">{t("whatsapp")}</span>
               <span className="mt-1 text-sm text-muted-foreground">
                 {phoneDisplay}
               </span>
@@ -56,7 +66,7 @@ export function ContactSectionB2B({
               <div className="rounded-full bg-primary/10 p-3">
                 <Phone className="h-6 w-6 text-primary" />
               </div>
-              <span className="mt-3 font-semibold">Llamar</span>
+              <span className="mt-3 font-semibold">{t("call")}</span>
               <span className="mt-1 text-sm text-muted-foreground">
                 {phoneDisplay}
               </span>
@@ -69,7 +79,7 @@ export function ContactSectionB2B({
               <div className="rounded-full bg-blue-100 p-3">
                 <Mail className="h-6 w-6 text-blue-600" />
               </div>
-              <span className="mt-3 font-semibold">Email</span>
+              <span className="mt-3 font-semibold">{t("email")}</span>
               <span className="mt-1 text-sm text-muted-foreground">
                 {contact.email}
               </span>
@@ -84,7 +94,7 @@ export function ContactSectionB2B({
               className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground shadow-md transition hover:-translate-y-0.5 hover:bg-[#ea580c] hover:shadow-lg"
             >
               <MessageCircle className="h-5 w-5" />
-              {ctaText}
+              {resolvedCta}
             </a>
           </div>
         </div>

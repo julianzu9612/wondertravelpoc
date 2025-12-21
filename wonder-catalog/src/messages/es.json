@@ -1,0 +1,464 @@
+{
+  "metadata": {
+    "title": "Wonder Travel | Catálogo Digital",
+    "description": "Descubre Colombia con Wonder Travel: Ciudad Perdida, Amazonas, Caño Cristales y más. Viajes a medida y respuesta inmediata por WhatsApp."
+  },
+  "language": {
+    "label": "Idioma",
+    "en": "Inglés",
+    "es": "Español",
+    "fr": "Francés"
+  },
+  "nav": {
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "menuTitle": "Menú",
+    "close": "Cerrar",
+    "links": {
+      "home": "Inicio",
+      "trips": "Wonder Signature",
+      "universities": "Universidades",
+      "corporate": "Empresas",
+      "contact": "Contacto"
+    }
+  },
+  "whatsapp": {
+    "interestTrip": "Hola, me interesa el viaje {trip} de Wonder Travel",
+    "interestGeneral": "Hola, me interesa una experiencia de viaje con {label}",
+    "aria": "Hablar por WhatsApp"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Wonder Travel",
+      "tagline": "Latinoamérica auténtica",
+      "title": "Explora la Latinoamérica que pocos conocen",
+      "description": "Ciudad Perdida, Amazonas, Caño Cristales y más. Planes boutique con logística probada, expertos locales y respuesta inmediata por WhatsApp.",
+      "ctaPrimary": "Consultar por WhatsApp",
+      "ctaSecondary": "Ver viajes destacados",
+      "chips": [
+        "Respuesta en minutos",
+        "Expertos locales",
+        "Logística cuidada",
+        "Aventura curada"
+      ]
+    },
+    "campaign": {
+      "eyebrow": "Campaña",
+      "title": "Expediciones Wonder · temporada vigente",
+      "description": "Salidas curadas con logística lista. Habla con el equipo para cupos y fechas disponibles.",
+      "ctaPrimary": "Consultar cupos",
+      "ctaSecondary": "Ver catálogo"
+    },
+    "featured": {
+      "eyebrow": "Destacados",
+      "title": "Aventuras curadas por Wonder",
+      "description": "Experiencias con alta demanda, logística probada y feedback sobresaliente."
+    },
+    "search": {
+      "eyebrow": "Explora",
+      "title": "Busca por nombre o categoría",
+      "placeholder": "Amazonas, trekking, cultura...",
+      "all": "Todas",
+      "empty": "No encontramos viajes con ese criterio. Prueba otra palabra o categoría."
+    },
+    "testimonials": {
+      "eyebrow": "Testimonios",
+      "title": "Lo que dicen los viajeros",
+      "description": "Historias reales de experiencias Wonder.",
+      "badge": "4.9/5 · 30 reseñas",
+      "items": [
+        {
+          "name": "Amanda N.",
+          "country": "Colombia Clásica",
+          "quote": "El viaje fue impecable: logística, guías y experiencias auténticas. 11/10."
+        },
+        {
+          "name": "Camila V.",
+          "country": "Tesoro Escondido",
+          "quote": "Superó todas las expectativas. Cada experiencia fue mágica y bien cuidada."
+        },
+        {
+          "name": "Michael A.",
+          "country": "Amazonas 3 fronteras",
+          "quote": "Simplemente increíble. Atención al detalle y seguridad en ruta."
+        }
+      ]
+    },
+    "trustpilot": {
+      "label": "Trustpilot",
+      "score": "4.7 / 5",
+      "reviews": "29 reseñas verificadas",
+      "cta": "Ver reseñas en Trustpilot"
+    },
+    "trustBand": {
+      "eyebrow": "Confianza",
+      "title": "4.9/5 viajeros felices · Partners de confianza",
+      "description": "Ratings referenciales y certificaciones claves para viajar tranquilo."
+    },
+    "partners": {
+      "eyebrow": "Partners y certificaciones",
+      "title": "Alianzas de confianza",
+      "description": "Sustituye los placeholders por logos reales en",
+      "badge": "Certificaciones y aliados",
+      "certified": "Aliado certificado"
+    }
+  },
+  "trips": {
+    "meta": {
+      "title": "Viajes | Wonder Travel",
+      "description": "Explora todas las experiencias del catálogo Wonder Travel. Aventuras curadas, listas para inspirarte."
+    },
+    "heading": {
+      "eyebrow": "Catálogo completo",
+      "title": "Todas las experiencias",
+      "description": "Filtra por nombre o explora las tarjetas. Próximamente: filtros más avanzados."
+    },
+    "card": {
+      "from": "Desde"
+    },
+    "detail": {
+      "eyebrow": "Viaje",
+      "facts": {
+        "duration": "Duración",
+        "difficulty": "Dificultad",
+        "from": "Desde"
+      },
+      "ctaWhatsapp": "Consultar por WhatsApp",
+      "ctaItinerary": "Ver itinerario",
+      "stickyWhatsapp": "Consultar por WhatsApp",
+      "itineraryTitle": "Itinerario",
+      "itineraryDay": "Día {day}",
+      "galleryTitle": "Galería"
+    },
+    "related": {
+      "eyebrow": "También te puede gustar",
+      "title": "Viajes relacionados"
+    },
+    "gallery": {
+      "title": "Galería",
+      "empty": "Añade más imágenes en /public/images/trips y actualiza el array en el JSON."
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contacto | Wonder Travel",
+      "description": "Hablemos por WhatsApp o email para planear tu próxima aventura con Wonder Travel."
+    },
+    "eyebrow": "Contacto",
+    "title": "¿Listo para viajar?",
+    "description": "Escríbenos por WhatsApp para una respuesta inmediata o déjanos tu mensaje por email.",
+    "ctaWhatsapp": "Hablar por WhatsApp",
+    "phoneLabel": "Teléfono",
+    "addressLabel": "Dirección",
+    "address": "Calle 98 # 10 - 32 · Bogotá, Colombia",
+    "mapTitle": "Encuéntranos",
+    "mapLabel": "Mapa Wonder Travel"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "La ruta que buscas no existe o se movió. Vuelve al inicio o explora los viajes.",
+    "ctaHome": "Ir al inicio",
+    "ctaTrips": "Ver viajes"
+  },
+  "footer": {
+    "eyebrow": "Wonder Travel",
+    "title": "¿Listo para viajar?",
+    "cta": "Escríbenos por WhatsApp",
+    "contactLine": "Teléfono: +{phone} · travelbuddy@wondertravel.co",
+    "address": "Calle 98 # 10 - 32 · Bogotá, Colombia",
+    "explore": "Explora",
+    "legal": "Legal",
+    "links": {
+      "home": "Inicio",
+      "trips": "Wonder Signature",
+      "universities": "Universidades",
+      "corporate": "Empresas",
+      "contact": "Contacto",
+      "data": "Datos personales",
+      "terms": "Términos y condiciones",
+      "sustainability": "Sostenibilidad"
+    },
+    "copyright": "© {year} Wonder Travel.",
+    "catalogVersion": "Catálogo estático v2.0"
+  },
+  "b2b": {
+    "contact": {
+      "title": "¿Listo para comenzar?",
+      "description": "Contáctanos y diseñemos juntos la experiencia perfecta para tu grupo.",
+      "whatsapp": "WhatsApp",
+      "call": "Llamar",
+      "email": "Correo electrónico",
+      "cta": "Escribir por WhatsApp"
+    }
+  },
+  "corporate": {
+    "meta": {
+      "title": "Wonder Corporate | Experiencias Corporativas en Colombia",
+      "description": "Trabajo en equipo, viajes de incentivo y experiencias corporativas diseñadas para transformar equipos. +50 empresas confían en nosotros."
+    },
+    "hero": {
+      "subtitle": "Wonder Corporativo",
+      "title": "Experiencias corporativas que transforman equipos",
+      "description": "Diseñamos viajes y actividades que fortalecen la cultura organizacional, premian el talento y crean conexiones reales entre tu equipo.",
+      "ctaPrimary": "Cotizar experiencia",
+      "ctaSecondary": "Ver servicios",
+      "badges": [
+        "Trabajo en equipo",
+        "Incentivos",
+        "Integraciones",
+        "Retiros"
+      ]
+    },
+    "pillars": {
+      "title": "¿Por qué Wonder Corporate?",
+      "description": "Combinamos expertise en turismo con conocimiento en desarrollo organizacional para crear experiencias que impactan.",
+      "items": {
+        "teamBuilding": {
+          "title": "Trabajo en equipo",
+          "description": "Actividades diseñadas científicamente para fortalecer vínculos, mejorar la comunicación y aumentar el compromiso de tu equipo."
+        },
+        "adventure": {
+          "title": "Aventura & Naturaleza",
+          "description": "Experiencias outdoor que desafían, inspiran y crean memorias compartidas. Desde senderismo hasta deportes extremos."
+        },
+        "logistics": {
+          "title": "Logística Completa",
+          "description": "Nos encargamos de todo: transporte, hospedaje, alimentación y coordinación. Tu solo preocúpate de disfrutar."
+        }
+      }
+    },
+    "services": {
+      "title": "Nuestros Servicios Corporativos",
+      "description": "Soluciones integrales para cada necesidad de tu empresa.",
+      "items": {
+        "teamBuilding": {
+          "title": "Trabajo en equipo",
+          "description": "Actividades diseñadas para fortalecer la cohesión del equipo, mejorar la comunicación y crear lazos duraderos.",
+          "features": [
+            "Dinámicas de integración",
+            "Retos colaborativos",
+            "Talleres de liderazgo"
+          ]
+        },
+        "incentives": {
+          "title": "Viajes de Incentivo",
+          "description": "Recompensa a tu equipo con experiencias memorables que celebran sus logros y motivan nuevas metas.",
+          "features": [
+            "Destinos exclusivos",
+            "Experiencias de alto nivel",
+            "Reconocimiento personalizado"
+          ]
+        },
+        "logistics": {
+          "title": "Logística Integral",
+          "description": "Nos encargamos de todos los detalles: transporte, hospedaje, alimentación y actividades.",
+          "features": [
+            "Coordinación punto a punto",
+            "Flota de vehículos propia",
+            "Soporte 24/7"
+          ]
+        }
+      }
+    },
+    "stats": {
+      "title": "Resultados que generan confianza",
+      "description": "Nuestros números reflejan el compromiso con cada empresa que confía en nosotros.",
+      "items": {
+        "companies": "Empresas atendidas",
+        "nps": "NPS Promedio",
+        "destinations": "Destinos operados",
+        "satisfaction": "Satisfacción garantizada"
+      }
+    },
+    "testimonials": {
+      "title": "Empresas que confían en nosotros",
+      "description": "Lo que dicen los líderes de las organizaciones que han vivido la experiencia Wonder Corporate.",
+      "items": [
+        {
+          "quote": "El viaje de integración superó todas las expectativas. Nuestro equipo regresó más unido y motivado que nunca.",
+          "author": "Laura Méndez",
+          "role": "Directora de Recursos Humanos",
+          "organization": "Tecnoglass"
+        },
+        {
+          "quote": "La atención al detalle es impresionante. Cada actividad estaba pensada para nuestros objetivos de team building.",
+          "author": "Andrés Vargas",
+          "role": "CEO",
+          "organization": "Rappi Colombia"
+        },
+        {
+          "quote": "Profesionales, flexibles y creativos. Han organizado nuestros incentivos por 3 años consecutivos.",
+          "author": "Patricia López",
+          "role": "Gerente de Ventas",
+          "organization": "Bancolombia"
+        }
+      ]
+    },
+    "contact": {
+      "title": "¿Listo para transformar tu equipo?",
+      "description": "Cuéntanos sobre tu empresa y diseñemos juntos la experiencia perfecta.",
+      "cta": "Agendar llamada"
+    }
+  },
+  "universities": {
+    "meta": {
+      "title": "Wonder Groups | Viajes Académicos para Universidades",
+      "description": "Viajes académicos transformadores para programas MBA, LLM y MPA de las mejores universidades del mundo. +15 años de experiencia, +7,000 viajeros."
+    },
+    "hero": {
+      "subtitle": "Wonder Grupos",
+      "title": "Viajes académicos que transforman perspectivas",
+      "description": "Diseñamos experiencias inmersivas para programas MBA, LLM y MPA de las universidades más prestigiosas del mundo. Cada viaje es una oportunidad de aprendizaje único.",
+      "ctaPrimary": "Solicitar cotización",
+      "ctaSecondary": "Ver programas",
+      "badges": [
+        "MBA",
+        "LLM",
+        "MPA",
+        "Educación Ejecutiva"
+      ]
+    },
+    "pillars": {
+      "title": "¿Por qué Wonder Groups?",
+      "description": "Más de 15 años creando experiencias académicas que combinan aprendizaje, networking y aventura.",
+      "items": {
+        "support": {
+          "title": "Servicio 24/7",
+          "description": "Equipo dedicado disponible en todo momento. Coordinación completa desde la planeación hasta el último día del viaje."
+        },
+        "unique": {
+          "title": "Experiencias Únicas",
+          "description": "Acceso exclusivo a empresas, instituciones y espacios que no están disponibles para el público general."
+        },
+        "safety": {
+          "title": "Seguridad Garantizada",
+          "description": "Protocolos de seguridad certificados, seguros completos y plan de contingencia para cada grupo."
+        }
+      }
+    },
+    "programs": {
+      "title": "Programas Académicos",
+      "description": "Diseñamos experiencias a la medida de cada programa académico, entendiendo las necesidades específicas de cada disciplina.",
+      "items": {
+        "mba": {
+          "title": "MBA",
+          "subtitle": "Maestría en Administración de Empresas",
+          "description": "Viajes inmersivos para programas de negocios que combinan visitas a empresas líderes, networking con ejecutivos y experiencias culturales únicas.",
+          "highlights": [
+            "Visitas a startups y corporaciones",
+            "Conexiones con altos ejecutivos",
+            "Casos de estudio en terreno"
+          ]
+        },
+        "llm": {
+          "title": "LLM",
+          "subtitle": "Maestría en Derecho",
+          "description": "Experiencias diseñadas para futuros abogados que incluyen visitas a cortes, bufetes internacionales y organismos multilaterales.",
+          "highlights": [
+            "Visitas a tribunales y cortes",
+            "Sesiones con firmas de abogados",
+            "Encuentros con ONGs y organismos"
+          ]
+        },
+        "mpa": {
+          "title": "MPA",
+          "subtitle": "Maestría en Administración Pública",
+          "description": "Programas enfocados en políticas públicas con acceso a instituciones gubernamentales, think tanks y proyectos de impacto social.",
+          "highlights": [
+            "Reuniones con funcionarios públicos",
+            "Visitas a proyectos sociales",
+            "Análisis de políticas locales"
+          ]
+        }
+      }
+    },
+    "stats": {
+      "title": "Números que hablan por nosotros",
+      "description": "Resultados que reflejan nuestro compromiso con la excelencia.",
+      "items": {
+        "travelers": "Viajeros atendidos",
+        "destinations": "Destinos únicos",
+        "experience": "Años de experiencia",
+        "rating": "Calificación promedio"
+      }
+    },
+    "logos": {
+      "title": "Universidades que confían en nosotros",
+      "description": "Colaboramos con las instituciones académicas más prestigiosas del mundo."
+    },
+    "gallery": {
+      "title": "Momentos que Transforman",
+      "description": "Cada viaje es una oportunidad para crear conexiones que trascienden fronteras.",
+      "alts": [
+        "Grupo académico 1",
+        "Grupo académico 2",
+        "Grupo académico 3",
+        "Grupo académico 4",
+        "Grupo académico 5",
+        "Grupo académico 6"
+      ]
+    },
+    "certifications": {
+      "title": "Certificaciones y Reconocimientos",
+      "description": "Cumplimos con los más altos estándares de calidad y seguridad.",
+      "items": [
+        {
+          "name": "TourCert",
+          "description": "Certificación internacional de turismo sostenible y responsable."
+        },
+        {
+          "name": "Sello Compromiso con la Paz",
+          "description": "Reconocimiento por contribuir al desarrollo de comunidades afectadas por el conflicto."
+        },
+        {
+          "name": "ACOTUR",
+          "description": "Miembro de la Asociación Colombiana de Turismo Responsable."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Lo que dicen nuestros clientes",
+      "description": "",
+      "items": [
+        {
+          "quote": "La organización fue impecable. Nuestros estudiantes tuvieron acceso a experiencias que jamás hubieran logrado por su cuenta.",
+          "author": "María González",
+          "role": "Coordinadora de Programas Internacionales",
+          "organization": "Universidad de los Andes"
+        },
+        {
+          "quote": "Wonder Travel entiende las necesidades específicas de cada programa académico. El detalle en la planeación es excepcional.",
+          "author": "Carlos Rodríguez",
+          "role": "Director MBA",
+          "organization": "CESA"
+        },
+        {
+          "quote": "Llevamos 5 años trabajando con ellos y cada viaje supera el anterior. Son verdaderos expertos en viajes académicos.",
+          "author": "Ana Martínez",
+          "role": "Coordinadora LLM",
+          "organization": "Universidad Externado"
+        }
+      ]
+    },
+    "contact": {
+      "title": "¿Planeas un viaje académico?",
+      "description": "Cuéntanos sobre tu grupo y diseñemos juntos una experiencia transformadora.",
+      "cta": "Cotizar viaje grupal"
+    }
+  },
+  "destinations": {
+    "title": "Destinos en toda Colombia",
+    "description": "Operamos en los destinos más icónicos del país, con conocimiento local y red de aliados en cada región.",
+    "label": "Destinos",
+    "helper": "Hover para preview; click para fijar.",
+    "count": "{count} destinos",
+    "experiences": "Experiencias",
+    "showAll": "Ver todas ({count})",
+    "showLess": "Ver menos",
+    "ctaQuote": "Cotizar este destino",
+    "ctaAdvisor": "Hablar con un asesor"
+  },
+  "map": {
+    "aria": "Mapa de Colombia con destinos seleccionables"
+  }
+}

@@ -1,13 +1,9 @@
-import type { Metadata } from "next";
+import { headers } from "next/headers";
 import {
   Geist_Mono,
   Inter,
   Playfair_Display,
 } from "next/font/google";
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
-import { WhatsAppFloatingGate } from "@/components/layout/whatsapp-floating-gate";
-import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -25,39 +21,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: siteConfig.name,
-  description: siteConfig.description,
-  openGraph: {
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    url: siteConfig.url,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
-  },
-};
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const locale = headersList.get("x-next-intl-locale") ?? "en";
+
   return (
-    <html lang="es">
+    <html lang={locale}>
       <body
         className={`${inter.variable} ${playfair.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        <main className="min-h-[calc(100vh-8rem)] bg-background text-foreground">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppFloatingGate />
+        {children}
       </body>
     </html>
   );

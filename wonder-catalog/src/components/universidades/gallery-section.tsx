@@ -1,32 +1,43 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 type Props = {
   title?: string;
   description?: string;
 };
 
-const images = [
-  { src: "/b2b/universities/gallery/group-1.jpg", alt: "Grupo académico 1" },
-  { src: "/b2b/universities/gallery/group-2.jpg", alt: "Grupo académico 2" },
-  { src: "/b2b/universities/gallery/group-3.jpg", alt: "Grupo académico 3" },
-  { src: "/b2b/universities/gallery/group-4.jpg", alt: "Grupo académico 4" },
-  { src: "/b2b/universities/gallery/group-5.jpg", alt: "Grupo académico 5" },
-  { src: "/b2b/universities/gallery/group-6.jpg", alt: "Grupo académico 6" },
+const imageSources = [
+  "/b2b/universities/gallery/group-1.jpg",
+  "/b2b/universities/gallery/group-2.jpg",
+  "/b2b/universities/gallery/group-3.jpg",
+  "/b2b/universities/gallery/group-4.jpg",
+  "/b2b/universities/gallery/group-5.jpg",
+  "/b2b/universities/gallery/group-6.jpg",
 ];
 
 export function GallerySection({
-  title = "Momentos que Transforman",
-  description = "Cada viaje es una oportunidad para crear conexiones que trascienden fronteras.",
+  title,
+  description,
 }: Props) {
+  const t = useTranslations("universities.gallery");
+  const altTexts = t.raw("alts") as string[];
+  const resolvedTitle = title ?? t("title");
+  const resolvedDescription = description ?? t("description");
+
+  const images = imageSources.map((src, index) => ({
+    src,
+    alt: altTexts[index] ?? t("title"),
+  }));
+
   return (
     <section className="py-16 sm:py-20 bg-muted/30">
       <div className="mx-auto max-w-5xl px-4 sm:px-8">
         <div className="mb-12 text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            {title}
+            {resolvedTitle}
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            {description}
+            {resolvedDescription}
           </p>
         </div>
 

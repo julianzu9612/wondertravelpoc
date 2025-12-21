@@ -6,8 +6,21 @@ import type { ContactType } from "@/lib/whatsapp";
 
 // Detecta la ruta y determina el tipo de contacto apropiado
 function getContactTypeFromPath(pathname: string | null): ContactType {
-  if (pathname?.startsWith("/universidades")) return "groups";
-  if (pathname?.startsWith("/empresas")) return "corporate";
+  const normalized = pathname?.toLowerCase() ?? "";
+  if (
+    normalized.includes("/universidades") ||
+    normalized.includes("/universities") ||
+    normalized.includes("/universites")
+  ) {
+    return "groups";
+  }
+  if (
+    normalized.includes("/empresas") ||
+    normalized.includes("/corporate") ||
+    normalized.includes("/entreprises")
+  ) {
+    return "corporate";
+  }
   return "signature";
 }
 
@@ -16,7 +29,12 @@ export function WhatsAppFloatingGate() {
   const pathname = usePathname();
 
   const isTripDetail =
-    pathname?.startsWith("/trips/") && pathname !== "/trips";
+    (pathname?.includes("/trips/") ||
+      pathname?.includes("/viajes/") ||
+      pathname?.includes("/voyages/")) &&
+    !pathname?.endsWith("/trips") &&
+    !pathname?.endsWith("/viajes") &&
+    !pathname?.endsWith("/voyages");
 
   if (isTripDetail) return null;
 

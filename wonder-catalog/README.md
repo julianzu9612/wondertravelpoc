@@ -7,6 +7,7 @@ Catálogo estático para Wonder Travel, con CTA a WhatsApp y datos en JSON.
 npm install
 npm run dev -- --hostname 0.0.0.0 --port 3000
 npm run lint
+npm run build
 ```
 
 ## Troubleshooting (dev server)
@@ -118,6 +119,11 @@ El componente `HeroB2B` escala el video 110% y lo ancla arriba-izquierda para em
 ### Datos traducidos
 - **Trips**: `src/data/trips.ts` contiene `translations` por idioma (slugs, títulos e itinerarios).
 - **Corporate Destinations**: `src/data/empresas/destinations.ts` usa EN como base y overrides ES/FR. Hay validación que falla si falta traducción de un destino habilitado.
+
+## Fuentes (sin fetch remoto)
+- Se removió `next/font/google` para evitar fallos de build cuando no hay acceso a Google Fonts.
+- Los stacks se definen en `src/app/globals.css` usando variables `--font-sans`, `--font-display`, `--font-mono`.
+- Si se quieren fuentes exactas, agregar archivos locales y migrar a `next/font/local`.
 
 ## Despliegue en Vercel (monorepo)
 - El repo completo incluye documentación y otras carpetas; el proyecto Next vive en `wonder-catalog`. En Vercel, selecciona esa ruta como **Root Directory** al importar.

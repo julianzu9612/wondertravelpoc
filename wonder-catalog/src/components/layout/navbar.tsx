@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ComponentProps } from "react";
 import {
   type ContactType,
   getContactInfo,
@@ -13,7 +13,7 @@ import {
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { Link } from "@/i18n/navigation";
 
-type NavLink = { href: string; labelKey: string };
+type NavLink = { href: ComponentProps<typeof Link>["href"]; labelKey: string };
 
 const navLinks: NavLink[] = [
   { href: "/", labelKey: "links.home" },
@@ -123,7 +123,7 @@ function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
             <nav className="mt-4 grid gap-2 text-sm font-semibold">
               {navLinks.map((link) => (
                 <Link
-                  key={link.href}
+                  key={link.labelKey}
                   href={link.href}
                   className="rounded-xl border border-border/70 bg-white px-4 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                   onClick={() => setIsMenuOpen(false)}
@@ -168,7 +168,7 @@ export function Navbar() {
         <nav className="hidden items-center gap-6 text-sm font-medium text-foreground/80 sm:flex">
           {navLinks.map((link) => (
             <Link
-              key={link.href}
+              key={link.labelKey}
               href={link.href}
               className="transition-colors hover:text-foreground"
             >

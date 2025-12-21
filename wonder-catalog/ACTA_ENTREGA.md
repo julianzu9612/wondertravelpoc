@@ -157,3 +157,8 @@ public/b2b/                   # Logos, fotos, videos (~15MB)
 - **Problema**: Home/hero y algunas secciones quedaban en inglés aun con `/fr`/`/es`.
 - **Causa**: server components usando `useTranslations` sin locale explícito (tomaba default EN).
 - **Solución**: `setRequestLocale(locale)` + `getTranslations({ locale })` y pasar `locale` desde la página.
+
+### Build en Vercel (compatibilidad)
+- **Problema**: `next/font/google` fallaba al no poder descargar fuentes desde Google Fonts.
+- **Solución**: se removió `next/font/google` y se definieron stacks locales en `src/app/globals.css`.
+- **Build**: `npm run build` ahora usa `next build --webpack` para evitar fallos de Turbopack en entornos restringidos.

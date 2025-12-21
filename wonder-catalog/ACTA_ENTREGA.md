@@ -119,6 +119,7 @@ public/b2b/                   # Logos, fotos, videos (~15MB)
 
 ### Alcance entregado
 - **Idiomas**: inglés (default), español y francés con rutas prefijadas `/en`, `/es`, `/fr`.
+- **Root**: `/` redirige al locale default (`/en`) para evitar 404 en producción.
 - **Switch de idioma**: cambia idioma preservando ruta actual y query params (sin duplicar prefijos).
 - **Traducciones UI**: todo el copy visible se mueve a `src/messages/*.json` (home, corporate, universidades, trips, contacto, navbar, footer).
 - **Datos traducidos**:

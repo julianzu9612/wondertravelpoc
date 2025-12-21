@@ -112,6 +112,7 @@ El componente `HeroB2B` escala el video 110% y lo ancla arriba-izquierda para em
 
 ## Internacionalización (i18n)
 - **Locales**: `en` (default), `es`, `fr` con prefijo en ruta (`/en`, `/es`, `/fr`).
+- **Root**: `/` redirige al locale default (`/en`).
 - **Mensajes**: `src/messages/en.json`, `src/messages/es.json`, `src/messages/fr.json`.
 - **Routing**: `src/i18n/routing.ts` + `middleware.ts`.
 - **Server components**: usar `setRequestLocale(locale)` y `getTranslations({ locale })` cuando se renderiza en servidor.

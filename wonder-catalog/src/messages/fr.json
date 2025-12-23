@@ -136,7 +136,7 @@
     },
     "gallery": {
       "title": "Galerie",
-      "empty": "Ajoutez plus d'images dans /public/images/trips et mettez à jour le tableau dans le JSON."
+      "empty": "Plus de photos bientôt."
     }
   },
   "contact": {

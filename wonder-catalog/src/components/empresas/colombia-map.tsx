@@ -25,6 +25,7 @@ type Props = {
 
 const VIEWBOX_WIDTH = 800;
 const VIEWBOX_HEIGHT = 980;
+const TEXTURE_PADDING = 18;
 
 function wrapText(text: string, maxCharsPerLine: number, maxLines: number) {
   const words = text.trim().split(/\s+/).filter(Boolean);
@@ -223,11 +224,11 @@ export function ColombiaMap({
             <>
               <image
                 href={textureHref}
-                x={0}
-                y={0}
-                width={VIEWBOX_WIDTH}
-                height={VIEWBOX_HEIGHT}
-                preserveAspectRatio="xMidYMid slice"
+                x={TEXTURE_PADDING}
+                y={TEXTURE_PADDING}
+                width={VIEWBOX_WIDTH - TEXTURE_PADDING * 2}
+                height={VIEWBOX_HEIGHT - TEXTURE_PADDING * 2}
+                preserveAspectRatio="xMidYMid meet"
                 opacity={0.98}
               />
               <use

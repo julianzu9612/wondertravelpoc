@@ -42,8 +42,8 @@ export function TestimonialsB2B({
               key={index}
               className="relative rounded-2xl border border-border/70 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
             >
-              <Quote className="absolute right-4 top-4 h-8 w-8 text-primary/20" />
-              <p className="text-muted-foreground leading-relaxed italic">
+              <Quote className="pointer-events-none absolute right-4 top-4 h-8 w-8 text-primary/20" />
+              <p className="text-muted-foreground leading-relaxed italic pr-10">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
               <div className="mt-6 border-t border-border/50 pt-4">

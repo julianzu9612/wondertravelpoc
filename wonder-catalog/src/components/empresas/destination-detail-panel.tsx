@@ -118,12 +118,6 @@ export function DestinationDetailPanel({ destination }: Props) {
             >
               {t("ctaQuote")}
             </a>
-            <a
-              href="#contacto"
-              className="inline-flex items-center justify-center rounded-full border border-border/70 bg-white px-4 py-2 text-sm font-semibold text-foreground/80 transition hover:bg-muted/40"
-            >
-              {t("ctaAdvisor")}
-            </a>
           </div>
         </div>
       </div>

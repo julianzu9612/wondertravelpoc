@@ -51,7 +51,360 @@ const DESTINATION_TRANSLATIONS: Record<
   Locale,
   Record<string, DestinationTranslation>
 > = {
-  en: {},
+  en: {
+    cartagena: {
+      name: "Cartagena",
+      tagline: "Historic coastal city",
+      description:
+        "Discover the magic of Cartagena, where colonial history meets Caribbean charm. A UNESCO heritage city with luxury, culture, and sea.",
+      activities: [
+        {
+          title: "Top-tier hotels",
+          description:
+            "Stay in boutique and luxury hotels within the walled city and along the coast.",
+          icon: "Hotel",
+        },
+        {
+          title: "Cultural & culinary experiences",
+          description:
+            "Food tours, private dinners, and unique cultural experiences.",
+          icon: "UtensilsCrossed",
+        },
+        {
+          title: "Rosario Islands sailing",
+          description:
+            "Yacht or catamaran excursions with snorkeling and lunch included.",
+          icon: "Ship",
+        },
+        {
+          title: "Oceanfront homes",
+          description:
+            "Exclusive villas for private events and corporate retreats.",
+          icon: "Home",
+        },
+        {
+          title: "Beach clubs",
+          description:
+            "Access to the best beach clubs with VIP service and curated settings.",
+          icon: "Umbrella",
+        },
+        {
+          title: "Well-being retreats",
+          description:
+            "Spa, yoga, meditation, and holistic therapies by the sea.",
+          icon: "Heart",
+        },
+      ],
+    },
+    medellin: {
+      name: "Medellín",
+      tagline: "City of eternal spring",
+      description:
+        "Experience Colombia's innovation capital with ideal weather and infrastructure for team-building and corporate events.",
+      activities: [
+        {
+          title: "Industry leader talks",
+          description:
+            "Sessions with business leaders and experts from key sectors.",
+          icon: "Mic",
+        },
+        {
+          title: "Orquideorama visit",
+          description:
+            "Experiences at the Botanical Garden with iconic architecture and biodiversity.",
+          icon: "Flower2",
+        },
+        {
+          title: "Premium events",
+          description:
+            "Exclusive venues with top-tier technology and services.",
+          icon: "CalendarDays",
+        },
+        {
+          title: "Cultural experiences",
+          description:
+            "Comuna 13 tours, museums, galleries, and elevated gastronomy.",
+          icon: "Palette",
+        },
+        {
+          title: "Metrocable & city tours",
+          description:
+            "Panoramic rides with sweeping views of the city.",
+          icon: "Cable",
+        },
+        {
+          title: "Business networking",
+          description:
+            "Events in rooftops and exclusive spaces with the local business community.",
+          icon: "Users",
+        },
+      ],
+    },
+    bogota: {
+      name: "Bogotá",
+      tagline: "Vibrant capital",
+      description:
+        "The cosmopolitan capital offers world-class venues, culture, and high-impact corporate experiences.",
+      activities: [
+        {
+          title: "Industry leader talks",
+          description:
+            "Conferences with top business leaders and thought partners.",
+          icon: "Mic",
+        },
+        {
+          title: "Premium cultural experiences",
+          description:
+            "Private access to museums, galleries, and iconic cultural spaces.",
+          icon: "Building2",
+        },
+        {
+          title: "Top-tier events",
+          description:
+            "Venues for conferences, launches, and corporate events.",
+          icon: "CalendarDays",
+        },
+        {
+          title: "Signature dining",
+          description:
+            "Culinary experiences at the city's most celebrated restaurants.",
+          icon: "UtensilsCrossed",
+        },
+        {
+          title: "Monserrate & city tours",
+          description:
+            "Excursions to Monserrate and the capital's most iconic neighborhoods.",
+          icon: "Mountain",
+        },
+        {
+          title: "Business networking",
+          description:
+            "Connections with the country's most diverse business ecosystem.",
+          icon: "Users",
+        },
+      ],
+    },
+    "coffee-region": {
+      name: "Coffee Region",
+      tagline: "Coffee landscapes",
+      description:
+        "Immerse your team in Colombia's coffee culture with breathtaking landscapes and authentic experiences.",
+      activities: [
+        {
+          title: "Industry insights",
+          description:
+            "Sessions with experts in sustainability and rural entrepreneurship.",
+          icon: "Mic",
+        },
+        {
+          title: "Premium coffee tour",
+          description:
+            "Farm visits with cupping, coffee process walk-throughs, and scenic views.",
+          icon: "Coffee",
+        },
+        {
+          title: "Hacienda events",
+          description:
+            "Corporate events in historic haciendas with premium service.",
+          icon: "CalendarDays",
+        },
+        {
+          title: "Glamping & wellness",
+          description:
+            "Boutique stays with relaxation and wellness experiences.",
+          icon: "TreePine",
+        },
+        {
+          title: "Colorful towns",
+          description:
+            "Visits to heritage towns like Salento and Filandia.",
+          icon: "Landmark",
+        },
+        {
+          title: "Well-being retreats",
+          description:
+            "Full wellness programs in natural settings.",
+          icon: "Heart",
+        },
+      ],
+    },
+    tayrona: {
+      name: "Tayrona",
+      tagline: "Lush Caribbean",
+      description:
+        "Pristine beaches and tropical jungle for corporate retreats with deep reconnection.",
+      activities: [
+        {
+          title: "Boutique ecolodges",
+          description:
+            "Premium stays by the sea or immersed in the jungle.",
+          icon: "TreePine",
+        },
+        {
+          title: "Hiking & trails",
+          description:
+            "Routes through jungle and beaches with spectacular views.",
+          icon: "Footprints",
+        },
+        {
+          title: "Cultural experiences",
+          description:
+            "Encounters with local communities and ancestral traditions.",
+          icon: "Landmark",
+        },
+        {
+          title: "Wellness & yoga",
+          description:
+            "Wellness sessions overlooking the Caribbean.",
+          icon: "Heart",
+        },
+        {
+          title: "Snorkeling & sea",
+          description:
+            "Explore reefs and crystal-clear waters.",
+          icon: "Waves",
+        },
+        {
+          title: "Corporate retreats",
+          description:
+            "Private spaces for team integration and reflection.",
+          icon: "Users",
+        },
+      ],
+    },
+    pacifico: {
+      name: "Pacific",
+      tagline: "Unique biodiversity",
+      description:
+        "One of the most biodiverse regions on the planet, ideal for immersive corporate experiences.",
+      activities: [
+        {
+          title: "Whale watching",
+          description:
+            "Encounters with humpback whales during season (July–October).",
+          icon: "Fish",
+        },
+        {
+          title: "Premium ecolodges",
+          description:
+            "Exclusive lodging with direct access to jungle and ocean.",
+          icon: "TreePine",
+        },
+        {
+          title: "Diving & snorkeling",
+          description:
+            "Dives in pristine reefs with abundant marine life.",
+          icon: "Waves",
+        },
+        {
+          title: "Jungle trekking",
+          description:
+            "Guided expeditions in ultra-biodiverse forests.",
+          icon: "Footprints",
+        },
+        {
+          title: "Birdwatching",
+          description:
+            "Observe endemic species with expert guides.",
+          icon: "Bird",
+        },
+        {
+          title: "Herpetology tours",
+          description:
+            "Specialized tours for frogs, snakes, and unique reptiles.",
+          icon: "Bug",
+        },
+      ],
+    },
+    amazonas: {
+      name: "Amazonas",
+      tagline: "Untamed rainforest",
+      description:
+        "The world's largest rainforest for transformative experiences with nature and culture.",
+      activities: [
+        {
+          title: "Hikes & jungle walks",
+          description:
+            "Guided expeditions through the Amazon rainforest.",
+          icon: "Footprints",
+        },
+        {
+          title: "Amazon River navigation",
+          description:
+            "Boat journeys across the majestic river and its tributaries.",
+          icon: "Ship",
+        },
+        {
+          title: "Pink dolphins",
+          description:
+            "Encounters with pink dolphins in their natural habitat.",
+          icon: "Fish",
+        },
+        {
+          title: "Wildlife spotting",
+          description:
+            "Observe monkeys, caimans, birds, and more.",
+          icon: "Binoculars",
+        },
+        {
+          title: "Indigenous communities",
+          description:
+            "Cultural exchange with local communities and their ancestral wisdom.",
+          icon: "Users",
+        },
+        {
+          title: "Sport fishing",
+          description:
+            "Piranha fishing and emblematic species experiences.",
+          icon: "Anchor",
+        },
+      ],
+    },
+    santander: {
+      name: "Santander",
+      tagline: "Adventure capital",
+      description:
+        "Extreme sports, canyons, and adrenaline experiences for teams seeking challenges.",
+      activities: [
+        {
+          title: "Adventure sports",
+          description:
+            "Paragliding, bungee, rappelling, and other extreme activities.",
+          icon: "Plane",
+        },
+        {
+          title: "Hiking & trekking",
+          description:
+            "Trails through canyons and mountains with unique landscapes.",
+          icon: "Footprints",
+        },
+        {
+          title: "Kayak",
+          description:
+            "Kayak descents through crystal-clear rivers.",
+          icon: "Anchor",
+        },
+        {
+          title: "Rafting",
+          description:
+            "Rafting the Fonce and Suárez rivers.",
+          icon: "Waves",
+        },
+        {
+          title: "Mountain biking",
+          description:
+            "Technical routes for mountain biking.",
+          icon: "Bike",
+        },
+        {
+          title: "Well-being retreats",
+          description:
+            "Wellness blended with softer adventure and nature.",
+          icon: "Heart",
+        },
+      ],
+    },
+  },
   es: {
     cartagena: {
       name: "Cartagena",
@@ -796,7 +1149,7 @@ function getBaseDestinations() {
 }
 
 const BASE_DESTINATIONS = getBaseDestinations();
-const REQUIRED_LOCALES: Locale[] = ["es", "fr"];
+const REQUIRED_LOCALES: Locale[] = ["en", "es", "fr"];
 
 function assertDestinationTranslations() {
   for (const locale of REQUIRED_LOCALES) {
@@ -814,9 +1167,11 @@ function assertDestinationTranslations() {
 assertDestinationTranslations();
 
 export function getCorporateDestinations(locale: Locale): CorporateDestination[] {
-  if (locale === "en") return BASE_DESTINATIONS;
-
   const translations = DESTINATION_TRANSLATIONS[locale];
+  if (!translations || Object.keys(translations).length === 0) {
+    return BASE_DESTINATIONS;
+  }
+
   return BASE_DESTINATIONS.map((destination) => {
     const override = translations[destination.id];
     if (!override) return destination;

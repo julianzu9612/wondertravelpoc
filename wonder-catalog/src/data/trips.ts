@@ -5,7 +5,13 @@ const TRIPS: Trip[] = [
   {
     id: "1",
     price: 1800000,
-    images: ["/images/trips/ciudad-perdida-1.jpg"],
+    images: [
+      "/images/trips/ciudad-perdida-1.jpg",
+      "/b2b/corporate/destinations/tayrona.jpg",
+      "/b2b/corporate/destinations/cartagena.jpg",
+      "/images/trips/beach.jpg",
+      "/images/trips/mavicure-1.jpg",
+    ],
     isFeatured: true,
     translations: {
       en: {
@@ -115,7 +121,13 @@ const TRIPS: Trip[] = [
   {
     id: "2",
     price: 2500000,
-    images: ["/images/trips/amazonas-1.jpg"],
+    images: [
+      "/images/trips/amazonas-1.jpg",
+      "/b2b/corporate/destinations/amazonas.jpg",
+      "/images/trips/mavicure-1.jpg",
+      "/b2b/corporate/destinations/pacifico.jpg",
+      "/images/trips/cano-cristales-1.jpg",
+    ],
     isFeatured: true,
     translations: {
       en: {
@@ -231,7 +243,13 @@ const TRIPS: Trip[] = [
   {
     id: "3",
     price: 850000,
-    images: ["/images/trips/tatacoa-1.webp"],
+    images: [
+      "/images/trips/tatacoa-1.webp",
+      "/b2b/corporate/destinations/santander.jpg",
+      "/b2b/corporate/destinations/coffee-region.jpg",
+      "/images/trips/cano-cristales-1.jpg",
+      "/images/trips/mavicure-1.jpg",
+    ],
     isFeatured: false,
     translations: {
       en: {
@@ -317,7 +335,13 @@ const TRIPS: Trip[] = [
   {
     id: "4",
     price: 2100000,
-    images: ["/images/trips/mavicure-1.jpg"],
+    images: [
+      "/images/trips/mavicure-1.jpg",
+      "/images/trips/amazonas-1.jpg",
+      "/b2b/corporate/destinations/amazonas.jpg",
+      "/b2b/corporate/destinations/pacifico.jpg",
+      "/images/trips/cano-cristales-1.jpg",
+    ],
     isFeatured: true,
     translations: {
       en: {
@@ -418,7 +442,13 @@ const TRIPS: Trip[] = [
   {
     id: "5",
     price: 1950000,
-    images: ["/images/trips/cano-cristales-1.webp"],
+    images: [
+      "/images/trips/cano-cristales-1.webp",
+      "/b2b/corporate/destinations/coffee-region.jpg",
+      "/images/trips/amazonas-1.jpg",
+      "/images/trips/mavicure-1.jpg",
+      "/b2b/corporate/destinations/pacifico.jpg",
+    ],
     isFeatured: true,
     translations: {
       en: {

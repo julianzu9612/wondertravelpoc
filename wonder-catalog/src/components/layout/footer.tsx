@@ -1,13 +1,41 @@
+"use client";
+
 import { useTranslations } from "next-intl";
-import { getContactInfo, getWhatsAppHref, WHATSAPP_NUMBER } from "@/lib/whatsapp";
+import { usePathname } from "next/navigation";
+import {
+  getContactInfo,
+  getWhatsAppHref,
+  type ContactType,
+} from "@/lib/whatsapp";
 import { Link } from "@/i18n/navigation";
+
+function getContactTypeFromPath(pathname: string | null): ContactType {
+  const normalized = pathname?.toLowerCase() ?? "";
+  if (
+    normalized.includes("/universidades") ||
+    normalized.includes("/universities") ||
+    normalized.includes("/universites")
+  ) {
+    return "groups";
+  }
+  if (
+    normalized.includes("/empresas") ||
+    normalized.includes("/corporate") ||
+    normalized.includes("/entreprises")
+  ) {
+    return "corporate";
+  }
+  return "signature";
+}
 
 export function Footer() {
   const t = useTranslations("footer");
   const tWhatsApp = useTranslations("whatsapp");
-  const contact = getContactInfo("signature");
+  const pathname = usePathname();
+  const contactType = getContactTypeFromPath(pathname);
+  const contact = getContactInfo(contactType);
   const whatsappHref = getWhatsAppHref({
-    contactType: "signature",
+    contactType,
     message: tWhatsApp("interestGeneral", { label: contact.label }),
   });
 
@@ -30,12 +58,18 @@ export function Footer() {
             {t("cta")}
           </a>
           <p className="text-foreground/70">
-            {t("contactLine", { phone: WHATSAPP_NUMBER })}
+            {t("contactLine", { phone: contact.number })}
           </p>
+          <a
+            href={`mailto:${contact.email}`}
+            className="text-foreground/70 transition-colors hover:text-foreground"
+          >
+            {contact.email}
+          </a>
           <p className="text-foreground/60">{t("address")}</p>
         </div>
 
-        <div className="grid grid-cols-2 gap-6 sm:gap-10">
+        <div className="grid gap-6 sm:gap-10">
           <div className="space-y-3">
             <h4 className="text-xs uppercase tracking-[0.08em] text-foreground/60">
               {t("explore")}
@@ -67,32 +101,6 @@ export function Footer() {
                 className="transition-colors hover:text-foreground"
               >
                 {t("links.contact")}
-              </Link>
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <h4 className="text-xs uppercase tracking-[0.08em] text-foreground/60">
-              {t("legal")}
-            </h4>
-            <div className="flex flex-col gap-2">
-              <Link
-                href="/politica-datos"
-                className="transition-colors hover:text-foreground"
-              >
-                {t("links.data")}
-              </Link>
-              <Link
-                href="/terminos"
-                className="transition-colors hover:text-foreground"
-              >
-                {t("links.terms")}
-              </Link>
-              <Link
-                href="/sostenibilidad"
-                className="transition-colors hover:text-foreground"
-              >
-                {t("links.sustainability")}
               </Link>
             </div>
           </div>

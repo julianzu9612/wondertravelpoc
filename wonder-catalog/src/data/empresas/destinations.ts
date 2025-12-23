@@ -186,7 +186,7 @@ const DESTINATION_TRANSLATIONS: Record<
     },
     "coffee-region": {
       name: "Coffee Region",
-      tagline: "Coffee landscapes",
+      tagline: "Lush Coffee Landscapes",
       description:
         "Immerse your team in Colombia's coffee culture with breathtaking landscapes and authentic experiences.",
       activities: [
@@ -229,7 +229,7 @@ const DESTINATION_TRANSLATIONS: Record<
       ],
     },
     tayrona: {
-      name: "Tayrona",
+      name: "Tayrona Region",
       tagline: "Lush Caribbean",
       description:
         "Pristine beaches and tropical jungle for corporate retreats with deep reconnection.",
@@ -273,7 +273,7 @@ const DESTINATION_TRANSLATIONS: Record<
       ],
     },
     pacifico: {
-      name: "Pacific",
+      name: "Pacific Region",
       tagline: "Unique biodiversity",
       description:
         "One of the most biodiverse regions on the planet, ideal for immersive corporate experiences.",
@@ -317,7 +317,7 @@ const DESTINATION_TRANSLATIONS: Record<
       ],
     },
     amazonas: {
-      name: "Amazonas",
+      name: "Amazon Region",
       tagline: "Untamed rainforest",
       description:
         "The world's largest rainforest for transformative experiences with nature and culture.",

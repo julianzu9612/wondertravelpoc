@@ -15,17 +15,17 @@ interface ContactInfo {
 
 export const CONTACTS: Record<ContactType, ContactInfo> = {
   signature: {
-    number: "573229723925",
+    number: "573143055465",
     email: "travelbuddy@wondertravel.co",
     label: "Wonder Signature",
   },
   groups: {
-    number: "573229723925",
+    number: "573102361480",
     email: "travelbuddygroups@wondertravel.co",
     label: "Wonder Groups",
   },
   corporate: {
-    number: "573229723925",
+    number: "573102361480",
     email: "travelbuddygroups@wondertravel.co",
     label: "Wonder Corporate",
   },

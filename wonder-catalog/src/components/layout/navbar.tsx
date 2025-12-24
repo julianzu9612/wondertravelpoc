@@ -66,7 +66,7 @@ function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
 
         <div
           className={`absolute left-0 right-0 top-0 border-b border-border/70 bg-background/95 backdrop-blur transition-transform duration-200 ${
-            isMenuOpen ? "translate-y-0" : "-translate-y-3"
+            isMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
           onClick={(event) => event.stopPropagation()}
         >
